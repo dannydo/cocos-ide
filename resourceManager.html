@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cocos2d Studio Test</title>
+  <link rel="stylesheet" type="text/css" href="less/bootstrap.css" />
+
+  <script src="library/coffeescript.js"></script>
+  <script src="library/ocanvas-2.7.1.min.js"></script>
+  <script src="library/underscore.js"></script>
+  <script src="library/zepto.js"></script>
+  <script src="library/angular.js"></script>
+  <script src="library/XMLHttpRequest.js"></script>
+<style>
+  html, body, .container-fluid, .row {
+    height: 100%;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+  }
+  
+  .column-left, .column-right {
+    overflow: scroll;
+    overflow-x:hidden;
+    height: 100%;
+    padding-top: 20px;
+  }
+
+  .well {
+    background-color: #ddd;
+  }
+
+  .resource-item {
+    text-align: center;
+    position: relative;
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    border: 1px solid #000;
+  }
+
+  .resource-item span {
+    position: absolute;
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+  }
+
+  .object.list, .dragable, .resource-item {
+    cursor: pointer;
+  }
+
+  .object.list, .variable.list {
+    margin: 2px;
+  }
+
+  .dragable {
+    border: 1px solid;
+    padding: 10px;
+    min-height: 50px;
+  }
+
+  .selected {
+    background-color: #ffccff;
+    font-weight: bold;
+  }
+
+  .drag-active {
+    background-color: #9AB9E2;
+  }
+
+  .rename {
+    display: none;
+  }
+
+  .enableRename .rename{
+    display: inline-block;
+  } 
+
+
+</style>
+<body class="ResourceManager" ng-controller="ResourceManager as ci" document-click='ci.disableDrag()'>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 column-left">
+      <fieldset class="well well-sm">
+        <h2>Object List</h2>
+        <input type="button" ng-click="ci.saveObject()" value="save" class="pull-right" >
+        <input type="text" ng-model="ci.form.objectName" ng-enter="ci.addObject()">
+        <input type="button" ng-click="ci.addObject()" value="add object" >
+
+        <div class="object list" ng-repeat="(objectName, v) in ci.objectList" ng-dblclick="ci.activeObjectRename({objectName:objectName})">
+          <div class='{{v===ci.selectedObject && "selected" || " "}}' ng-click="ci.selectObject({objectName:objectName})">
+            <input type="button" ng-click="ci.deleteObject({objectName:objectName})" value="x">
+            <span class='{{ci.objectRename == objectName  && "hidden" || " "}}'>{{objectName}}</span>
+            <input type="text" class='{{ci.objectRename == objectName && " " || "hidden"}}' ng-enter='ci.renameObject({objectName:objectName, objectRename:$event.target.value})' value="{{objectName}}" />
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class='well well-sm {{ci.selectedObject && " " || "hidden"}}'>
+        <h3>Variable List</h3>
+        <input type="text" ng-model="ci.form.variableName">
+        <input type="text" ng-model="ci.form.variableDefault" ng-enter="ci.addVariable()">
+        <input type="button" ng-click="ci.addVariable()" value="add variable" >
+
+        <br /><br />
+        <div class="dragable"
+          ng-repeat="(k, v) in ci.selectedObject.variables"
+          ng-dblclick="ci.activeVariableRename({variableName:k})"
+          ng-mousedown="ci.dragVariableName=k">
+          <div class='{{v===ci.selectedVariable && "selected" || " "}}' ng-click="ci.selectVariable({variableName:k})">
+            <input type="button" ng-click="ci.deleteVariable({variableName:k})" value="x">
+            <span class='{{ci.variableRename == k  && "hidden" || " "}}'>{{k}}</span>
+            <input type="text" class='{{ci.variableRename == k && " " || "hidden"}}' ng-enter='ci.renameVariable({variableName:k, variableRename:$event.target.value})' value="{{k}}" />
+            ({{v.length}}) [{{v.join(", ")}}]
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class='well well-sm {{ci.selectedVariable  && " " || "hidden"}}'>
+        <h3>Variable Combination</h3>
+        <input type="text" ng-model="ci.form.combinationName" ng-enter="ci.addCombination()">
+        <input type="button" ng-click="ci.addCombination()" value="add combination" >
+
+        <div class="variable combination list" 
+          ng-repeat="(k, v) in ci.selectedVariable" 
+          ng-dblclick="ci.activeCombinationRename({combinationName:v})">
+            <input type="button" ng-click="ci.deleteCombination({combinationName:v})" value="x">
+            <span class='{{ci.combinationRename == v  && "hidden" || " "}}'>{{v}}</span>
+            <input type="text" 
+              class='{{ci.combinationRename == v && " " || "hidden"}}' 
+              ng-enter='ci.renameCombination({combinationName:v, combinationRename:$event.target.value})' value="{{v}}" />
+        </div>
+      </fieldset>
+
+      <fieldset class='well well-sm {{ci.selectedObject  && " " || "hidden"}}'>
+        <h3>Layer</h3>
+        <input type="text" ng-model="ci.form.layerName" ng-enter="ci.addLayer()">
+        <input type="button" ng-click="ci.addLayer()" value="add layer" >
+
+        <br /><br />
+        <div class='dragable {{ci.dragVariableName && "drag-active" || " "}}'  
+          ng-repeat="(layerName, v) in ci.selectedObject.layers" 
+          ng-dblclick="ci.activeLayerRename({layerName:layerName})"
+          ng-mouseup="ci.dropVariable({layerName:layerName})">
+          <div class='{{v===ci.selectedLayer && "selected" || " "}}' ng-click="ci.selectLayer({layerName:layerName})">
+            <input type="button" ng-click="ci.deleteLayer({layerName:layerName})" value="x">
+            <span class='{{ci.layerRename == layerName  && "hidden" || " "}}'>{{layerName}}</span>
+            <input type="text" 
+              class='{{ci.layerRename == layerName && " " || "hidden"}}' 
+              ng-enter='ci.renameLayer({layerName:layerName, layerRename:$event.target.value})' value="{{layerName}}" />
+
+            <span ng-repeat="(k, variableName) in v.variableKeys">
+              <a ng-if="variableName" class="label label-default" ng-click="ci.deleteLayerVariable({layerName:layerName,variableName:variableName})">
+                {{variableName && variableName + " x" || ""}}
+              </a>&nbsp;
+            </span>
+          </div>
+        </div>
+      </fieldset>
+      
+      <fieldset class='well well-sm {{ci.selectedLayer && " " || "hidden"}}'>
+        <h3>Possible Object State</h3>
+
+        <div class='dragable {{ci.dragResourceName && "drag-active" || " "}}'
+          ng-repeat="(k, v) in ci.selectedLayer.objectStates" 
+          ng-mouseup="ci.dropResourceName({objectState:k})">
+            {{k}}:
+            <img ng-src='{{v}}'  class='{{v && " " || "hidden"}}' width="100px">
+            <span>{{v && ci.getFilename(v) || " "}}</span>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="col-md-8 column-right">
+      <fieldset class='well well-sm {{ci.resourceList && " " || "hidden"}}'>
+        <h3>Resource</h3>
+        <div class="resource-item" ng-repeat="(k, v) in ci.resourceList" 
+          ng-style="{'background-image':'url('+v+')'}"
+          ng-mousedown="ci.dragResourceName=v">
+            <span>{{ci.getFilename(v)}}</span>
+        </div>
+        <div class="clear: both;"></div>
+      </fieldset>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+window.resourceManager = true
+</script>
+<script src="resourceManager.coffee" type="text/coffeescript"></script>
+
+</body>
+</html>
