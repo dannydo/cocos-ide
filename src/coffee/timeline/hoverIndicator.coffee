@@ -49,28 +49,21 @@ class HoverIndicator
       if event.originalEvent.selected.length 
         {col, row} = event.originalEvent.selected[event.originalEvent.selected.length - 1]
         if not @_enableFrameMove
-          @_enableFrameMove = true
-          @_moveFrameIndicator({x:@parent.size.x * (col + 1) , y: @parent.size.y * (row+1)})
-          @_enableFrameMove = false
-        
+          @setPosition(col, row)
 
-
+  setPosition: (col, row, ignore = false)->
+    if @col != col or @row != row
+      @col = col
+      @row = row
+      @frameIndicator.x = @parent.size.x * (col + 1)
+      @frameIndicator.redraw()
+      if not ignore
+        @layer.trigger "hover-frame-selected", @
 
   _moveFrameIndicator: (event, ignore = false)=>
     if @_enableFrameMove
       x = Math.round ((event.x - @parent.draw.x) / @parent.size.x - 1)
       y = Math.floor ((event.y - @parent.draw.y) / @parent.size.y - 1)
-  
-      if @col != x or @row != y
-        @col = x
-        @row = y
-        console.log "ROPW", @row
-        if not ignore
-          @layer.trigger "hover-frame-selected", @
-
-      x = @parent.size.x * (x + 1)
-      if @frameIndicator.x != x
-        @frameIndicator.x = x
-        @frameIndicator.redraw()
+      @setPosition x, y, ignore
 
 ci.HoverIndicator = HoverIndicator

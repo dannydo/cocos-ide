@@ -32,7 +32,7 @@ MainLayer = cc.Layer.extend
     cache = cc.spriteFrameCache
     cache.addSpriteFrames(resource.res.boardPlist);
 
-    window.sa = new Studio.Action()
+    window.sa = new kiss.Action()
 
     @boderNode = new BorderNode()
     @boderNode.setVisible(false)
@@ -86,26 +86,27 @@ MainLayer = cc.Layer.extend
       cs._cocos2dxReady(@)
 
   bootAngularJs:()->
-    @app = angular.module 'CocosStudio', []
-    @rm = @resourceManager = new ResourceManager({app:@app})
-    @rm.on
-      event:"selectObject" 
-      method: (e,p)=> @onSelectObject(e,p)
+    if angular?
+      @app = angular.module 'CocosStudio', []
+      @rm = @resourceManager = new ResourceManager({app:@app})
+      @rm.on
+        event:"selectObject" 
+        method: (e,p)=> @onSelectObject(e,p)
 
-    @rm.on
-      event:"selectAnimation" 
-      method: (e,p)=> @onSelectAnimation(e,p)
+      @rm.on
+        event:"selectAnimation" 
+        method: (e,p)=> @onSelectAnimation(e,p)
 
-    @colorPickerClass = new Colorpicker()
-    @colorPicker = @colorPickerClass.colorPicker
+      @colorPickerClass = new Colorpicker()
+      @colorPicker = @colorPickerClass.colorPicker
 
-    @app.controller 'PropertyManager', ['$scope', ($scope) => 
-      @scope = $scope;
-      @colorPickerClass.setScope(@scope)
-      @resourceManager.scope = @scope
-      @
-    ]
-    angular.bootstrap(document, ['CocosStudio']);
+      @app.controller 'PropertyManager', ['$scope', ($scope) => 
+        @scope = $scope;
+        @colorPickerClass.setScope(@scope)
+        @resourceManager.scope = @scope
+        @
+      ]
+      angular.bootstrap(document, ['CocosStudio']);
 
   onSelectObject:(resourceManager, parameters)->      
     sa.animations = []

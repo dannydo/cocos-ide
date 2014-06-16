@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Cocos2d Studio Test</title>
-  <link rel="stylesheet" type="text/css" href="less/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
 
   <script src="library/coffeescript.js"></script>
   <script src="library/ocanvas-2.7.1.min.js"></script>
@@ -63,6 +63,10 @@
 
   .object.list, .variable.list {
     margin: 2px;
+  }
+
+  .dragable, .object-state {
+    margin-bottom: 10px;
   }
 
   .dragable {
@@ -175,12 +179,20 @@
       <fieldset class='well well-sm {{ci.selectedLayer && " " || "hidden"}}'>
         <h3>Possible Object State</h3>
 
-        <div class='dragable {{ci.dragResourceName && "drag-active" || " "}}'
+        <div class='dragable {{ci.dragResourceName && "drag-active" || " "}} object-state'
           ng-repeat="(k, v) in ci.selectedLayer.objectStates" 
           ng-mouseup="ci.dropResourceName({objectState:k})">
-            {{k}}:
-            <img ng-src='{{v}}'  class='{{v && " " || "hidden"}}' width="100px">
-            <span>{{v && ci.getFilename(v) || " "}}</span>
+            <div class="row">
+              <div class="col-md-3">
+                <div ng-repeat="(variableName, combinationName) in ci.getVariableNameByObjectStates(k)">
+                  <span class="label label-default">{{variableName}}: {{combinationName}}</span>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <img ng-src='{{v}}'  class='{{v && " " || "hidden"}}' width="100px">
+                <span>{{v && ci.getFilename(v) || " "}}</span>
+              </div>
+            </div>
         </div>
       </fieldset>
     </div>
@@ -202,7 +214,11 @@
 <script type="text/javascript">
 window.resourceManager = true
 </script>
-<script src="resourceManager.coffee" type="text/coffeescript"></script>
+
+<script src="src/coffee/utility/lodashAddon.coffee" type="text/coffeescript"></script>
+<script src="src/coffee/models/kiss.coffee" type="text/coffeescript"></script>
+
+<script src="src/html/resourceManager.coffee" type="text/coffeescript"></script>
 
 </body>
 </html>

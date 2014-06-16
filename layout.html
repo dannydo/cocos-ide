@@ -3,16 +3,15 @@
 <head>
   <meta charset="utf-8">
   <title>Cocos2d Studio Layout Test</title>
-  <link rel="stylesheet" type="text/css" href="less/bootstrap.css" />
-  <link rel="stylesheet" type="text/css" href="layout.css" />
-  <link rel="stylesheet" href="colorpicker.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="css/layout.css" />
+  <link rel="stylesheet" href="css/colorpicker.css" />
 
   <script src="library/coffeescript.js"></script>
   <script src="library/zepto.js"></script>
   <script src="library/lodash.js"></script>
   <script src="library/ocanvas-2.7.1.min.js"></script>
-  <script src="library/angular.js"></script>
-  <script src="cocos2d-html5.js"></script>
+  <script src="library/cocos2d-html5.js"></script>
 
   <style type="text/css">
     .ciPanel.ciLeft .ciContent {
@@ -371,18 +370,22 @@
   </div>
 </div>
 
-<script src="resourceManager.coffee" type="text/coffeescript"></script>
-<script src="panelManager.coffee" type="text/coffeescript"></script>
+<script src="src/coffee/utility/lodashAddon.coffee" type="text/coffeescript"></script>
+<script src="src/coffee/models/kiss.coffee" type="text/coffeescript"></script>
 
-<script src="colorpicker.coffee" type="text/coffeescript"></script>
+
 <script src="src/coffee/timeline/lines.coffee" type="text/coffeescript"></script>
 <script src="src/coffee/timeline/hoverIndicator.coffee" type="text/coffeescript"></script>
 <script src="src/coffee/timeline/segment.coffee" type="text/coffeescript"></script>
 <script src="src/coffee/timeline/knob.coffee" type="text/coffeescript"></script>
 <script src="src/coffee/timeline/timeline.coffee" type="text/coffeescript"></script>
-<script src="layout.coffee" type="text/coffeescript"></script>
 
-<script src="property.coffee" type="text/coffeescript"></script>
+<script src="src/html/resourceManager.coffee" type="text/coffeescript"></script>
+<script src="src/html/panelManager.coffee" type="text/coffeescript"></script>
+<script src="src/html/colorpicker.coffee" type="text/coffeescript"></script>
+<script src="src/html/layout.coffee" type="text/coffeescript"></script>
+<script src="src/html/property.coffee" type="text/coffeescript"></script>
+
 <script src="src/php/coffee_loading.php" type="text/coffeescript"></script>
 
 </body>

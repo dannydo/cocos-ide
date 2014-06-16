@@ -1,0 +1,87 @@
+adj = (m) ->
+  [
+    m[4] * m[8] - m[5] * m[7]
+    m[2] * m[7] - m[1] * m[8] 
+    m[1] * m[5] - m[2] * m[4] 
+ 
+    m[5] * m[6] - m[3] * m[8] 
+    m[0] * m[8] - m[2] * m[6] 
+    m[2] * m[3] - m[0] * m[5] 
+     
+    m[3] * m[7] - m[4] * m[6] 
+    m[1] * m[6] - m[0] * m[7] 
+    m[0] * m[4] - m[1] * m[3] 
+  ]
+
+
+multmm = (a, b) ->
+  c = Array(9);
+  for i in [0...3]
+    for j in [0...3]
+      cij = 0;
+      for k in [0...3]
+        cij += a[3*i + k]*b[3*k + j];
+      c[3*i + j] = cij;
+  c
+
+
+
+multmv = (m, v) ->
+  [
+    m[0]*v[0] + m[1]*v[1] + m[2]*v[2],
+    m[3]*v[0] + m[4]*v[1] + m[5]*v[2],
+    m[6]*v[0] + m[7]*v[1] + m[8]*v[2]
+  ]
+
+
+pdbg = (m, v) ->
+  r = multmv(m, v)
+  r + " (" + r[0]/r[2] + ", " + r[1]/r[2] + ")"
+
+
+basisToPoints = (x1, y1, x2, y2, x3, y3, x4, y4)->
+  m = [
+    x1, x2, x3,
+    y1, y2, y3,
+     1,  1,  1
+  ];
+
+  v = multmv adj(m), [x4, y4, 1]
+
+  multmm m, [
+    v[0], 0, 0,
+    0, v[1], 0,
+    0, 0, v[2]
+  ]
+
+
+general2DProjection = (x1s, y1s, x1d, y1d, x2s, y2s, x2d, y2d, x3s, y3s, x3d, y3d, x4s, y4s, x4d, y4d) ->
+  s = basisToPoints(x1s, y1s, x2s, y2s, x3s, y3s, x4s, y4s);
+  d = basisToPoints(x1d, y1d, x2d, y2d, x3d, y3d, x4d, y4d);
+  multmm d, adj(s)
+
+
+project = (m, x, y) ->
+  v = multmv(m, [x, y, 1])
+  [v[0]/v[2], v[1]/v[2]]
+
+
+transform2d = (x1, y1, x2, y2, x3, y3, x4, y4) ->
+  w = 200
+  h = 200
+
+  t = general2DProjection(0, 0, x1, y1, w, 0, x2, y2, 0, h, x3, y3, w, h, x4, y4)
+
+  for i in [0...9]
+    t[i] = t[i]/t[8];
+
+  [
+    t[0], t[3]
+    t[1], t[4]
+    t[2], t[5]
+  ]
+
+corners = [-113.07147642000001, 284.27951249999995, 390.13086437999993, 611.0629335, -439.85489742000004, 787.4818532999999, 63.3474433799999, 1114.2652742999999]
+
+for x in [0...100000]
+  transform2d corners...
