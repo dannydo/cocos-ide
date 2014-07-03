@@ -1,64 +1,10 @@
-if global?
-  require './../console/boot.coffee'
-  kiss = global.kiss
-else
-  root = window
-  kiss = root.kiss ? {}
-
-if kiss.ResourceManager? and __filename == process.argv[1]
-  console.log "ResourceManager test goes here"
-
-  om = new kiss.ResourceManager({bindingName:"om"})
-
-  om.addObject 
-    objectName:"gem"
-
-  om.addVariable 
-    variableName: "color"
-    variableDefault: "red"
-
-  om.addCombination
-    combinationName: "blue"
-
-
-  #Issue cant rename yet.
-
-  om.addObject 
-    objectName:"gem"
-
-  om.addVariable 
-    variableName: "color"
-    variableDefault: "red"
-
-  om.addCombination
-    combinationName: "blue"
-
-  om.addVariable 
-    variableName: "snap"
-    variableDefault: "off"
-
-  om.renameCombination
-    combinationName: "off"
-    combinationRename: "on"
-
-  #om.deleteCombination
-  #  combinationName: "on"
-
-  om.selectVariable 
-    variableName: "color"
-
-  #om.deleteCombination
-  #  combinationName: "red"
-
-  #om.deleteCombination
-  #  combinationName: "blue"  
-  console.log om
-  return
 
 class kiss.ResourceManager 
   constructor:({@app, @bindingName}={})->
+    @objectFileTime = 0
     @bindEvent = {}
     @objectList = {}
+    @resouceMode = 'graphics'
     @form = {}
     if window?
       @_bootAngularJs();
@@ -96,6 +42,7 @@ class kiss.ResourceManager
       @selectedObject = @objectList[objectName] = 
         variables       : {}
         variableDefault : {}
+        sounds          : {}
         animations      : {}
         layers          : {}
       @form.objectName = ""
@@ -103,9 +50,7 @@ class kiss.ResourceManager
       @selectedAnimation = false
       @selectedLayer = false
       @loadResource()
-      kiss.event.emit 
-        channel:"#{@bindingName}.addObject" 
-        parameters:[objectName]
+  
 
 
   deleteObject: ({objectName})->
@@ -114,10 +59,6 @@ class kiss.ResourceManager
       @selectedVariable = false
       @selectedVariableName = false
     delete @objectList[objectName]
-    kiss.event.emit 
-      channel:"#{@bindingName}.deleteObject" 
-      parameters:[objectName]
-
 
   selectObject: ({objectName})->
     @selectedObject = @objectList[objectName]
@@ -129,9 +70,18 @@ class kiss.ResourceManager
 
     delete @dragVariableName
     @loadResource()
-    kiss.event.emit 
-      channel:"#{@bindingName}.selectObject" 
-      parameters:[objectName]
+
+
+  addSound: ({soundNameField}={})=>
+    soundName = soundNameField.value
+    soundNameField.value = ''
+    if soundName and not @selectedObject.sounds[soundName]?
+      @selectedObject.sounds[soundName] = false
+
+  deleteSound: ({objectName, soundName})->
+    @selectedObject = @objectList[objectName]
+    delete @selectedObject.sounds[soundName]
+
 
 
   addAnimation: ({animationName}={})->
@@ -142,25 +92,19 @@ class kiss.ResourceManager
       @form.animationName = ""
       @selectAnimation
         animationName: animationName
-      kiss.event.emit 
-        channel:"#{@bindingName}.addAnimation" 
-        parameters:[animationName]
+  
 
 
   deleteAnimation: ({animationName})->
     if @selectedObject.animations[animationName]?
       delete @selectedObject.animations[animationName]
-      kiss.event.emit 
-        channel:"#{@bindingName}.deleteAnimation" 
-        parameters:[animationName]
+  
 
 
   selectAnimation: ({animationName})->
     if @selectedObject.animations[animationName]?
       @selectedAnimation = animationName
-      kiss.event.emit 
-        channel:"#{@bindingName}.selectAnimation" 
-        parameters:[animationName]
+  
 
     if @animationRename isnt animationName
       delete @animationRename
@@ -173,26 +117,20 @@ class kiss.ResourceManager
       @selectedObject.layers[layerName] = {variableKeys: [], objectStates: {"":false}}
       @selectedLayer = @selectedObject.layers[layerName]
       @form.layerName = ""
-      kiss.event.emit 
-        channel:"#{@bindingName}.addLayer" 
-        parameters:[layerName]
+  
 
 
   deleteLayer: ({layerName})->
     if @selectedObject.layers[layerName]?
       @selectedLayer = false
       delete @selectedObject.layers[layerName]
-      kiss.event.emit 
-        channel:"#{@bindingName}.deleteLayer" 
-        parameters:[layerName]
+  
 
 
   selectLayer: ({layerName})->
     if @selectedObject.layers[layerName]?
       @selectedLayer = @selectedObject.layers[layerName]
-      kiss.event.emit 
-        channel:"#{@bindingName}.selectLayer" 
-        parameters:[layerName]
+  
 
     if @layerRename isnt layerName
       delete @layerRename
@@ -227,9 +165,7 @@ class kiss.ResourceManager
       
       @form.variableName = ""
       @form.variableDefault = ""
-      kiss.event.emit 
-        channel:"#{@bindingName}.addVariable" 
-        parameters:[variableName]
+  
 
 
   selectVariable: ({variableName})->
@@ -237,9 +173,7 @@ class kiss.ResourceManager
     @selectedVariableName = variableName
     if @variableRename isnt variableName
       delete @variableRename
-    kiss.event.emit 
-      channel:"#{@bindingName}.selectVariable" 
-      parameters:[variableName]
+
 
 
   deleteVariable: ({variableName})->
@@ -256,9 +190,25 @@ class kiss.ResourceManager
     delete @selectedObject.variableDefault[variableName]
     delete @dragVariableName
 
-    kiss.event.emit 
-      channel:"#{@bindingName}.deleteVariable" 
-      parameters:[variableName]
+
+
+  setVariableLock: ({variableName, isLock})->
+    console.log isLock
+    @selectedObject.variableLock ?= {}
+    @selectedObject.variableLock[variableName] = isLock
+
+  isVariableLock: ({variableName})->
+    if variableName
+      if @selectedObject.variableLock
+        if @selectedObject.variableLock[variableName]
+          @selectedObject.variableLock[variableName]
+        else 
+          false
+      else 
+        false
+    else 
+      false
+
 
   addCombination: ({combinationName}={})->
     combinationName ?= @form.combinationName
@@ -268,9 +218,7 @@ class kiss.ResourceManager
       @_objectStatesNewCombination
         variableName: @selectedVariableName
         combinationName: combinationName
-      kiss.event.emit 
-        channel:"#{@bindingName}.addCombination" 
-        parameters:[combinationName]
+  
 
   deleteCombination: ({combinationName})->
     if combinationName in @selectedVariable
@@ -285,9 +233,7 @@ class kiss.ResourceManager
 
         if @selectedObject.variableDefault[variableName] == combinationName
           @selectedObject.variableDefault[variableName] = @selectedObject.variables[variableName][0]
-      kiss.event.emit 
-        channel:"#{@bindingName}.deleteCombination" 
-        parameters:[combinationName]
+  
 
   renameCombination: ({combinationName, combinationRename})->
     if combinationName in @selectedVariable
@@ -301,10 +247,6 @@ class kiss.ResourceManager
       if @selectedObject.variableDefault[@selectedVariableName] == combinationName
         @selectedObject.variableDefault[@selectedVariableName] = combinationRename
 
-      kiss.event.emit 
-        channel:"#{@bindingName}.renameCombination" 
-        parameters:[combinationName, combinationRename]
-
     delete @combinationRename
 
   renameObject: ({objectName, objectRename})->
@@ -312,20 +254,22 @@ class kiss.ResourceManager
       object = @objectList[objectName]
       delete @objectList[objectName]
       @objectList[objectRename] = object
-      kiss.event.emit 
-        channel:"#{@bindingName}.renameObject" 
-        parameters:[objectName, objectRename]
 
     delete @objectRename
+
+  renameSound: ({soundName, soundRename})->
+    if @selectedObject.sounds[soundName]? 
+      sound = @selectedObject.sounds[soundName]
+      delete @selectedObject.sounds[soundName]
+      @selectedObject.sounds[soundRename] = sound
+
+    delete @soundRename
 
   renameLayer: ({layerName, layerRename})->
     if @selectedObject.layers[layerName]? 
       layer = @selectedObject.layers[layerName]
       delete @selectedObject.layers[layerName]
       @selectedObject.layers[layerRename] = layer
-      kiss.event.emit 
-        channel:"#{@bindingName}.renameLayer" 
-        parameters:[layerName, layerRename]
 
     delete @objectRename
 
@@ -347,9 +291,7 @@ class kiss.ResourceManager
 
       if @selectedVariableName == variableName
         @selectedVariableName = variableRename
-      kiss.event.emit 
-        channel:"#{@bindingName}.renameVariable" 
-        parameters:[variableName, variableRename]
+  
 
     delete @variableRename
 
@@ -358,9 +300,7 @@ class kiss.ResourceManager
       animation = @selectedObject.animations[animationName]
       delete @selectedObject.animations[animationName]
       @selectedObject.animations[animationRename] = animation
-      kiss.event.emit 
-        channel:"#{@bindingName}.renameVariable" 
-        parameters:[animationName, animationRename]
+  
 
     delete @animationRename
 
@@ -454,33 +394,27 @@ class kiss.ResourceManager
 
   activeObjectRename:({objectName})->
     @objectRename = objectName
-    kiss.event.emit 
-      channel:"#{@bindingName}.activeObjectRename" 
-      parameters:[objectName]
+
+
+  activeSoundRename:({soundName})->
+    @soundRename = soundName
+
 
   activeLayerRename:({layerName})->
     @layerRename = layerName
-    kiss.event.emit 
-      channel:"#{@bindingName}.activeLayerRename" 
-      parameters:[layerName]
+
 
   activeVariableRename:({variableName})->
     @variableRename = variableName
-    kiss.event.emit 
-      channel:"#{@bindingName}.activeVariableRename" 
-      parameters:[variableName]
+
 
   activeCombinationRename:({combinationName})->
     @combinationRename = combinationName
-    kiss.event.emit 
-      channel:"#{@bindingName}.activeCombinationRename" 
-      parameters:[combinationName]
+
 
   activeAnimationRename:({animationName})->
     @animationRename = animationName
-    kiss.event.emit 
-      channel:"#{@bindingName}.activeAnimationRename" 
-      parameters:[animationName]
+
 
   getFilename:(path)->
     path.split('/').pop().split('.').shift();
@@ -494,10 +428,16 @@ class kiss.ResourceManager
       
     variables
 
-  dropResourceName:({objectState})->
-    if @dragResourceName? 
-      @selectedLayer.objectStates[objectState] = @dragResourceName
-      delete @dragResourceName
+  dropGraphicName:({objectState})->
+    if @dragGraphicName? 
+      @selectedLayer.objectStates[objectState] = @dragGraphicName
+      delete @dragGraphicName
+
+  dropSoundFilename:({objectName, soundName})->
+    if @dragSoundFilename?
+      soundFilename = @getFilename @dragSoundFilename
+      @objectList[objectName].sounds[soundName] = soundFilename
+      delete @dragSoundFilename
 
   dropVariable:({layerName})->
     if @dragVariableName?
@@ -512,8 +452,16 @@ class kiss.ResourceManager
 
   disableDrag:()->
     delete @dragVariableName
-    delete @dragResourceName
+    delete @dragGraphicName
+    delete @dragSoundFilename
 
+  changeResouceMode:(mode)->
+    @resouceMode = mode
+
+  playSound:({playSoundUrl})->
+    audio = document.getElementById('audio')
+    audio.setAttribute("src",playSoundUrl)
+    audio.play()
 
   loadResource: ->
     if not @resourceList? and XMLHttpRequest?
@@ -530,49 +478,19 @@ class kiss.ResourceManager
 
       req.open 'GET', 'src/php/resourceManager/resources.php', false
       req.send()
-      kiss.event.emit 
-        channel:"#{@bindingName}.loadResource"
-        parameters:[]
 
   saveObject: ->
-    req = new XMLHttpRequest()
-
-    req.addEventListener 'readystatechange', =>
-      if req.readyState is 4                        # ReadyState Compelte
-        successResultCodes = [200, 304]
-        if req.status in successResultCodes
-
-        else
-          console.log 'Error loading data...'
-
-    req.open 'POST', 'src/php/resourceManager/objectSave.php', false
-    req.send(_.objectToCoffee(@objectList))
-    kiss.event.emit 
-      channel:"#{@bindingName}.saveObject"
-      parameters:[]
+    @objectFileTime = _.saveObjectList(@objectFileTime, @objectList)
 
   loadObject: ->
-    req = new XMLHttpRequest()
-
-    req.addEventListener 'readystatechange', =>
-      if req.readyState is 4                        # ReadyState Compelte
-        successResultCodes = [200, 304]
-        if req.status in successResultCodes
-          data = CoffeeScript.eval '(' + req.responseText + ')'
-          @objectList = data
-
-          for key, value of data
-            break
-          @selectObject objectName:key
-          @_scopeApply()
-        else
-          console.log 'Error loading data...'
-
-    req.open 'GET', 'src/php/resourceManager/objectLoad.php', false
-    req.send()
-    kiss.event.emit 
-      channel:"#{@bindingName}.loadObject"
-      parameters:[]
+    _.loadObjectFile 'src/php/resourceManager/objectLoad.php', (file)=>
+      @objectFileTime = file.time
+      @objectList = file.object
+      
+      for key, value of @objectList
+        break
+      @selectObject objectName:key
+      @_scopeApply()
 
   _scopeApply: ()->
     if @scope?
@@ -581,6 +499,14 @@ class kiss.ResourceManager
         @scope.$apply()
 
 
+  _fix: ()->
+    for n, object of @objectList  
+      for n, layer of object.layers
+        for name, state of layer.objectStates
+          layer.objectStates[name] = state.replace("engine/res/", "engine/res/graphics/")
+          console.log state.replace("engine/res/", "engine/res/graphics/")
+
 if window?
   resourceManager = new kiss.ResourceManager(bindingName:"resourceManager")
   resourceManager.loadObject()
+  window.resourceManager = resourceManager

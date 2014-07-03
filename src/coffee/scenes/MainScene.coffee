@@ -1,4 +1,3 @@
-
 MainScene = cc.Scene.extend
   onEnter: ->
     @_super()
@@ -25,20 +24,15 @@ MainLayer = cc.Layer.extend
     @drawingNode.drawSegment(cc.p(0,5000), cc.p(0,-5000), 1, @lineColor)
     @addChild @drawingNode
 
-    # Batch Node for performance but need some bug fixing
-    @spritebatch = spritebatch = cc.SpriteBatchNode.create(resource.images.boardPng);
-    @addChild spritebatch
-
-    cache = cc.spriteFrameCache
-    cache.addSpriteFrames(resource.res.boardPlist);
 
     window.sa = new kiss.Action()
 
-    @boderNode = new BorderNode()
-    @boderNode.setVisible(false)
+    @borderNode = new kiss.BorderNode
+      bindingName : "borderNode"
+    @addChild @borderNode
 
-    @addChild @boderNode
-
+    @property = new kiss.Property
+      bindingName: "property"
 
     @standardEvent = cc.EventListener.create
       event: cc.EventListener.TOUCH_ONE_BY_ONE
@@ -52,14 +46,18 @@ MainLayer = cc.Layer.extend
                
         if cc.rectContainsPoint(rect, locationInNode)
           @active = target
-          @spritebatch.reorderChild target
-          @activeColor = _.clone(@active.color)
-          @colorPicker.rgb = @activeColor
-          @boderNode.setVisible(true)
-          @boderNode.updateLayout(@active, @scope)
+
+          kiss.event.emit
+            channel: "mainLayer.updateLayoutBoder"
+            parameter: {elementActive:@active, isNodeChange:true}
+
           return true
         else if @active?
-          @boderNode.setVisible(false)
+          @active = null
+          
+          kiss.event.emit
+            channel: "mainLayer.updateLayoutBoder"
+            parameter: {elementActive:@active, isNodeChange:true}
 
         return false
       
@@ -72,44 +70,50 @@ MainLayer = cc.Layer.extend
         target.x += delta.x
         target.y += delta.y
 
-        @boderNode.x += delta.x
-        @boderNode.y += delta.y
+        @borderNode.x += delta.x
+        @borderNode.y += delta.y
 
-        @scope.$apply()
+        position =
+          x : target.x
+          y : target.y
+        kiss.event.emit
+          channel: "borderNode.updatePropertyPosition"
+          parameter: position
       
-      onTouchEnded: (touch, event) =>         
-        @scope.$apply()
-        cs._nodeChange()
+      onTouchEnded: (touch, event) =>
+        cs._nodeChange(@selectedObject)
       
-    @bootAngularJs();
     if cs?
       cs._cocos2dxReady(@)
 
-  bootAngularJs:()->
-    if angular?
-      @app = angular.module 'CocosStudio', []
-      @rm = @resourceManager = new ResourceManager({app:@app})
-      @rm.on
-        event:"selectObject" 
-        method: (e,p)=> @onSelectObject(e,p)
+    kiss.event.on 
+      channel:"objectList.onSelectObject" 
+      method: (selectedObject)=> @onSelectObject(selectedObject)
 
-      @rm.on
-        event:"selectAnimation" 
-        method: (e,p)=> @onSelectAnimation(e,p)
+    kiss.event.on 
+      channel:"objectList.onSelectAnimation" 
+      method: (selectedAnimation)=> @onSelectAnimation(selectedAnimation)
 
-      @colorPickerClass = new Colorpicker()
-      @colorPicker = @colorPickerClass.colorPicker
+    kiss.event.on 
+      channel:"property.onChangeObjectStateVariable"
+      method: (objectState)=> 
+        @objectState = objectState;
+        @active.updateObjectState({objectState: objectState})
 
-      @app.controller 'PropertyManager', ['$scope', ($scope) => 
-        @scope = $scope;
-        @colorPickerClass.setScope(@scope)
-        @resourceManager.scope = @scope
-        @
-      ]
-      angular.bootstrap(document, ['CocosStudio']);
+        kiss.event.emit
+          channel: "mainLayer.updateLayoutBoder"
+          parameter: {elementActive:@active, isNodeChange:true}
 
-  onSelectObject:(resourceManager, parameters)->      
+
+  onSelectObject:(selectedObject)->
+    @selectedObject = selectedObject
     sa.animations = []
+    cs._updateKnobTimeline()
+
+    @active = null
+    kiss.event.emit
+      channel: "mainLayer.updateLayoutBoder"
+      parameter: {elementActive:@active, isNodeChange:true}
 
     if @spriteNode?
       for k, v of @spriteNode
@@ -117,41 +121,36 @@ MainLayer = cc.Layer.extend
 
     @layerRow = []
     @spriteNode = {}
-
-    for layerName, data of @resourceManager.selectedObject.layers
-      name = @resourceManager.getObjectState
-        layerName:layerName
-        combinations: @resourceManager.selectedObject.variableDefault
-      name = name.split("/").pop()
+    for layerName, data of selectedObject.layers
       @layerRow.push layerName
-      @objectState = _.clone @resourceManager.selectedObject.variableDefault
+      @objectState = _.clone selectedObject.variableDefault
 
-      if name
-        @active = Studio.Node.getSpriteNode name
+      @active = kiss.Node.getSpriteNode
+        selectedObject: selectedObject
+        layerName:layerName
+        objectState: selectedObject.variableDefault
+
+      if @active
         @active.setTag layerName
         @active.row = @layerRow.length - 1
-
+        
         @spriteNode[layerName] = @active
   
         cc.eventManager.addListener(@standardEvent.clone(), @active);
         @addChild @active
 
-  onSelectAnimation:(resourceManager, parameters)->
-    [animationName] = parameters
-    sa.animations = @resourceManager.selectedObject.animations[animationName]
-    cs._updateKnobTimeline()
+  onSelectAnimation:(selectedAnimation)->
+    if selectedAnimation.length > 0
+      sa.animations = selectedAnimation
+      cs._updateKnobTimeline()
+    else
+      kiss.event.emit
+        channel: "mainLayer.updateLayoutBoder"
+        parameter: {elementActive:null, isNodeChange:true}
 
-  selectColor:(rgb)->
-    if @active?
-      @activeColor = rgb
-      @active.color = rgb
-    _.defer ->
-        $('#colorpicker').addClass('fade').hide()
+      sa.animations = selectedAnimation
+      cs._updateKnobTimeline()
 
-  applyChangeLayoutBoderNode:()->
-    @boderNode.updateLayout(@active, @scope)
 
-  applyActiveColor:()->
-    @active.color = @activeColor
 
 window.MainScene = MainScene

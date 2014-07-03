@@ -1,24 +1,21 @@
-if global?
-  require './../../console/boot.coffee'
-  kiss = global.kiss
-else
-  root = window
-  kiss = root.kiss ? {}
-
-if kiss.event? and __filename? and __filename == process.argv[1]
-  console.log "test code for kiss.event goes here"
-  return
-
 kiss.event = 
   channels : {}
-  on : ({channel, method, priority})->
+  previous : {}
+
+  on : ({channel, method, priority, ready})->
     if not channel?
       throw "_.on require name parameters"
 
     if not @channels[channel]?
       @channels[channel] = []
     if method not in @channels[channel]
-        @channels[channel].push method
+      @channels[channel].push method
+
+    if ready? and @previous[channel]?
+      try
+        method parameter
+      catch exception
+        console.log "kiss.event.on: #{channel}", exceptions
 
   off : ({channel, method})->
     if not channel?
@@ -33,6 +30,8 @@ kiss.event =
 
     if @channels[channel]?
       exceptions  = []
+      @previous[channel] = parameter
+
       for method in @channels[channel]
         try
           method parameter
@@ -40,10 +39,8 @@ kiss.event =
           exceptions.push exception
 
       if exceptions.length != 0
-        console.log "exceptions", exceptions
-
-  once : ({channel, parameter, priority})->
-
+        console.log "kiss.event.emit", channel, parameter
+        console.log "kiss.event.emit exceptions", exceptions
 
 if $?
   $ ->
@@ -67,8 +64,8 @@ if $?
           parameter: 
             event: e
             delta:
-              x: kiss.event.mouse.up.x - kiss.event.mouse.down.x
-              y: kiss.event.mouse.up.y - kiss.event.mouse.down.y
+              x: kiss.event.mouse.up.clientX - kiss.event.mouse.down.clientX
+              y: kiss.event.mouse.up.clientY - kiss.event.mouse.down.clientY
         delete kiss.event.mouse
 
     $(document).on "mousemove", (e)->
@@ -79,8 +76,8 @@ if $?
           parameter: 
             event: e
             delta:
-              x: kiss.event.mouse.move.x - kiss.event.mouse.down.x
-              y: kiss.event.mouse.move.y - kiss.event.mouse.down.y
+              x: kiss.event.mouse.move.clientX - kiss.event.mouse.down.clientX
+              y: kiss.event.mouse.move.clientY - kiss.event.mouse.down.clientY
 
         kiss.event.emit 
           channel: "moveDragOver"

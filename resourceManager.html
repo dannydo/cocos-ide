@@ -35,7 +35,7 @@
     background-color: #ddd;
   }
 
-  .resource-item {
+  .graphic-item {
     text-align: center;
     position: relative;
     float: left;
@@ -50,19 +50,39 @@
     border: 1px solid #000;
   }
 
-  .resource-item span {
+  .graphic-item span {
     position: absolute;
     background-color: #fff;
     bottom: 0;
     left: 0;
   }
 
-  .object.list, .dragable, .resource-item {
+  .sound-item {
+    line-height: 30px;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    padding-left: 10px;
+  }
+
+  .object-list, .dragable, .graphic-item, .sound-item {
     cursor: pointer;
   }
 
-  .object.list, .variable.list {
+  .object-list, .variable.list {
     margin: 2px;
+  }
+
+  .object-list .object-sounds {
+    min-height: 28px;
+    padding-left: 28px;
+    margin-top: 5px;
+  }
+
+  .object-list .object-sounds .object-sound {
+    border: 1px solid;
+    min-height: 28px;
+    margin-bottom: 10px;
+    padding: 2px;
   }
 
   .dragable, .object-state {
@@ -100,21 +120,45 @@
   <div class="row">
     <div class="col-md-4 column-left">
       <fieldset class="well well-sm">
-        <h2>Object List</h2>
+        <h2>
+          Object List
+
+          <input type="button" ng-click='ci.resouceMode = (ci.resouceMode == "graphics" && "sounds" || "graphics")' value='{{ci.resouceMode == "graphics" && "sounds" || "graphics"}}' class="pull-right">
+        </h2>
         <input type="button" ng-click="ci.saveObject()" value="save" class="pull-right" >
         <input type="text" ng-model="ci.form.objectName" ng-enter="ci.addObject()">
         <input type="button" ng-click="ci.addObject()" value="add object" >
 
-        <div class="object list" ng-repeat="(objectName, v) in ci.objectList" ng-dblclick="ci.activeObjectRename({objectName:objectName})">
+        <div class="object-list" ng-repeat="(objectName, v) in ci.objectList" ng-dblclick="ci.activeObjectRename({objectName:objectName})" ng-if="ci.resouceMode == 'graphics'">
           <div class='{{v===ci.selectedObject && "selected" || " "}}' ng-click="ci.selectObject({objectName:objectName})">
             <input type="button" ng-click="ci.deleteObject({objectName:objectName})" value="x">
             <span class='{{ci.objectRename == objectName  && "hidden" || " "}}'>{{objectName}}</span>
             <input type="text" class='{{ci.objectRename == objectName && " " || "hidden"}}' ng-enter='ci.renameObject({objectName:objectName, objectRename:$event.target.value})' value="{{objectName}}" />
           </div>
         </div>
+
+        <div class="object-list" ng-repeat="(objectName, v) in ci.objectList" ng-if="ci.resouceMode == 'sounds'">
+          <div class='{{v===ci.selectedObject && "selected" || " "}}' ng-click="ci.selectObject({objectName:objectName})">
+            <input type="button" ng-click="ci.deleteObject({objectName:objectName})" value="x">
+            <span class='{{ci.objectRename == objectName  && "hidden" || " "}}'>{{objectName}}</span>
+
+            <div class='object-sounds'>
+              <div style="margin-bottom: 10px;">
+                <input type="text" ng-enter="ci.addSound({soundNameField:$event.target})">
+                <input type="button" ng-click="ci.addSound({soundNameField:$event.target.previousElementSibling})" value="+" >
+              </div>
+
+              <div class='object-sound {{ci.dragSoundFilename && "drag-active" || " "}}' ng-repeat="(soundName, filename) in v.sounds" ng-dblclick="ci.activeSoundRename({soundName:soundName})" ng-mouseup="ci.dropSoundFilename({objectName:objectName,soundName:soundName})">
+                <input type="button" ng-click="ci.deleteSound({objectName:objectName, soundName:soundName})" value="x">
+                <span class='{{ci.soundRename == soundName  && "hidden" || " "}}'>{{soundName}} {{filename  && "(" + filename + ")" || " "}}</span>
+                <input type="text" class='{{ci.soundRename == soundName && " " || "hidden"}}' ng-enter='ci.renameSound({soundName:soundName, soundRename:$event.target.value})' value="{{soundName}}" />
+              </div>
+            </div>
+          </div>
+        </div>
       </fieldset>
 
-      <fieldset class='well well-sm {{ci.selectedObject && " " || "hidden"}}'>
+      <fieldset class='well well-sm {{ci.selectedObject && " " || "hidden"}}' ng-if="ci.resouceMode == 'graphics'">
         <h3>Variable List</h3>
         <input type="text" ng-model="ci.form.variableName">
         <input type="text" ng-model="ci.form.variableDefault" ng-enter="ci.addVariable()">
@@ -130,11 +174,14 @@
             <span class='{{ci.variableRename == k  && "hidden" || " "}}'>{{k}}</span>
             <input type="text" class='{{ci.variableRename == k && " " || "hidden"}}' ng-enter='ci.renameVariable({variableName:k, variableRename:$event.target.value})' value="{{k}}" />
             ({{v.length}}) [{{v.join(", ")}}]
+
+            <input class='pull-right {{ci.isVariableLock({variableName:k}) == true  && "hidden" || " "}}' type="checkbox" ng-click="ci.setVariableLock({variableName:k, isLock: true})">
+            <input class='pull-right {{ci.isVariableLock({variableName:k}) == false  && "hidden" || " "}}' type="checkbox" ng-click="ci.setVariableLock({variableName:k, isLock: false})" checked="checked">
           </div>
         </div>
       </fieldset>
 
-      <fieldset class='well well-sm {{ci.selectedVariable  && " " || "hidden"}}'>
+      <fieldset class='well well-sm {{ci.selectedVariable  && " " || "hidden"}}' ng-if="ci.resouceMode == 'graphics'">
         <h3>Variable Combination</h3>
         <input type="text" ng-model="ci.form.combinationName" ng-enter="ci.addCombination()">
         <input type="button" ng-click="ci.addCombination()" value="add combination" >
@@ -150,7 +197,7 @@
         </div>
       </fieldset>
 
-      <fieldset class='well well-sm {{ci.selectedObject  && " " || "hidden"}}'>
+      <fieldset class='well well-sm {{ci.selectedObject  && " " || "hidden"}}' ng-if="ci.resouceMode == 'graphics'">
         <h3>Layer</h3>
         <input type="text" ng-model="ci.form.layerName" ng-enter="ci.addLayer()">
         <input type="button" ng-click="ci.addLayer()" value="add layer" >
@@ -176,12 +223,12 @@
         </div>
       </fieldset>
       
-      <fieldset class='well well-sm {{ci.selectedLayer && " " || "hidden"}}'>
+      <fieldset class='well well-sm {{ci.selectedLayer && " " || "hidden"}}' ng-if="ci.resouceMode == 'graphics'">
         <h3>Possible Object State</h3>
 
-        <div class='dragable {{ci.dragResourceName && "drag-active" || " "}} object-state'
+        <div class='dragable {{ci.dragGraphicName && "drag-active" || " "}} object-state'
           ng-repeat="(k, v) in ci.selectedLayer.objectStates" 
-          ng-mouseup="ci.dropResourceName({objectState:k})">
+          ng-mouseup="ci.dropGraphicName({objectState:k})">
             <div class="row">
               <div class="col-md-3">
                 <div ng-repeat="(variableName, combinationName) in ci.getVariableNameByObjectStates(k)">
@@ -198,11 +245,20 @@
     </div>
 
     <div class="col-md-8 column-right">
-      <fieldset class='well well-sm {{ci.resourceList && " " || "hidden"}}'>
+      <fieldset class='well well-sm {{ci.resourceList.graphics && " " || "hidden"}}'>
         <h3>Resource</h3>
-        <div class="resource-item" ng-repeat="(k, v) in ci.resourceList" 
+
+        <div class="sound-item" ng-repeat="(k, v) in ci.resourceList.sounds"
+          ng-if="ci.resouceMode == 'sounds'" ng-mousedown="ci.dragSoundFilename=v">
+            {{ci.getFilename(v)}}
+            <input type="button" ng-click="ci.playSound({playSoundUrl:v})" value="play" />
+        </div>
+        <audio id="audio" class="hidden" audioplayer controls></audio>
+
+        <div class="graphic-item" ng-repeat="(k, v) in ci.resourceList.graphics" 
           ng-style="{'background-image':'url('+v+')'}"
-          ng-mousedown="ci.dragResourceName=v">
+          ng-mousedown="ci.dragGraphicName=v"
+          ng-if="ci.resouceMode == 'graphics'">
             <span>{{ci.getFilename(v)}}</span>
         </div>
         <div class="clear: both;"></div>
@@ -211,14 +267,18 @@
   </div>
 </div>
 
-<script type="text/javascript">
-window.resourceManager = true
+
+<script type="text/coffeescript">
+  window.kiss = {}
+
+  for url in [
+      'src/coffee/utility/lodashAddon.coffee'
+      'src/coffee/models/kiss.coffee'
+
+      'src/html/resourceManager.coffee'
+    ]
+    CoffeeScript.load url
 </script>
-
-<script src="src/coffee/utility/lodashAddon.coffee" type="text/coffeescript"></script>
-<script src="src/coffee/models/kiss.coffee" type="text/coffeescript"></script>
-
-<script src="src/html/resourceManager.coffee" type="text/coffeescript"></script>
 
 </body>
 </html>

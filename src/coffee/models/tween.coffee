@@ -1,15 +1,3 @@
-if global?
-  require './../../console/boot.coffee'
-  kiss = global.kiss
-else
-  root = window
-  kiss = root.kiss ? {}
-
-if kiss.Tween? and __filename? and __filename == process.argv[1]
-  for name, tween of kiss.Tween
-    console.log name, tween 0.5
-  return
-
 kiss.Tween =
   liner : (p)->
     p

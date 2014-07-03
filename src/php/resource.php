@@ -1,6 +1,6 @@
 <?php
 require_once "directory_listing.php";
-$file_names = directory_listing("../../res");
+$file_names = directory_listing("../../../engine/res");
 
 $exportjson = array();
 $json = array();

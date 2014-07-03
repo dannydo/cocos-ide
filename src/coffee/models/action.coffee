@@ -1,14 +1,3 @@
-if global?
-  require './../../console/boot.coffee'
-  kiss = global.kiss
-else
-  root = window
-  kiss = root.kiss ? {}
-
-if kiss.Action? and __filename? and __filename == process.argv[1]
-  console.log "test code for kiss.action goes here"
-  return
-
 class kiss.Action extends cc.ActionInterval
   @properties : [
     "x"
@@ -83,7 +72,7 @@ class kiss.Action extends cc.ActionInterval
 
       target = @target.getChildByTag node.tag
       if target
-        target.changeSprite node.sprite
+        target.updateObjectState {objectState: node.objectState}
 
         if kiss.Action.defaultProperties.color[action.parameter]?
           color = target.color
@@ -152,7 +141,7 @@ class kiss.Action extends cc.ActionInterval
     super(dt)
 
     index = @_animationIndex
-    while index != @animations.length and 
+    while index != @animations.length and @animations[index] and
         @_elapsed >= @animations[index].time
       @_setup()
       @_animationIndex = ++index

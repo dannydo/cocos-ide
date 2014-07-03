@@ -1,5 +1,7 @@
 <?php
 
-$objectFilePath = '../../coffee/Object.coffee';
+$objectFilePath = 'object.js';
 
-die(file_get_contents($objectFilePath));
+$data = str_replace('res/', '../engine/res/', file_get_contents($objectFilePath));
+
+die($data);

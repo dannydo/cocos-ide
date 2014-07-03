@@ -11,7 +11,7 @@ class CocosStudio
     $(window).on "resize", => @resize
     @ciMain = $(".ciMain")
     @ciMiddle = $(".ciMiddle", @ciMain)
-    @ciMiddle.ciContent = $(".ciMiddle > .ciContent", @ciMiddle)
+    @ciMiddle.ciContent = $(".ciMiddle > .ciContent", @ciMain)
     @ciTop = $(".ciTop", @ciMain)
     @ciBottom = $(".ciBottom", @ciMain)
     @ciLeft = $(".ciLeft", @ciMain)
@@ -31,6 +31,7 @@ class CocosStudio
 
   _updateKnobTimeline:()->
     @timeLine.knob.removeAllKnob()
+
     for node in sa.animations
       child = MainLayer.getChildByTag node.tag
       knob = @timeLine.knob.createKnob
@@ -40,38 +41,44 @@ class CocosStudio
       knob._userData = node
 
     @timeLine.knob._clearSelection()
+    @timeLine.hoverIndicator.hoverIndicator.redraw()
 
   _hoverFrameSelected:(event)=>
     if MainLayer
       sa.setTime MainLayer, event.originalEvent.col / @_frameRate
+      event = ""
       for knob in @timeLine.knob._list
-        if knob.col == @timeLine.hoverIndicator.col
+        if knob.col == @timeLine.hoverIndicator.col and knob._userData?
           MainLayer.objectState = _.clone knob._userData.objectState
+          event = _.clone knob._userData.event
       
-      if MainLayer.layerRow[@timeLine.hoverIndicator.row]
+      if MainLayer.layerRow and MainLayer.layerRow[@timeLine.hoverIndicator.row]
         MainLayer.active = MainLayer.spriteNode[MainLayer.layerRow[@timeLine.hoverIndicator.row]]
-        MainLayer.boderNode.updateLayout(MainLayer.active, MainLayer.scope, true)
-        MainLayer.boderNode.setVisible(true)
-      else
-        MainLayer.boderNode.setVisible(false)
-
-      MainLayer.scope.$apply()
+        MainLayer.active.event = event
+        kiss.event.emit
+          channel: "mainLayer.updateLayoutBoder"
+          parameter: {elementActive:MainLayer.active, isNodeChange:false}
       
   _knobAdded:(event)=>
     knob = event.originalEvent.added
 
-    knob._userData = 
-      time: 0
-      tag: MainLayer.layerRow[knob.row]
-      sprite: MainLayer.spriteNode[MainLayer.layerRow[knob.row]].frameName  
-      actions: {}
-      objectState: _.clone MainLayer.objectState
+    if MainLayer.layerRow? and MainLayer.layerRow.length > knob.row
+      knob._userData = 
+        time: 0
+        tag: MainLayer.layerRow[knob.row]
+        sprite: MainLayer.spriteNode[MainLayer.layerRow[knob.row]].frameName  
+        actions: {}
+        objectState: _.clone MainLayer.objectState
 
-    if MainLayer.active? 
-      knob._userData.actions = Studio.Action.copyProperties MainLayer.active
+      if MainLayer.active? 
+        knob._userData.actions = kiss.Action.copyProperties MainLayer.active
 
-    knob._userData.time = knob.col / @_frameRate 
-    sa.animations.push knob._userData
+      knob._userData.time = knob.col / @_frameRate
+      sa.animations.push knob._userData
+    else
+      knob.remove()
+      @timeLine.hoverIndicator.hoverIndicator.redraw()
+
 
   _knobDelete:(event)=>
     for knob in event.originalEvent.deleted
@@ -79,7 +86,7 @@ class CocosStudio
 
   _knobUpdate:(event)=>
     for knob in event.originalEvent.manager._list
-      if knob._userData.time * @_frameRate != knob.col
+      if knob._userData? and knob._userData.time * @_frameRate != knob.col
         knob._userData.time = knob.col / @_frameRate 
 
   _playAnimation:()->
@@ -106,22 +113,19 @@ class CocosStudio
       MainLayer.active.actionManager.removeAllActionsFromTarget MainLayer
 
 
-  _nodeChange:()->
+  _nodeChange:(selectedObject)->
 
     if MainLayer.active?
       index = "#{@timeLine.hoverIndicator.col}:#{MainLayer.active.row}"
       if @timeLine.knob._index[index]?
         knob = @timeLine.knob._index[index]
-        knob._userData.actions = Studio.Action.copyProperties MainLayer.active
-        
-        name = MainLayer.resourceManager.getObjectState
-          layerName: MainLayer.active.tag
-          combinations: MainLayer.objectState
+        knob._userData.actions = kiss.Action.copyProperties MainLayer.active
 
-        if name
-          MainLayer.active.changeSprite name
-          knob._userData.sprite = MainLayer.active.frameName
-          knob._userData.objectState = _.clone MainLayer.objectState
+        MainLayer.active.updateObjectState({objectState: MainLayer.objectState})
+
+        knob._userData.sprite = MainLayer.active.frameName
+        knob._userData.objectState = _.clone MainLayer.objectState
+        knob._userData.event = MainLayer.active.event
 
         sa._expand()
       else
@@ -133,7 +137,7 @@ class CocosStudio
           time        : @timeLine.hoverIndicator.col / @_frameRate
           tag         : MainLayer.active.tag
           sprite      : MainLayer.active.frameName
-          actions     : Studio.Action.copyProperties MainLayer.active
+          actions     : kiss.Action.copyProperties MainLayer.active
           objectState : _.clone MainLayer.objectState
 
         sa.animations.push knob._userData
@@ -153,11 +157,12 @@ class CocosStudio
 
     pm._onchange.push ()=>
         canvas.height = @ciTimeLine.height()
-        canvas.width = @ciTimeLine.width()
-        @ciCanvas[0].height = @ciMiddle.ciContent.height()
-        @ciCanvas[0].width = @ciMiddle.ciContent.width()
+        canvas.width = @ciTimeLine.innerWidth()
 
-        @timeLine.ocanvas.width = @ciTimeLine.width()
+        @ciCanvas[0].height = @ciMiddle.ciContent.height()
+        @ciCanvas[0].width = @ciMiddle.ciContent.innerWidth()
+
+        @timeLine.ocanvas.width = @ciTimeLine.innerWidth()
         @timeLine.ocanvas.height = @ciTimeLine.height()
 
         if cc.view?

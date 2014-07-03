@@ -1,74 +1,41 @@
-class Colorpicker
-  constructor:()->
-    @colorpickerTop = 102
-    @colorpickerLeft = 496
-    @colorPicker = {}
-    @colorPicker.rgb ?= {r:0,g:0,b:0}
-    @colorPicker.dot = {top:300,left:0}
-    @colorPicker.hue = {top:300}
-    @colorPicker.hsb = @RGBtoHSB @colorPicker.rgb
-    @colorPicker.hex = @RGBtoHEX @colorPicker.rgb
-    @colorPicker.color = @HSBtoRGB({h:@colorPicker.hsb.h,s:100,b:100})
-    @activeDrag()
+class kiss.colorpicker
+  constructor: ({@bindingName})->
+    @color =
+      rgb:
+        r : 0
+        g : 0
+        b : 0
+      hsv:
+        h : 0
+        s : 0
+        v : 0
+      hex : 'FFFFFF'
+    @browsingColor = {}
+    @dom = 
+      review: $('#colorpicker-review') 
+      output: $('#output')
+      button:
+        select: $('#colorpicker-select')
+    @_bind()
 
-  setScope: (scope)->
-    @scope = scope
+  _bind:()->
+    $('#property-color').on "click", (event)=>
+      @setDefault()
+      $('#colorpicker-modal').modal('show')
 
-  clamp: (min, max, val)->
-    if val < min
-      val = min
-    if val > max
-      val = max
-    val
+      @dom.button.select.on "click", (event)=>
+        @selectColor()
 
-  HSBtoRGB: ({h,s,b})->
-    if h == 360
-      h = 0
-    s /= 100.0
-    b /= 100.0
-    h /= 60.0
-    i = Math.floor h
-    f = h - i
-    p = (b*(1-s)*255)
-    q = (b*(1-(s*f))*255)
-    t = (b*(1-(s*(1-f)))*255)
-    b = (Math.floor(b*255))
+    if @bindingName?
+      kiss.event.on
+        channel: "property.onSetColor"
+        method: ({r,g,b})=>
+          console.log 'test'
+          @setColor {r:r,g:g,b:b}
+          @dom.output.val("##{@color.hex}")
+          @dom.review.css('background-color', "rgb(#{@color.rgb.r},#{@color.rgb.g},#{@color.rgb.b})")
 
-    [r,g,b]= [[b,t,p],[q,b,p],[p,b,t],[p,q,b],[t,p,b],[b,p,q]][i]
-    r:Math.round(r)
-    g:Math.round(g)
-    b:Math.round(b)
-
-  RGBtoHSB: ({r,g,b})->
-    r /= 255
-    g /= 255
-    b /= 255
-
-    x = Math.min(Math.min(r, g), b)
-    val = Math.max(Math.max(r, g), b)
-
-    if x is val
-      h:300
-      s:0
-      b:val*100
-    else
-      f = (r == x) ? g-b : ((g == x) ? b-r : r-g)
-      i = (r == x) ? 3 : ((g == x) ? 5 : 1)
-      h = Math.round((i-f/(val-x))*60)%360
-
-      if h > 0
-        h = h
-      else 
-        h = 0
-      h:h
-      s:Math.round(((val-x)/val)*100)
-      b:Math.round(val*100)
-
-  HSBtoHEX: ({h,s,b})->
-    @colorPicker.rgb = @HSBtoRGB @colorPicker.hsb
-    @colorPicker.hex = @RGBtoHEX @colorPicker.rgb
-
-  RGBtoHEX: ({r,g,b})->
+  rgb2hex: ({r,g,b})->
     r = r.toString(16)
     g = g.toString(16)
     b = b.toString(16)
@@ -78,70 +45,93 @@ class Colorpicker
     b = if b.length is 1 then "0#{b}" else b
 
     r + g + b
+
+  setColor:({r,g,b})->
+    @color.rgb.r = r
+    @color.rgb.g = g
+    @color.rgb.b = b
+
+    @color.hex = @rgb2hex(@color.rgb)
+    @browsingColor = @color.rgb
+
+  changeColor:({color})->
+    @color.rgb.r = color.r
+    @color.rgb.g = color.g
+    @color.rgb.b = color.b
+
+    @color.hsv.h = color.h
+    @color.hsv.s = color.s
+    @color.hsv.v = color.v
+
+    @color.hex = color.hex
+    @dom.review.css('background-color', "rgb(#{@color.rgb.r},#{@color.rgb.g},#{@color.rgb.b})")
+
+  selectColor: ()->
+    kiss.event.emit
+      channel: "#{@bindingName}.onSelectColor"
+      parameter: @color.rgb
+
+  setDefault: () ->
+    $('svg').remove()
+    @cp = Raphael.colorpicker(40, 20, 300, "##{@color.hex}")
+    @cp2 = Raphael.colorwheel(360, 20, 300, "##{@color.hex}")
+    clr = Raphael.color("##{@color.hex}")
+
+    dom = {}
+    for element in ["output","vr","vg","vb","vh","vh2","vs","vs2","vv","vl"]
+      dom[element] = $ "##{element}"
+
+    for color in "r,g,b".split(',')
+      dom["v"+color].val clr[color] 
+
+    hsv = 
+      h : Math.round(clr.h * 360) + "°";
+      s : Math.round(clr.s * 100) + "%";
+      v : Math.round(clr.v * 100) + "%";
+
+    for color in "h,s,v".split(',')
+      dom["v"+color].val hsv[color] 
+
+    for color in "h,s".split(',')
+      dom["v"+color+"2"].val hsv[color] 
+
+    dom.vl.val Math.round(clr.l * 100) + "%";
+
+    dom.output.on "keyup", (event) =>
+      element = $(event.target)
+
+      @cp.color(element.val())
+      @cp2.color(element.val())
+
+    onchange = (item)=>
+      (color) =>
+        dom.output.val color.replace(/^#(.)\1(.)\2(.)\3$/, "#$1$2$3");
+        item.color(color);
+        color = Raphael.color(color);
+        dom.vr.html color.r;
+        dom.vg.html color.g;
+        dom.vb.html color.b;
+
+        h = Math.round(color.h * 360) + "°"
+        s = Math.round(color.s * 100) + "%"
+        dom.vh.html h
+        dom.vh2.html h
+        dom.vs.html s
+        dom.vs2.html s
+        dom.vv.html Math.round(color.v * 100) + "%";
+        dom.vl.html Math.round(color.l * 100) + "%";
+
+        @changeColor {color:color}
+
+    @cp.onchange = onchange(@cp2);
+    @cp2.onchange = onchange(@cp);
     
-  updateColorPickerFromHSB: ()->
-    @colorPicker.rgb = @HSBtoRGB @colorPicker.hsb
-    @colorPicker.hex = @RGBtoHEX @colorPicker.rgb
-    @colorPicker.color = @HSBtoRGB({h:@colorPicker.hsb.h,s:100,b:100})
-
-  updateColorPickerFromRGB: ()->
-    @colorPicker.hsb = @RGBtoHSB @colorPicker.rgb
-    @colorPicker.hex = @RGBtoHEX @colorPicker.rgb
-    @colorPicker.color = @HSBtoRGB({h:@colorPicker.hsb.h,s:100,b:100})
-
-  updateColorPickerFromHEX: ()->
-
-  colorPickerColorUpdate: (e)=>
-    position = @colorpickerColor.position()
-    s = Math.round (e.x - @colorpickerLeft) / @colorpickerColor.width() * 100
-    b = 100 - Math.round (e.y - @colorpickerTop) / @colorpickerColor.height() * 100
-
-    s = @clamp(0, 100, s)
-    b = @clamp(0, 100, b)
-    
-    @colorPicker.hsb.b = b
-    @colorPicker.hsb.s = s
-    @updateColorPickerFromHSB()
-
-    @colorPicker.dot.top = @clamp(0, 300, e.y - @colorpickerTop)
-    @colorPicker.dot.left = @clamp(0, 300, e.x - @colorpickerLeft)
-    
-    @scope.$apply()
-
-  colorPickerColorMouseup: (e)=>
-    @colorPickerColorUpdate(e)
-    $(window).off "mousemove", @colorPickerColorUpdate
-    $(window).off "mouseup", @colorPickerColorMouseup
-
-  colorPickerHueUpdate: (e)=>
-    position = @colorpickerHue.position()
-    h = 360 - Math.round (e.y - @colorpickerTop) / @colorpickerHue.height() * 360
-    h = @clamp(0, 360, h)
-    
-    @colorPicker.hsb.h = h
-    @updateColorPickerFromHSB()
-
-    @colorPicker.hue.top = @clamp(0, 300, e.y - @colorpickerTop)
-
-    @scope.$apply()
-
-  colorPickerHueMouseup : (e)=>
-    @colorPickerHueUpdate(e)
-    $(window).off "mousemove", @colorPickerHueUpdate
-    $(window).off "mouseup", @colorPickerHueMouseup
- 
-  activeDrag:()->
-    @colorpickerHue = $(".colorpicker_hue")
-    @colorpickerColor = $(".colorpicker_color")
-    @colorpickerColorDot = $("div div div div", @colorpickerColor)
-
-    @colorpickerHue.on "mousedown", (e)=>
-      $(window).on "mousemove", @colorPickerHueUpdate
-      $(window).on "mouseup", @colorPickerHueMouseup
-
-    @colorpickerColor.on "mousedown", (e)=>
-      $(window).on "mousemove", @colorPickerColorUpdate
-      $(window).on "mouseup", @colorPickerColorMouseup
+    $('.modal-body').append($('svg'))
 
 
-window.Colorpicker = Colorpicker
+window.colorpicker = new kiss.colorpicker
+  bindingName: "colorpicker"
+
+kiss.event.emit
+  channel: "colorpicker.onSetColor"
+  parameter: {r: 247, g: 46, b: 59}

@@ -1,9 +1,11 @@
 <?php
 
-$objectFilePath = '../../coffee/Object.coffee';
+$objectFilePath = './object.js';
 
 $requestBody = file_get_contents('php://input');
 
 if (isset($requestBody)) {
-  file_put_contents($objectFilePath, $requestBody);
+	$requestBody = str_replace('../engine/res/', 'res/', $requestBody);
+
+  	file_put_contents($objectFilePath, $requestBody);
 }

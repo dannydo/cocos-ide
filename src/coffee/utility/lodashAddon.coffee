@@ -1,5 +1,5 @@
 if global?
-  require './../../console/boot.coffee'
+  require './console'
   kiss = global.kiss
 else
   root = window
@@ -49,3 +49,52 @@ else
         else
           result.push indent + "\"#{object}\""
       result.join  "\n"
+
+  _.loadObjectFile = (url, callback) ->
+    req = new XMLHttpRequest()
+    req.addEventListener 'readystatechange', =>
+      if req.readyState is 4                        # ReadyState Compelte
+        successResultCodes = [200, 304]
+        if req.status in successResultCodes
+          objectListFile = eval '(' + req.responseText + ')'
+
+          if callback?
+            callback objectListFile
+        else
+          console.log 'Error loading data...'
+
+    req.open 'GET', url, false
+    req.send()
+
+  _.saveObjectFile = (url, object) ->
+    req = new XMLHttpRequest()
+
+    req.addEventListener 'readystatechange', =>
+      if req.readyState is 4                        # ReadyState Compelte
+        successResultCodes = [200, 304]
+        if req.status in successResultCodes
+
+        else
+          console.log 'Error loading data...'
+
+    req.open 'POST', url, false
+    req.send(JSON.stringify(object))
+
+  _.saveObjectList = (currentTime, object)->
+    newTime = new Date().getTime()
+    newFile = 
+      time: newTime
+      object: object
+
+    @loadObjectFile 'src/php/resourceManager/objectLoad.php', (file)=>
+      if currentTime isnt file.time
+        if confirm('You are not a newest version. Are you really want to save?')
+          @saveObjectFile('src/php/resourceManager/objectSave.php', newFile)
+          @saveObjectFile('src/php/resourceManager/saveGameData.php', object)
+        else 
+          newTime = currentTime
+      else
+        @saveObjectFile('src/php/resourceManager/objectSave.php', newFile)
+        @saveObjectFile('src/php/resourceManager/saveGameData.php', object)
+
+    newTime

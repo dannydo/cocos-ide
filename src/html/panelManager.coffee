@@ -8,10 +8,10 @@ class window.PanelManager
       col: []
     @typeSize =
       row: "height"
-      col: "width"
+      col: "innerWidth"
     @typeEvent =
-      row: "y"
-      col: "x"
+      row: "clientY"
+      col: "clientX"
     @typePrimary = 
       top:
         type: "row"
@@ -35,11 +35,11 @@ class window.PanelManager
 
     {type, direction} = @typePrimary[type]
 
-    if $.zepto.isZ resizablePanel
+    if _.typeOf resizablePanel is 'object'
       resizablePanel = resizablePanel[0]
-    if $.zepto.isZ collapsablePanel
+    if _.typeOf collapsablePanel is 'object'
       collapsablePanel = collapsablePanel[0]
-    if $.zepto.isZ referencePanel
+    if _.typeOf referencePanel is 'object'
       referencePanel = referencePanel[0]
 
     collapsablePanel._resizablePanel = resizablePanel
