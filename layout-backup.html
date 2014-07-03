@@ -1,0 +1,342 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cocos2d Studio Layout Test</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="css/layout.css" />
+  <link rel="stylesheet" href="css/colorpicker.css" />
+
+  <script src="library/coffeescript.js"></script>
+  <script src="library/zepto.js"></script>
+  <script src="library/lodash.js"></script>
+  <script src="library/ocanvas-2.7.1.min.js"></script>
+  <script src="library/cocos2d-html5.js"></script>
+
+  <style type="text/css">
+    .ciPanel.ciLeft .ciContent {
+      overflow: scroll;
+      overflow-x:hidden;
+      height: 100%;
+      padding-top: 20px;
+    }
+
+    .object.list, .variable.list {
+      margin: 2px;
+    }
+
+    .object.list .selected, .variable.list .selected {
+      background-color: #ffccff;
+      font-weight: bold;
+    }
+
+    .ResourceManager {
+      color:black;
+    }
+
+    .PropertyManager .row {
+      margin-bottom: 3px;
+    }    
+
+    .PropertyManager .row #property-color {
+      width: 50px;
+    }
+  </style>
+<body class="selectDisable"  ng-controller="PropertyManager as pm">
+
+<div class="ciPanel ciMain">
+  <div class="ciPanel ciTop ciRow">
+    <div class="ciContent">&nbsp;</div>
+  </div>
+  <div class="ciPanel ciMiddle ciRow">
+    <div class="ciPanel ciLeft ciCol">
+      <div class="ciContent ResourceManager">
+
+        <fieldset class="well well-sm">
+          <h2>
+            Object List
+            <input type="button" 
+                ng-click="pm.rm.saveObject()" 
+                value="save" 
+                class="pull-right" >
+          </h2>
+          <div class="object list" ng-repeat="(objectName, v) in pm.rm.objectList" 
+            ng-dblclick="pm.rm.activeObjectRename({objectName:objectName})">
+            <div class='{{v===pm.rm.selectedObject && "selected" || " "}}' 
+                ng-click="pm.rm.selectObject({objectName:objectName})">
+              <span class='{{pm.rm.objectRename == objectName  && "hidden" || " "}}'>{{objectName}}</span>
+              <input type="text" 
+                  class='{{pm.rm.objectRename == objectName && " " || "hidden"}}' 
+                  ng-enter='pm.rm.renameObject({objectName:objectName, objectRename:$event.target.value})' 
+                  value="{{objectName}}" />
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="ciContent ciCol">
+      <canvas id="gameCanvas" width="640" height="960"></canvas>
+    </div>
+
+
+
+
+
+
+    <div class="ciPanel ciRight ciCol">
+      <div class="ciContent PropertyManager">
+
+
+
+        <div class="row">
+          <div class="col-md-4">X</div>
+          <div class="col-md-8">
+            <input id="property-x" type="number">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">Y</div>
+          <div class="col-md-8">
+            <input id="property-y" type="number">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">rotation</div>
+          <div class="col-md-8">
+            <input id="property-rotation" type="number" min="-360" max="360">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">skewX</div>
+          <div class="col-md-8">
+            <input id="property-skewX" type="number" min="-360" max="360">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">skewY</div>
+          <div class="col-md-8">
+            <input id="property-skewY" type="number" min="-360" max="360">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">scaleX</div>
+          <div class="col-md-8">
+            <input id="property-scaleX" type="number">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">scaleY</div>
+          <div class="col-md-8">
+            <input id="property-scaleY" type="number">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">anchorX</div>
+          <div class="col-md-8">
+            <input id="property-anchorX" type="number">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">anchorY</div>
+          <div class="col-md-8">
+            <input id="property-anchorY" type="number">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">zIndex</div>
+          <div class="col-md-8">
+            <input id="property-zIndex" type="number">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">transparency</div>
+          <div class="col-md-8">
+            <input id="property-transparency" type="number" min="0" max="255">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">color</div>
+          <div class="col-md-8">
+            <input id="property-color" type="button">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">visible</div>
+          <div class="col-md-8">
+            <input id="property-visible" type="checkbox">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">lock</div>
+          <div class="col-md-8">
+            <input id="property-lock" type="checkbox">
+          </div>
+        </div>
+
+        <div class="row" id="property-objectList"></div>
+
+          
+
+
+        <div id="colorpicker" class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" 
+                  onclick="$('#colorpicker').addClass('fade').hide();" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Colorpicker</h4>
+              </div>
+              <div class="modal-body">
+                <div class="colorpicker">
+                  <div class="colorpicker_color" style="background-color: rgb({{pm.colorPicker.color.r}}, {{pm.colorPicker.color.g}}, {{pm.colorPicker.color.b}});">
+                    <div>
+                      <div style='left: {{pm.colorPicker.dot.left}}px; top: {{pm.colorPicker.dot.top}}px;'></div>
+                    </div>
+                  </div>
+                  <div class="colorpicker_hue">
+                    <div style="top: {{pm.colorPicker.hue.top}}px;"></div>
+                  </div>
+                  <div class="colorpicker_new_color" style="background-color: rgb({{pm.colorPicker.rgb.r}}, {{pm.colorPicker.rgb.g}}, {{pm.colorPicker.rgb.b}});"></div>
+                  <div class="colorpicker_current_color" style="background-color: rgb(0, 0, 0);"></div>
+
+                  <div class="color-controls">
+                    <div class="colorpicker_hex">
+                      <label>HEX</label>
+                      <input type="text" maxlength="6" size="6"  ng-model="pm.colorPicker.hex" 
+                        ng-change="pm.colorPickerClass.updateColorPickerFromHEX()">
+                    </div>
+                    <div class="colorpicker_rgb_r colorpicker_field">
+                      <label>R</label>
+                      <input type="number" min="0" max="255" maxlength="3" size="3" ng-model="pm.colorPicker.rgb.r" 
+                        ng-change="pm.colorPickerClass.updateColorPickerFromRGB()">
+                    </div>
+                    <div class="colorpicker_rgb_g colorpicker_field">
+                      <label>G</label>
+                      <input type="number" min="0" max="255" maxlength="3" size="3" ng-model="pm.colorPicker.rgb.g" 
+                        ng-change="pm.colorPickerClass.updateColorPickerFromRGB()">
+                    </div>
+                    <div class="colorpicker_rgb_b colorpicker_field">
+                      <label>B</label>
+                      <input type="number" min="0" max="255" maxlength="3" size="3" ng-model="pm.colorPicker.rgb.b" 
+                        ng-change="pm.colorPickerClass.updateColorPickerFromRGB()">
+                    </div>
+                    <div class="colorpicker_hsb_h colorpicker_field">
+                      <label>H</label>
+                      <input type="number" min="0" max="360" maxlength="3" size="3" ng-model="pm.colorPicker.hsb.h" 
+                        ng-change="pm.colorPickerClass.updateColorPickerFromHSB()">
+                    </div>
+                    <div class="colorpicker_hsb_s colorpicker_field">
+                      <label>S</label>
+                      <input type="number" min="0" max="100" maxlength="3" size="3" ng-model="pm.colorPicker.hsb.s" 
+                        ng-change="pm.colorPickerClass.updateColorPickerFromHSB()">
+                    </div>
+                    <div class="colorpicker_hsb_b colorpicker_field">
+                      <label>B</label>
+                      <input type="number" min="0" max="100" maxlength="3" size="3" ng-model="pm.colorPicker.hsb.b" 
+                        ng-change="pm.colorPickerClass.updateColorPickerFromHSB()">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" 
+                  onclick="$('#colorpicker').addClass('fade').hide();">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="pm.selectColor(pm.colorPicker.rgb);">Select</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+    
+        
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="ciPanel ciBottom ciRow">
+    <div class="ciContent">
+
+      <div class="ciAnimationList ResourceManager">
+        <div class="ciContent">
+          <div class="ciBody">
+            <fieldset class="well well-sm">
+              <h3>
+                Animation List
+              </h3>
+
+              <input type="text" ng-model="pm.rm.form.animationName" ng-enter="pm.rm.addAnimation()">
+              <input type="button" ng-click="pm.rm.addAnimation()" value="+" >
+
+              <div class="object list" ng-repeat="(animationName, v) in pm.rm.selectedObject.animations" ng-dblclick="pm.rm.activeAnimationRename({animationName:animationName})">
+                <div class='{{animationName===pm.rm.selectedAnimation && "selected" || " "}}' ng-click="pm.rm.selectAnimation({animationName:animationName})">
+                  <input type="button" ng-click="pm.rm.deleteAnimation({animationName:animationName})" value="x">
+
+                  <span class='{{pm.rm.animationRename == animationName  && "hidden" || " "}}'>{{animationName}}</span>
+                  <input type="text" class='{{pm.rm.animationRename == animationName && " " || "hidden"}}' ng-enter='pm.rm.renameAnimation({animationName:animationName, animationRename:$event.target.value})' value="{{animationName}}" />
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ciTimeLine">
+        <div class="ciHeader">Animation Controls [ <span 
+            onclick="cs._playAnimation()">Play</span>, <span 
+          onclick="cs._loopAnimation()">Loop</span>, <span 
+          onclick="cs._stopAnimation()">Stop</span> ]</br>
+        </div>
+        <canvas class="ciContent" id="canvas" width="500" height="500 "></canvas>
+      </div>
+
+      <div class="ciTweenList">
+        <div class="ciContent">
+          <div class="ciHeader">Tween List</div>
+          <div class="ciBody"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="src/coffee/utility/lodashAddon.coffee" type="text/coffeescript"></script>
+<script src="src/coffee/models/kiss.coffee" type="text/coffeescript"></script>
+
+
+<script src="src/coffee/timeline/lines.coffee" type="text/coffeescript"></script>
+<script src="src/coffee/timeline/hoverIndicator.coffee" type="text/coffeescript"></script>
+<script src="src/coffee/timeline/segment.coffee" type="text/coffeescript"></script>
+<script src="src/coffee/timeline/knob.coffee" type="text/coffeescript"></script>
+<script src="src/coffee/timeline/timeline.coffee" type="text/coffeescript"></script>
+
+<script src="src/html/resourceManager.coffee" type="text/coffeescript"></script>
+<script src="src/html/panelManager.coffee" type="text/coffeescript"></script>
+<script src="src/html/colorpicker.coffee" type="text/coffeescript"></script>
+<script src="src/html/layout.coffee" type="text/coffeescript"></script>
+<script src="src/html/property.coffee" type="text/coffeescript"></script>
+<script src="src/html/border-node.coffee" type="text/coffeescript"></script>
+
+<script src="src/php/coffee_loading.php" type="text/coffeescript"></script>
+
+</body>
+</html>
