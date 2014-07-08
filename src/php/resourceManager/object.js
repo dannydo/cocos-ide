@@ -1,5 +1,5 @@
 {
-  "time":1404790755346,
+  "time":1404792181485,
   "object":{
     "gem":{
       "variables":{
@@ -4513,9 +4513,6 @@
             "none,on,4":"res\/graphics\/board\/combo6\/Combo_6_Snap.png"
           }
         }
-      },
-      "variableLock":{
-        "color":false
       }
     },
     "bush":{
@@ -14070,7 +14067,10 @@
           "game",
           "overlay",
           "popUp",
-          "popUpWaiting"
+          "popUpWaiting",
+          "targetPopup",
+          "targetRibbon",
+          "leaderboard"
         ],
         "state":[
           "off",
@@ -14702,12 +14702,15 @@
           ],
           "objectStates":{
             "loadingPage":"res\/graphics\/ui\/panel_loading\/loadingBackground.png",
-            "startPage":"res\/graphics\/ui\/panel_start\/startBackground.png",
+            "startPage":"res\/graphics\/ui\/chapter\/worldmap_bg_1.png",
             "menu":"res\/graphics\/ui\/panel_setting\/settingBackground.png",
             "game":"res\/graphics\/ui\/panel_board\/boardBackground.png",
             "overlay":"res\/graphics\/ui\/overlayBackground.png",
             "popUp":"res\/graphics\/ui\/popup\/popUpBackground.png",
-            "popUpWaiting":"res\/graphics\/ui\/popup\/panel_popup_waiting.png"
+            "popUpWaiting":"res\/graphics\/ui\/popup\/panel_popup_waiting.png",
+            "targetPopup":"res\/graphics\/ui\/popup_target\/popup_target_bg.png",
+            "targetRibbon":"res\/graphics\/ui\/popup_target\/ribbon.png",
+            "leaderboard":"res\/graphics\/ui\/popup_target\/leaderboard_bg.png"
           }
         }
       }
@@ -14722,7 +14725,11 @@
           "popUpNo",
           "popUpCancel",
           "facebookLogin",
-          "facebookLogout"
+          "facebookLogout",
+          "targetPopupClose",
+          "play",
+          "no1",
+          "me"
         ]
       },
       "variableDefault":{
@@ -15055,7 +15062,11 @@
             "popUpNo":"res\/graphics\/ui\/popup\/popUpButtonNo.png",
             "popUpCancel":"res\/graphics\/ui\/popup\/popUpButtonClose.png",
             "facebookLogin":"res\/graphics\/ui\/panel_setting\/button\/btn_login.png",
-            "facebookLogout":"res\/graphics\/ui\/panel_setting\/button\/btn_logout.png"
+            "facebookLogout":"res\/graphics\/ui\/panel_setting\/button\/btn_logout.png",
+            "targetPopupClose":"res\/graphics\/ui\/popup_target\/btn_close.png",
+            "play":"res\/graphics\/ui\/popup_target\/play.png",
+            "no1":"res\/graphics\/ui\/popup_target\/btn-no1.png",
+            "me":"res\/graphics\/ui\/popup_target\/btn_me.png"
           }
         }
       }
@@ -18131,6 +18142,178 @@
           ],
           "objectStates":{
             "":"res\/graphics\/board\/effect\/flare.png"
+          }
+        }
+      }
+    },
+    "star":{
+      "variables":{
+        "type":[
+          "starActive",
+          "starDisable"
+        ]
+      },
+      "variableDefault":{
+        "type":"starActive"
+      },
+      "sounds":[
+        
+      ],
+      "animations":[
+        
+      ],
+      "layers":{
+        "body":{
+          "variableKeys":[
+            "type"
+          ],
+          "objectStates":{
+            "starActive":"res\/graphics\/ui\/popup_target\/star_active.png",
+            "starDisable":"res\/graphics\/ui\/popup_target\/star_disable.png"
+          }
+        }
+      }
+    },
+    "booster":{
+      "variables":{
+        "type":[
+          "booster1",
+          "booster2",
+          "booster3"
+        ]
+      },
+      "variableDefault":{
+        "type":"booster1"
+      },
+      "sounds":[
+        
+      ],
+      "animations":[
+        
+      ],
+      "layers":{
+        "backgroud":{
+          "variableKeys":[
+            
+          ],
+          "objectStates":{
+            "":"res\/graphics\/ui\/popup_target\/booter_bg.png"
+          }
+        },
+        "icon":{
+          "variableKeys":[
+            "type"
+          ],
+          "objectStates":{
+            "booster1":"res\/graphics\/ui\/popup_target\/booter_1.png",
+            "booster2":"res\/graphics\/ui\/popup_target\/booter_2.png",
+            "booster3":"res\/graphics\/ui\/popup_target\/booter_3.png"
+          }
+        }
+      }
+    },
+    "icon":{
+      "variables":{
+        "type":[
+          "mushroom",
+          "sendLife",
+          "crown"
+        ]
+      },
+      "variableDefault":{
+        "type":"mushroom"
+      },
+      "sounds":[
+        
+      ],
+      "animations":[
+        
+      ],
+      "layers":{
+        "body":{
+          "variableKeys":[
+            "type"
+          ],
+          "objectStates":{
+            "mushroom":"res\/graphics\/ui\/popup_target\/ico_mushroom.png",
+            "sendLife":"res\/graphics\/ui\/popup_target\/ico_send_life.png",
+            "crown":"res\/graphics\/ui\/popup_target\/crown.png"
+          }
+        }
+      }
+    },
+    "flashcard":{
+      "variables":[
+        
+      ],
+      "variableDefault":[
+        
+      ],
+      "sounds":[
+        
+      ],
+      "animations":[
+        
+      ],
+      "layers":{
+        "body":{
+          "variableKeys":[
+            
+          ],
+          "objectStates":{
+            "":"res\/graphics\/ui\/popup_target\/flashcard.png"
+          }
+        }
+      }
+    },
+    "avatar":{
+      "variables":[
+        
+      ],
+      "variableDefault":[
+        
+      ],
+      "sounds":[
+        
+      ],
+      "animations":[
+        
+      ],
+      "layers":{
+        "background":{
+          "variableKeys":[
+            
+          ],
+          "objectStates":{
+            "":"res\/graphics\/ui\/popup_target\/avatar_border.png"
+          }
+        }
+      }
+    },
+    "score":{
+      "variables":{
+        "backgroundType":[
+          "1",
+          "2"
+        ]
+      },
+      "variableDefault":{
+        "backgroundType":"1"
+      },
+      "sounds":[
+        
+      ],
+      "animations":[
+        
+      ],
+      "layers":{
+        "background":{
+          "variableKeys":[
+            "backgroundType"
+          ],
+          "objectStates":{
+            "1":"res\/graphics\/ui\/popup_target\/score_bg_1.png",
+            "2":"res\/graphics\/ui\/popup_target\/score_bg_2.png"
           }
         }
       }
