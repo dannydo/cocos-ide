@@ -1,5 +1,8 @@
 <?php
+
 require_once "../directory_listing.php";
+require_once "./json.php";
+
 $file_names = directory_listing("../../../../engine/res");
 
 $exportjson = array();
@@ -63,7 +66,7 @@ $jsonData          = str_replace('..\/engine\/res\/', 'res\/', json_encode($imag
 $imagesizeFilePath = '../../../../engine/res/Resources.js';
 $resouceImagesize  = 'var resources;
 
-resources = ' . $jsonData . ';
+resources = ' . jsonBeautifier($jsonData) . ';
 
 kiss.resources = resources;';
 

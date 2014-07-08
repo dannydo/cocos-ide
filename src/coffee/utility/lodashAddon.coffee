@@ -78,7 +78,7 @@ else
           console.log 'Error loading data...'
 
     req.open 'POST', url, false
-    req.send(JSON.stringify(object))
+    req.send(JSON.stringify(object, null, 4))
 
   _.saveObjectList = (currentTime, object)->
     newTime = new Date().getTime()
