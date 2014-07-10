@@ -75,9 +75,12 @@ class kiss.ResourceManager
   addSound: ({soundNameField}={})=>
     soundName = soundNameField.value
     soundNameField.value = ''
-    
+
+    if @selectedObject.sounds and Object.keys(@selectedObject.sounds).length is 0
+      delete @selectedObject.sounds
+
     @selectedObject.sounds ?= {}
-    if soundName and not @selectedObject.sounds[soundName]?
+    if soundName not in @selectedObject.sounds?
       @selectedObject.sounds[soundName] = false
 
   deleteSound: ({objectName, soundName})->
