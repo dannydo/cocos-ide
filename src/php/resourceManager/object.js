@@ -1,5 +1,5 @@
 {
-  "time":1405325975928,
+  "time":1405327357966,
   "object":{
     "gem":{
       "variables":{
@@ -12944,22 +12944,6 @@
             "y":"res\/graphics\/board\/letters\/gem\/gem_letter_y.png",
             "z":"res\/graphics\/board\/letters\/gem\/gem_letter_z.png"
           }
-        },
-        "bubble":{
-          "variableKeys":[
-            
-          ],
-          "objectStates":{
-            "":"res\/graphics\/board\/effect\/letter\/letter_bubble.png"
-          }
-        },
-        "flare":{
-          "variableKeys":[
-            
-          ],
-          "objectStates":{
-            "":"res\/graphics\/board\/effect\/flare.png"
-          }
         }
       }
     },
@@ -12994,14 +12978,14 @@
           "y",
           "z"
         ],
-        "bubbleDestroyed":[
-          0,
-          1
+        "type":[
+          "inactive",
+          "active"
         ]
       },
       "variableDefault":{
         "letter":"space",
-        "bubbleDestroyed":0
+        "type":"inactive"
       },
       "animations":{
         "FillLetter":[
@@ -13556,46 +13540,65 @@
       "layers":{
         "body":{
           "variableKeys":[
-            "letter"
+            "letter",
+            "type"
           ],
           "objectStates":{
-            "space":"res\/graphics\/board\/letters\/header\/header_letter_space.png",
-            "a":"res\/graphics\/board\/letters\/header\/header_letter_a.png",
-            "b":"res\/graphics\/board\/letters\/header\/header_letter_b.png",
-            "c":"res\/graphics\/board\/letters\/header\/header_letter_c.png",
-            "d":"res\/graphics\/board\/letters\/header\/header_letter_d.png",
-            "e":"res\/graphics\/board\/letters\/header\/header_letter_e.png",
-            "f":"res\/graphics\/board\/letters\/header\/header_letter_f.png",
-            "g":"res\/graphics\/board\/letters\/header\/header_letter_g.png",
-            "h":"res\/graphics\/board\/letters\/header\/header_letter_h.png",
-            "i":"res\/graphics\/board\/letters\/header\/header_letter_i.png",
-            "j":"res\/graphics\/board\/letters\/header\/header_letter_j.png",
-            "k":"res\/graphics\/board\/letters\/header\/header_letter_k.png",
-            "l":"res\/graphics\/board\/letters\/header\/header_letter_l.png",
-            "m":"res\/graphics\/board\/letters\/header\/header_letter_m.png",
-            "n":"res\/graphics\/board\/letters\/header\/header_letter_n.png",
-            "o":"res\/graphics\/board\/letters\/header\/header_letter_o.png",
-            "p":"res\/graphics\/board\/letters\/header\/header_letter_p.png",
-            "q":"res\/graphics\/board\/letters\/header\/header_letter_q.png",
-            "r":"res\/graphics\/board\/letters\/header\/header_letter_r.png",
-            "s":"res\/graphics\/board\/letters\/header\/header_letter_s.png",
-            "t":"res\/graphics\/board\/letters\/header\/header_letter_t.png",
-            "u":"res\/graphics\/board\/letters\/header\/header_letter_u.png",
-            "v":"res\/graphics\/board\/letters\/header\/header_letter_v.png",
-            "w":"res\/graphics\/board\/letters\/header\/header_letter_w.png",
-            "x":"res\/graphics\/board\/letters\/header\/header_letter_x.png",
-            "y":"res\/graphics\/board\/letters\/header\/header_letter_y.png",
-            "z":"res\/graphics\/board\/letters\/header\/header_letter_z.png"
+            "space,inactive":"res\/graphics\/board\/letters\/header\/header_letter_space.png",
+            "a,inactive":"res\/graphics\/board\/letters\/header\/header_letter_a.png",
+            "b,inactive":"res\/graphics\/board\/letters\/header\/header_letter_b.png",
+            "c,inactive":"res\/graphics\/board\/letters\/header\/header_letter_c.png",
+            "d,inactive":"res\/graphics\/board\/letters\/header\/header_letter_d.png",
+            "e,inactive":"res\/graphics\/board\/letters\/header\/header_letter_e.png",
+            "f,inactive":"res\/graphics\/board\/letters\/header\/header_letter_f.png",
+            "g,inactive":"res\/graphics\/board\/letters\/header\/header_letter_g.png",
+            "h,inactive":"res\/graphics\/board\/letters\/header\/header_letter_h.png",
+            "i,inactive":"res\/graphics\/board\/letters\/header\/header_letter_i.png",
+            "j,inactive":"res\/graphics\/board\/letters\/header\/header_letter_j.png",
+            "k,inactive":"res\/graphics\/board\/letters\/header\/header_letter_k.png",
+            "l,inactive":"res\/graphics\/board\/letters\/header\/header_letter_l.png",
+            "m,inactive":"res\/graphics\/board\/letters\/header\/header_letter_m.png",
+            "n,inactive":"res\/graphics\/board\/letters\/header\/header_letter_n.png",
+            "o,inactive":"res\/graphics\/board\/letters\/header\/header_letter_o.png",
+            "p,inactive":"res\/graphics\/board\/letters\/header\/header_letter_p.png",
+            "q,inactive":"res\/graphics\/board\/letters\/header\/header_letter_q.png",
+            "r,inactive":"res\/graphics\/board\/letters\/header\/header_letter_r.png",
+            "s,inactive":"res\/graphics\/board\/letters\/header\/header_letter_s.png",
+            "t,inactive":"res\/graphics\/board\/letters\/header\/header_letter_t.png",
+            "u,inactive":"res\/graphics\/board\/letters\/header\/header_letter_u.png",
+            "v,inactive":"res\/graphics\/board\/letters\/header\/header_letter_v.png",
+            "w,inactive":"res\/graphics\/board\/letters\/header\/header_letter_w.png",
+            "x,inactive":"res\/graphics\/board\/letters\/header\/header_letter_x.png",
+            "y,inactive":"res\/graphics\/board\/letters\/header\/header_letter_y.png",
+            "z,inactive":"res\/graphics\/board\/letters\/header\/header_letter_z.png",
+            "space,active":"res\/graphics\/board\/letters\/header\/header_letter_space.png",
+            "a,active":"res\/graphics\/board\/letters\/gem\/gem_letter_a.png",
+            "b,active":"res\/graphics\/board\/letters\/gem\/gem_letter_b.png",
+            "c,active":"res\/graphics\/board\/letters\/gem\/gem_letter_c.png",
+            "d,active":"res\/graphics\/board\/letters\/gem\/gem_letter_d.png",
+            "e,active":"res\/graphics\/board\/letters\/gem\/gem_letter_e.png",
+            "f,active":"res\/graphics\/board\/letters\/gem\/gem_letter_f.png",
+            "g,active":"res\/graphics\/board\/letters\/gem\/gem_letter_g.png",
+            "h,active":"res\/graphics\/board\/letters\/gem\/gem_letter_h.png",
+            "i,active":"res\/graphics\/board\/letters\/gem\/gem_letter_i.png",
+            "j,active":"res\/graphics\/board\/letters\/gem\/gem_letter_j.png",
+            "k,active":"res\/graphics\/board\/letters\/gem\/gem_letter_k.png",
+            "l,active":"res\/graphics\/board\/letters\/gem\/gem_letter_l.png",
+            "m,active":"res\/graphics\/board\/letters\/gem\/gem_letter_m.png",
+            "n,active":"res\/graphics\/board\/letters\/gem\/gem_letter_n.png",
+            "o,active":"res\/graphics\/board\/letters\/gem\/gem_letter_o.png",
+            "p,active":"res\/graphics\/board\/letters\/gem\/gem_letter_p.png",
+            "q,active":"res\/graphics\/board\/letters\/gem\/gem_letter_q.png",
+            "r,active":"res\/graphics\/board\/letters\/gem\/gem_letter_r.png",
+            "s,active":"res\/graphics\/board\/letters\/gem\/gem_letter_s.png",
+            "t,active":"res\/graphics\/board\/letters\/gem\/gem_letter_t.png",
+            "u,active":"res\/graphics\/board\/letters\/gem\/gem_letter_u.png",
+            "v,active":"res\/graphics\/board\/letters\/gem\/gem_letter_v.png",
+            "w,active":"res\/graphics\/board\/letters\/gem\/gem_letter_w.png",
+            "x,active":"res\/graphics\/board\/letters\/gem\/gem_letter_x.png",
+            "y,active":"res\/graphics\/board\/letters\/gem\/gem_letter_y.png",
+            "z,active":"res\/graphics\/board\/letters\/gem\/gem_letter_z.png"
           }
-        },
-        "bubble":{
-          "variableKeys":[
-            "bubbleDestroyed"
-          ],
-          "objectStates":[
-            "res\/graphics\/board\/lock\/lock_count_down.png",
-            "res\/graphics\/board\/effect\/shield_break\/shield_break_02.png"
-          ]
         }
       }
     },
