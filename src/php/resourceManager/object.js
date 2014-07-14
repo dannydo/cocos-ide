@@ -1,5 +1,5 @@
 {
-  "time":1405327357966,
+  "time":1405331105970,
   "object":{
     "gem":{
       "variables":{
@@ -16803,6 +16803,90 @@
           "objectStates":{
             "1":"res\/graphics\/ui\/popup_target\/score_bg_1.png",
             "2":"res\/graphics\/ui\/popup_target\/score_bg_2.png"
+          }
+        }
+      }
+    },
+    "headerEgg":{
+      "variables":{
+        "isDestroyed":[
+          "false",
+          "true"
+        ]
+      },
+      "variableDefault":{
+        "isDestroyed":"false"
+      },
+      "sounds":[
+        
+      ],
+      "animations":[
+        
+      ],
+      "layers":{
+        "body":{
+          "variableKeys":[
+            "isDestroyed"
+          ],
+          "objectStates":{
+            "true":"res\/graphics\/board\/hud\/header\/headerEggDestroyed.png",
+            "false":"res\/graphics\/board\/hud\/header\/headerEgg.png"
+          }
+        }
+      }
+    },
+    "headerBody":{
+      "variables":[
+        
+      ],
+      "variableDefault":[
+        
+      ],
+      "sounds":[
+        
+      ],
+      "animations":[
+        
+      ],
+      "layers":{
+        "background":{
+          "variableKeys":[
+            
+          ],
+          "objectStates":{
+            "":"res\/graphics\/board\/hud\/header\/headerBackground.png"
+          }
+        },
+        "leftEye":{
+          "variableKeys":[
+            
+          ],
+          "objectStates":{
+            "":"res\/graphics\/board\/hud\/header\/headerLeftEye.png"
+          }
+        },
+        "rightEye":{
+          "variableKeys":[
+            
+          ],
+          "objectStates":{
+            "":"res\/graphics\/board\/hud\/header\/headerRightEye.png"
+          }
+        },
+        "body":{
+          "variableKeys":[
+            
+          ],
+          "objectStates":{
+            "":"res\/graphics\/board\/hud\/header\/headerMiddle.png"
+          }
+        },
+        "mouth":{
+          "variableKeys":[
+            
+          ],
+          "objectStates":{
+            "":"res\/graphics\/board\/hud\/header\/headerMouth.png"
           }
         }
       }
