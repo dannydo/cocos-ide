@@ -1,5 +1,5 @@
 {
-  "time":1405308133869,
+  "time":1405325975928,
   "object":{
     "gem":{
       "variables":{
@@ -14085,7 +14085,11 @@
           "menu",
           "game",
           "overlay",
-          "popUp"
+          "popUp",
+          "targetRibbon",
+          "targetPopup",
+          "leaderboard",
+          "popUpWaiting"
         ],
         "state":[
           "off",
@@ -14717,11 +14721,15 @@
           ],
           "objectStates":{
             "loadingPage":"res\/graphics\/ui\/panel_loading\/loadingBackground.png",
-            "startPage":"res\/graphics\/ui\/panel_start\/startBackground.png",
+            "startPage":"res\/graphics\/ui\/chapter\/worldmap_bg_1.png",
             "menu":"res\/graphics\/ui\/panel_setting\/settingBackground.png",
             "game":"res\/graphics\/ui\/panel_board\/boardBackground.png",
             "overlay":"res\/graphics\/ui\/overlayBackground.png",
-            "popUp":"res\/graphics\/ui\/popup\/popUpBackground.png"
+            "popUp":"res\/graphics\/ui\/popup\/popUpBackground.png",
+            "targetRibbon":"res\/graphics\/ui\/popup_target\/ribbon.png",
+            "targetPopup":"res\/graphics\/ui\/popup_target\/popup_target_bg.png",
+            "leaderboard":"res\/graphics\/ui\/popup_target\/leaderboard_bg.png",
+            "popUpWaiting":"res\/graphics\/ui\/popup\/panel_popup_waiting.png"
           }
         }
       }
@@ -14734,7 +14742,13 @@
           "popUpOk",
           "popUpYes",
           "popUpNo",
-          "popUpCancel"
+          "popUpCancel",
+          "targetPopupClose",
+          "play",
+          "no1",
+          "me",
+          "facebookLogin",
+          "facebookLogout"
         ]
       },
       "variableDefault":{
@@ -15065,7 +15079,13 @@
             "popUpOk":"res\/graphics\/ui\/popup\/popUpButtonOk.png",
             "popUpYes":"res\/graphics\/ui\/popup\/popUpButtonYes.png",
             "popUpNo":"res\/graphics\/ui\/popup\/popUpButtonNo.png",
-            "popUpCancel":"res\/graphics\/ui\/popup\/popUpButtonClose.png"
+            "popUpCancel":"res\/graphics\/ui\/popup\/popUpButtonClose.png",
+            "targetPopupClose":"res\/graphics\/ui\/popup_target\/btn_close.png",
+            "play":"res\/graphics\/ui\/popup_target\/play.png",
+            "no1":"res\/graphics\/ui\/popup_target\/btn-no1.png",
+            "me":"res\/graphics\/ui\/popup_target\/btn_me.png",
+            "facebookLogin":"res\/graphics\/ui\/panel_setting\/button\/btn_login.png",
+            "facebookLogout":"res\/graphics\/ui\/panel_setting\/button\/btn_logout.png"
           }
         }
       }
@@ -16612,6 +16632,174 @@
           ],
           "objectStates":{
             "":false
+          }
+        }
+      }
+    },
+    "star":{
+      "variables":{
+        "type":[
+          "starDisable",
+          "starEnable"
+        ]
+      },
+      "variableDefault":{
+        "type":"starDisable"
+      },
+      "sounds":[
+        
+      ],
+      "animations":[
+        
+      ],
+      "layers":{
+        "body":{
+          "variableKeys":[
+            "type"
+          ],
+          "objectStates":{
+            "starDisable":"res\/graphics\/ui\/popup_target\/star_disable.png",
+            "starEnable":"res\/graphics\/ui\/popup_target\/star_active.png"
+          }
+        }
+      }
+    },
+    "flashcard":{
+      "variables":[
+        
+      ],
+      "variableDefault":[
+        
+      ],
+      "sounds":[
+        
+      ],
+      "animations":[
+        
+      ],
+      "layers":{
+        "body":{
+          "variableKeys":[
+            
+          ],
+          "objectStates":{
+            "":"res\/graphics\/ui\/popup_target\/flashcard.png"
+          }
+        }
+      }
+    },
+    "booster":{
+      "variables":{
+        "type":[
+          "booster1",
+          "booster2",
+          "booster3"
+        ]
+      },
+      "variableDefault":{
+        "type":"booster1"
+      },
+      "sounds":[
+        
+      ],
+      "animations":[
+        
+      ],
+      "layers":{
+        "body":{
+          "variableKeys":[
+            
+          ],
+          "objectStates":{
+            "":"res\/graphics\/ui\/popup_target\/booter_bg.png"
+          }
+        },
+        "icon":{
+          "variableKeys":[
+            "type"
+          ],
+          "objectStates":{
+            "booster1":"res\/graphics\/ui\/popup_target\/booter_1.png",
+            "booster2":"res\/graphics\/ui\/popup_target\/booter_2.png",
+            "booster3":"res\/graphics\/ui\/popup_target\/booter_3.png"
+          }
+        }
+      }
+    },
+    "avatar":{
+      "variables":[
+        
+      ],
+      "variableDefault":[
+        
+      ],
+      "sounds":[
+        
+      ],
+      "animations":[
+        
+      ],
+      "layers":{
+        "body":{
+          "variableKeys":[
+            
+          ],
+          "objectStates":{
+            "":"res\/graphics\/ui\/popup_target\/avatar_border.png"
+          }
+        }
+      }
+    },
+    "icon":{
+      "variables":{
+        "type":[
+          "sendLife"
+        ]
+      },
+      "variableDefault":{
+        "type":"sendLife"
+      },
+      "sounds":[
+        
+      ],
+      "animations":[
+        
+      ],
+      "layers":{
+        "body":{
+          "variableKeys":[
+            
+          ],
+          "objectStates":{
+            "":"res\/graphics\/ui\/popup_target\/ico_send_life.png"
+          }
+        }
+      }
+    },
+    "score":{
+      "variables":{
+        "backgroundType":[
+          "1",
+          "2"
+        ]
+      },
+      "variableDefault":{
+        "backgroundType":"1"
+      },
+      "sounds":[
+        
+      ],
+      "animations":[
+        
+      ],
+      "layers":{
+        "background":{
+          "variableKeys":[
+            "backgroundType"
+          ],
+          "objectStates":{
+            "1":"res\/graphics\/ui\/popup_target\/score_bg_1.png",
+            "2":"res\/graphics\/ui\/popup_target\/score_bg_2.png"
           }
         }
       }
