@@ -148,6 +148,11 @@ class kiss.objectList
 
 
   addAnimation: ({animationName}={})->
+    if @selectedObject.animations and Object.keys(@selectedObject.animations).length is 0
+      delete @selectedObject.animations
+
+    @selectedObject.animations ?= {}
+    
     if animationName and @selectedObject and animationName not in @selectedObject.animations?
       @selectedObject.animations[animationName] = []
       @dom.input.newAnimationName.val ""

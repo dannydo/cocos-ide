@@ -48,7 +48,6 @@ class kiss.ResourceManager
         layers          : {}
       @form.objectName = ""
       @selectedVariable = false
-      @selectedAnimation = false
       @selectedLayer = false
       @loadResource()
   
@@ -89,35 +88,13 @@ class kiss.ResourceManager
     delete @selectedObject.sounds[soundName]
 
 
-
-  addAnimation: ({animationName}={})->
-    animationName ?= @form.animationName
-    
-    if animationName not in @selectedObject.animations?
-      @selectedObject.animations[animationName] = []
-      @form.animationName = ""
-      @selectAnimation
-        animationName: animationName
-  
-
-
-  deleteAnimation: ({animationName})->
-    if @selectedObject.animations[animationName]?
-      delete @selectedObject.animations[animationName]
-  
-
-
-  selectAnimation: ({animationName})->
-    if @selectedObject.animations[animationName]?
-      @selectedAnimation = animationName
-  
-
-    if @animationRename isnt animationName
-      delete @animationRename
-
-
   addLayer: ({layerName}={})->
     layerName ?= @form.layerName
+
+    if @selectedObject.layers and Object.keys(@selectedObject.layers).length is 0
+      delete @selectedObject.layers
+
+    @selectedObject.layers ?= {}
 
     if layerName and not @selectedObject.layers[layerName]?
       @selectedObject.layers[layerName] = {variableKeys: [], objectStates: {"":false}}
@@ -159,6 +136,11 @@ class kiss.ResourceManager
   addVariable: ({variableName, variableDefault}={})->
     variableName ?= @form.variableName
     variableDefault ?= @form.variableDefault
+
+    if @selectedObject.variables and Object.keys(@selectedObject.variables).length is 0
+      delete @selectedObject.variables
+
+    @selectedObject.variables ?= {}
 
     if variableName and variableDefault and 
         not @selectedObject.variables[variableName]?
@@ -235,6 +217,7 @@ class kiss.ResourceManager
 
   addCombination: ({combinationName}={})->
     combinationName ?= @form.combinationName
+
     if combinationName and combinationName not in @selectedVariable
       @selectedVariable.push combinationName
       @form.combinationName = ""
@@ -317,15 +300,6 @@ class kiss.ResourceManager
   
 
     delete @variableRename
-
-  renameAnimation: ({animationName, animationRename})->
-    if @selectedObject.animations[animationName]?
-      animation = @selectedObject.animations[animationName]
-      delete @selectedObject.animations[animationName]
-      @selectedObject.animations[animationRename] = animation
-  
-
-    delete @animationRename
 
   _objectStatesNewVariable: ({variableName, variableDefault})->
     @selectedLayer.variableKeys.push variableName
@@ -433,10 +407,6 @@ class kiss.ResourceManager
 
   activeCombinationRename:({combinationName})->
     @combinationRename = combinationName
-
-
-  activeAnimationRename:({animationName})->
-    @animationRename = animationName
 
 
   getFilename:(path)->
