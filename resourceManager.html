@@ -220,6 +220,9 @@
                 {{variableName && variableName + " x" || ""}}
               </a>&nbsp;
             </span>
+
+            <input class='pull-right {{ci.isLayerHidden({layerName:layerName}) == true  && "hidden" || " "}}' type="checkbox" ng-click="ci.setLayerHidden({layerName:layerName, isHidden: true})">
+            <input class='pull-right {{ci.isLayerHidden({layerName:layerName}) == false  && "hidden" || " "}}' type="checkbox" ng-click="ci.setLayerHidden({layerName:layerName, isLayerHidden: false})" checked="checked">
           </div>
         </div>
       </fieldset>

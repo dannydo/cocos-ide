@@ -45,6 +45,7 @@ class kiss.ResourceManager
         sounds          : {}
         animations      : {}
         layers          : {}
+        layers          : {}
       @form.objectName = ""
       @selectedVariable = false
       @selectedAnimation = false
@@ -180,7 +181,6 @@ class kiss.ResourceManager
       delete @variableRename
 
 
-
   deleteVariable: ({variableName})->
     if @selectedVariable == @selectedObject.variables[variableName]
       @selectedVariable = false
@@ -196,9 +196,7 @@ class kiss.ResourceManager
     delete @dragVariableName
 
 
-
   setVariableLock: ({variableName, isLock})->
-    console.log isLock
     @selectedObject.variableLock ?= {}
     @selectedObject.variableLock[variableName] = isLock
 
@@ -207,6 +205,26 @@ class kiss.ResourceManager
       if @selectedObject.variableLock
         if @selectedObject.variableLock[variableName]
           @selectedObject.variableLock[variableName]
+        else 
+          false
+      else 
+        false
+    else 
+      false
+
+
+  setLayerHidden: ({layerName, isHidden})->
+    if @selectedObject.layerHidden and Object.keys(@selectedObject.layerHidden).length is 0
+      delete @selectedObject.layerHidden
+
+    @selectedObject.layerHidden ?= {}
+    @selectedObject.layerHidden[layerName] = isHidden
+
+  isLayerHidden: ({layerName})->
+    if layerName
+      if @selectedObject.layerHidden
+        if @selectedObject.layerHidden[layerName]
+          @selectedObject.layerHidden[layerName]
         else 
           false
       else 
