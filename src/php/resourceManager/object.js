@@ -1,5 +1,5 @@
 {
-  "time":1404792181485,
+  "time":1405307537777,
   "object":{
     "gem":{
       "variables":{
@@ -4513,6 +4513,11 @@
             "none,on,4":"res\/graphics\/board\/combo6\/Combo_6_Snap.png"
           }
         }
+      },
+      "variableLock":{
+        "color":true,
+        "combo":true,
+        "snap":true
       }
     },
     "bush":{
@@ -6108,24 +6113,24 @@
     "combo5":{
       "variables":{
         "Frames":[
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14"
         ]
       },
       "variableDefault":{
-        "Frames":1
+        "Frames":"1"
       },
       "animations":{
         "Combo5":[
@@ -7194,20 +7199,20 @@
     "combo6":{
       "variables":{
         "Frames":[
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14"
         ]
       },
       "variableDefault":{
@@ -7218,7 +7223,7 @@
           {
             "time":0,
             "tag":"Body",
-            "sprite":"combo_6_01.png",
+            "sprite":"res\/graphics\/board\/effect\/combo_6\/combo_6_01.png",
             "actions":{
               "x":{
                 "start":0,
@@ -7229,11 +7234,11 @@
                 "tween":"Linear"
               },
               "anchorX":{
-                "start":0.5,
+                "start":0.057,
                 "tween":"Linear"
               },
               "anchorY":{
-                "start":0.5,
+                "start":0.538,
                 "tween":"Linear"
               },
               "scaleX":{
@@ -7287,12 +7292,13 @@
             },
             "objectState":{
               "Frames":1
-            }
+            },
+            "event":""
           },
           {
             "time":0.05,
             "tag":"Body",
-            "sprite":"combo_6_02.png",
+            "sprite":"res\/graphics\/board\/effect\/combo_6\/combo_6_02.png",
             "actions":{
               "x":{
                 "start":0,
@@ -7303,11 +7309,11 @@
                 "tween":"Linear"
               },
               "anchorX":{
-                "start":0.5,
+                "start":0.057,
                 "tween":"Linear"
               },
               "anchorY":{
-                "start":0.5,
+                "start":0.538,
                 "tween":"Linear"
               },
               "scaleX":{
@@ -7361,12 +7367,13 @@
             },
             "objectState":{
               "Frames":2
-            }
+            },
+            "event":""
           },
           {
             "time":0.1,
             "tag":"Body",
-            "sprite":"combo_6_03.png",
+            "sprite":"res\/graphics\/board\/effect\/combo_6\/combo_6_03.png",
             "actions":{
               "x":{
                 "start":0,
@@ -7377,11 +7384,11 @@
                 "tween":"Linear"
               },
               "anchorX":{
-                "start":0.5,
+                "start":0.057,
                 "tween":"Linear"
               },
               "anchorY":{
-                "start":0.5,
+                "start":0.538,
                 "tween":"Linear"
               },
               "scaleX":{
@@ -7435,12 +7442,13 @@
             },
             "objectState":{
               "Frames":3
-            }
+            },
+            "event":""
           },
           {
             "time":0.15,
             "tag":"Body",
-            "sprite":"combo_6_04.png",
+            "sprite":"res\/graphics\/board\/effect\/combo_6\/combo_6_04.png",
             "actions":{
               "x":{
                 "start":0,
@@ -7451,11 +7459,11 @@
                 "tween":"Linear"
               },
               "anchorX":{
-                "start":0.5,
+                "start":0.057,
                 "tween":"Linear"
               },
               "anchorY":{
-                "start":0.5,
+                "start":0.538,
                 "tween":"Linear"
               },
               "scaleX":{
@@ -7509,12 +7517,13 @@
             },
             "objectState":{
               "Frames":4
-            }
+            },
+            "event":""
           },
           {
             "time":0.2,
             "tag":"Body",
-            "sprite":"combo_6_05.png",
+            "sprite":"res\/graphics\/board\/effect\/combo_6\/combo_6_05.png",
             "actions":{
               "x":{
                 "start":0,
@@ -7525,11 +7534,11 @@
                 "tween":"Linear"
               },
               "anchorX":{
-                "start":0.5,
+                "start":0.057,
                 "tween":"Linear"
               },
               "anchorY":{
-                "start":0.5,
+                "start":0.538,
                 "tween":"Linear"
               },
               "scaleX":{
@@ -7583,12 +7592,13 @@
             },
             "objectState":{
               "Frames":5
-            }
+            },
+            "event":""
           },
           {
             "time":0.25,
             "tag":"Body",
-            "sprite":"combo_6_06.png",
+            "sprite":"res\/graphics\/board\/effect\/combo_6\/combo_6_06.png",
             "actions":{
               "x":{
                 "start":0,
@@ -7599,11 +7609,11 @@
                 "tween":"Linear"
               },
               "anchorX":{
-                "start":0.5,
+                "start":0.057,
                 "tween":"Linear"
               },
               "anchorY":{
-                "start":0.5,
+                "start":0.538,
                 "tween":"Linear"
               },
               "scaleX":{
@@ -7657,12 +7667,13 @@
             },
             "objectState":{
               "Frames":6
-            }
+            },
+            "event":""
           },
           {
             "time":0.3,
             "tag":"Body",
-            "sprite":"combo_6_07.png",
+            "sprite":"res\/graphics\/board\/effect\/combo_6\/combo_6_07.png",
             "actions":{
               "x":{
                 "start":0,
@@ -7673,11 +7684,11 @@
                 "tween":"Linear"
               },
               "anchorX":{
-                "start":0.5,
+                "start":0.057,
                 "tween":"Linear"
               },
               "anchorY":{
-                "start":0.5,
+                "start":0.538,
                 "tween":"Linear"
               },
               "scaleX":{
@@ -7731,12 +7742,13 @@
             },
             "objectState":{
               "Frames":7
-            }
+            },
+            "event":""
           },
           {
             "time":0.35,
             "tag":"Body",
-            "sprite":"combo_6_08.png",
+            "sprite":"res\/graphics\/board\/effect\/combo_6\/combo_6_08.png",
             "actions":{
               "x":{
                 "start":0,
@@ -7747,11 +7759,11 @@
                 "tween":"Linear"
               },
               "anchorX":{
-                "start":0.5,
+                "start":0.057,
                 "tween":"Linear"
               },
               "anchorY":{
-                "start":0.5,
+                "start":0.538,
                 "tween":"Linear"
               },
               "scaleX":{
@@ -7805,12 +7817,13 @@
             },
             "objectState":{
               "Frames":8
-            }
+            },
+            "event":""
           },
           {
             "time":0.4,
             "tag":"Body",
-            "sprite":"combo_6_09.png",
+            "sprite":"res\/graphics\/board\/effect\/combo_6\/combo_6_09.png",
             "actions":{
               "x":{
                 "start":0,
@@ -7821,11 +7834,11 @@
                 "tween":"Linear"
               },
               "anchorX":{
-                "start":0.5,
+                "start":0.057,
                 "tween":"Linear"
               },
               "anchorY":{
-                "start":0.5,
+                "start":0.538,
                 "tween":"Linear"
               },
               "scaleX":{
@@ -7879,12 +7892,13 @@
             },
             "objectState":{
               "Frames":9
-            }
+            },
+            "event":""
           },
           {
             "time":0.45,
             "tag":"Body",
-            "sprite":"combo_6_10.png",
+            "sprite":"res\/graphics\/board\/effect\/combo_6\/combo_6_10.png",
             "actions":{
               "x":{
                 "start":0,
@@ -7895,11 +7909,11 @@
                 "tween":"Linear"
               },
               "anchorX":{
-                "start":0.5,
+                "start":0.057,
                 "tween":"Linear"
               },
               "anchorY":{
-                "start":0.5,
+                "start":0.538,
                 "tween":"Linear"
               },
               "scaleX":{
@@ -7953,12 +7967,13 @@
             },
             "objectState":{
               "Frames":10
-            }
+            },
+            "event":""
           },
           {
             "time":0.5,
             "tag":"Body",
-            "sprite":"combo_6_11.png",
+            "sprite":"res\/graphics\/board\/effect\/combo_6\/combo_6_11.png",
             "actions":{
               "x":{
                 "start":0,
@@ -7969,11 +7984,11 @@
                 "tween":"Linear"
               },
               "anchorX":{
-                "start":0.5,
+                "start":0.057,
                 "tween":"Linear"
               },
               "anchorY":{
-                "start":0.5,
+                "start":0.538,
                 "tween":"Linear"
               },
               "scaleX":{
@@ -8027,12 +8042,13 @@
             },
             "objectState":{
               "Frames":11
-            }
+            },
+            "event":""
           },
           {
             "time":0.55,
             "tag":"Body",
-            "sprite":"combo_6_12.png",
+            "sprite":"res\/graphics\/board\/effect\/combo_6\/combo_6_12.png",
             "actions":{
               "x":{
                 "start":0,
@@ -8043,11 +8059,11 @@
                 "tween":"Linear"
               },
               "anchorX":{
-                "start":0.5,
+                "start":0.057,
                 "tween":"Linear"
               },
               "anchorY":{
-                "start":0.5,
+                "start":0.538,
                 "tween":"Linear"
               },
               "scaleX":{
@@ -8101,12 +8117,13 @@
             },
             "objectState":{
               "Frames":12
-            }
+            },
+            "event":""
           },
           {
             "time":0.6,
             "tag":"Body",
-            "sprite":"combo_6_13.png",
+            "sprite":"res\/graphics\/board\/effect\/combo_6\/combo_6_13.png",
             "actions":{
               "x":{
                 "start":0,
@@ -8117,11 +8134,11 @@
                 "tween":"Linear"
               },
               "anchorX":{
-                "start":0.5,
+                "start":0.057,
                 "tween":"Linear"
               },
               "anchorY":{
-                "start":0.5,
+                "start":0.538,
                 "tween":"Linear"
               },
               "scaleX":{
@@ -8175,12 +8192,13 @@
             },
             "objectState":{
               "Frames":13
-            }
+            },
+            "event":""
           },
           {
             "time":0.65,
             "tag":"Body",
-            "sprite":"combo_6_14.png",
+            "sprite":"res\/graphics\/board\/effect\/combo_6\/combo_6_14.png",
             "actions":{
               "x":{
                 "start":0,
@@ -8191,11 +8209,11 @@
                 "tween":"Linear"
               },
               "anchorX":{
-                "start":0.5,
+                "start":0.057,
                 "tween":"Linear"
               },
               "anchorY":{
-                "start":0.5,
+                "start":0.538,
                 "tween":"Linear"
               },
               "scaleX":{
@@ -8249,7 +8267,8 @@
             },
             "objectState":{
               "Frames":14
-            }
+            },
+            "event":""
           }
         ]
       },
@@ -14066,11 +14085,7 @@
           "menu",
           "game",
           "overlay",
-          "popUp",
-          "popUpWaiting",
-          "targetPopup",
-          "targetRibbon",
-          "leaderboard"
+          "popUp"
         ],
         "state":[
           "off",
@@ -14702,15 +14717,11 @@
           ],
           "objectStates":{
             "loadingPage":"res\/graphics\/ui\/panel_loading\/loadingBackground.png",
-            "startPage":"res\/graphics\/ui\/chapter\/worldmap_bg_1.png",
+            "startPage":"res\/graphics\/ui\/panel_start\/startBackground.png",
             "menu":"res\/graphics\/ui\/panel_setting\/settingBackground.png",
             "game":"res\/graphics\/ui\/panel_board\/boardBackground.png",
             "overlay":"res\/graphics\/ui\/overlayBackground.png",
-            "popUp":"res\/graphics\/ui\/popup\/popUpBackground.png",
-            "popUpWaiting":"res\/graphics\/ui\/popup\/panel_popup_waiting.png",
-            "targetPopup":"res\/graphics\/ui\/popup_target\/popup_target_bg.png",
-            "targetRibbon":"res\/graphics\/ui\/popup_target\/ribbon.png",
-            "leaderboard":"res\/graphics\/ui\/popup_target\/leaderboard_bg.png"
+            "popUp":"res\/graphics\/ui\/popup\/popUpBackground.png"
           }
         }
       }
@@ -14723,13 +14734,7 @@
           "popUpOk",
           "popUpYes",
           "popUpNo",
-          "popUpCancel",
-          "facebookLogin",
-          "facebookLogout",
-          "targetPopupClose",
-          "play",
-          "no1",
-          "me"
+          "popUpCancel"
         ]
       },
       "variableDefault":{
@@ -15060,13 +15065,7 @@
             "popUpOk":"res\/graphics\/ui\/popup\/popUpButtonOk.png",
             "popUpYes":"res\/graphics\/ui\/popup\/popUpButtonYes.png",
             "popUpNo":"res\/graphics\/ui\/popup\/popUpButtonNo.png",
-            "popUpCancel":"res\/graphics\/ui\/popup\/popUpButtonClose.png",
-            "facebookLogin":"res\/graphics\/ui\/panel_setting\/button\/btn_login.png",
-            "facebookLogout":"res\/graphics\/ui\/panel_setting\/button\/btn_logout.png",
-            "targetPopupClose":"res\/graphics\/ui\/popup_target\/btn_close.png",
-            "play":"res\/graphics\/ui\/popup_target\/play.png",
-            "no1":"res\/graphics\/ui\/popup_target\/btn-no1.png",
-            "me":"res\/graphics\/ui\/popup_target\/btn_me.png"
+            "popUpCancel":"res\/graphics\/ui\/popup\/popUpButtonClose.png"
           }
         }
       }
@@ -15447,7 +15446,7 @@
         }
       }
     },
-    "combo4Line":{
+    "combo4Flare":{
       "variables":[
         
       ],
@@ -15455,7 +15454,7 @@
         
       ],
       "animations":{
-        "C4Line":[
+        "flare":[
           {
             "time":0,
             "tag":"Flare",
@@ -15478,86 +15477,18 @@
                 "tween":"Linear"
               },
               "scaleX":{
-                "start":0,
-                "tween":"Linear"
+                "start":0.2,
+                "tween":"Linear",
+                "startTime":0,
+                "endTime":0.13333333333333,
+                "end":1.5
               },
               "scaleY":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "skewX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "skewY":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotationX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotationY":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotation":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "zIndex":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "opacity":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "r":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "g":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "b":{
-                "start":255,
-                "tween":"Linear"
-              }
-            },
-            "objectState":[
-              
-            ]
-          },
-          {
-            "time":0.033333333333333,
-            "tag":"MainLight",
-            "sprite":"res\/graphics\/board\/effect\/combo_4\/combo_4_main_light.png",
-            "actions":{
-              "x":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "y":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "anchorX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "anchorY":{
-                "start":0.5,
-                "tween":"Linear"
-              },
-              "scaleX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "scaleY":{
-                "start":1.5,
-                "tween":"Linear"
+                "start":0.2,
+                "tween":"Linear",
+                "startTime":0,
+                "endTime":0.13333333333333,
+                "end":1.5
               },
               "skewX":{
                 "start":0,
@@ -15605,9 +15536,9 @@
             ]
           },
           {
-            "time":0.033333333333333,
-            "tag":"MainLight",
-            "sprite":"res\/graphics\/board\/effect\/combo_4\/combo_4_main_light.png",
+            "time":0.13333333333333,
+            "tag":"Flare",
+            "sprite":"combo_4_flare.png",
             "actions":{
               "x":{
                 "start":0,
@@ -15618,7 +15549,7 @@
                 "tween":"Linear"
               },
               "anchorX":{
-                "start":0,
+                "start":0.5,
                 "tween":"Linear"
               },
               "anchorY":{
@@ -15626,12 +15557,18 @@
                 "tween":"Linear"
               },
               "scaleX":{
-                "start":0,
-                "tween":"Linear"
+                "start":1.5,
+                "tween":"Linear",
+                "startTime":0.13333333333333,
+                "endTime":0.2,
+                "end":1
               },
               "scaleY":{
                 "start":1.5,
-                "tween":"Linear"
+                "tween":"Linear",
+                "startTime":0.13333333333333,
+                "endTime":0.2,
+                "end":1
               },
               "skewX":{
                 "start":0,
@@ -15678,6 +15615,185 @@
               
             ]
           },
+          {
+            "time":0.2,
+            "tag":"Flare",
+            "sprite":"combo_4_flare.png",
+            "actions":{
+              "x":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "y":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "anchorX":{
+                "start":0.5,
+                "tween":"Linear"
+              },
+              "anchorY":{
+                "start":0.5,
+                "tween":"Linear"
+              },
+              "scaleX":{
+                "start":1,
+                "tween":"Linear",
+                "startTime":0.2,
+                "endTime":0.26666666666667,
+                "end":0.5
+              },
+              "scaleY":{
+                "start":1,
+                "tween":"Linear",
+                "startTime":0.2,
+                "endTime":0.26666666666667,
+                "end":0.5
+              },
+              "skewX":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "skewY":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "rotationX":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "rotationY":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "rotation":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "zIndex":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "opacity":{
+                "start":255,
+                "tween":"Linear",
+                "startTime":0.2,
+                "endTime":0.26666666666667,
+                "end":0
+              },
+              "r":{
+                "start":255,
+                "tween":"Linear"
+              },
+              "g":{
+                "start":255,
+                "tween":"Linear"
+              },
+              "b":{
+                "start":255,
+                "tween":"Linear"
+              }
+            },
+            "objectState":[
+              
+            ]
+          },
+          {
+            "time":0.26666666666667,
+            "tag":"Flare",
+            "sprite":"combo_4_flare.png",
+            "actions":{
+              "x":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "y":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "anchorX":{
+                "start":0.5,
+                "tween":"Linear"
+              },
+              "anchorY":{
+                "start":0.5,
+                "tween":"Linear"
+              },
+              "scaleX":{
+                "start":0.5,
+                "tween":"Linear"
+              },
+              "scaleY":{
+                "start":0.5,
+                "tween":"Linear"
+              },
+              "skewX":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "skewY":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "rotationX":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "rotationY":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "rotation":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "zIndex":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "opacity":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "r":{
+                "start":255,
+                "tween":"Linear"
+              },
+              "g":{
+                "start":255,
+                "tween":"Linear"
+              },
+              "b":{
+                "start":255,
+                "tween":"Linear"
+              }
+            },
+            "objectState":[
+              
+            ]
+          }
+        ]
+      },
+      "layers":{
+        "Flare":{
+          "variableKeys":[
+            
+          ],
+          "objectStates":{
+            "":"res\/graphics\/board\/effect\/combo_4\/combo_4_flare.png"
+          }
+        }
+      }
+    },
+    "combo4Line":{
+      "variables":[
+        
+      ],
+      "variableDefault":[
+        
+      ],
+      "animations":{
+        "line":[
           {
             "time":0.033333333333333,
             "tag":"MainLight",
@@ -15778,154 +15894,6 @@
               },
               "scaleX":{
                 "start":0,
-                "tween":"Linear"
-              },
-              "scaleY":{
-                "start":1.5,
-                "tween":"Linear"
-              },
-              "skewX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "skewY":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotationX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotationY":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotation":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "zIndex":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "opacity":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "r":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "g":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "b":{
-                "start":255,
-                "tween":"Linear"
-              }
-            },
-            "objectState":[
-              
-            ]
-          },
-          {
-            "time":0.066666666666667,
-            "tag":"SubLight",
-            "sprite":"res\/graphics\/board\/effect\/combo_4\/combo_4_sub_light.png",
-            "actions":{
-              "x":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "y":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "anchorX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "anchorY":{
-                "start":0.5,
-                "tween":"Linear"
-              },
-              "scaleX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "scaleY":{
-                "start":1.5,
-                "tween":"Linear"
-              },
-              "skewX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "skewY":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotationX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotationY":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotation":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "zIndex":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "opacity":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "r":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "g":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "b":{
-                "start":255,
-                "tween":"Linear"
-              }
-            },
-            "objectState":[
-              
-            ]
-          },
-          {
-            "time":0.066666666666667,
-            "tag":"SubLight",
-            "sprite":"res\/graphics\/board\/effect\/combo_4\/combo_4_sub_light.png",
-            "actions":{
-              "x":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "y":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "anchorX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "anchorY":{
-                "start":0.5,
-                "tween":"Linear"
-              },
-              "scaleX":{
-                "start":0,
                 "tween":"Linear",
                 "startTime":0.066666666666667,
                 "endTime":0.13333333333333,
@@ -16003,159 +15971,8 @@
               },
               "scaleX":{
                 "start":0.33333333333333,
-                "tween":"Linear"
-              },
-              "scaleY":{
-                "start":1.5,
-                "tween":"Linear"
-              },
-              "skewX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "skewY":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotationX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotationY":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotation":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "zIndex":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "opacity":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "r":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "g":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "b":{
-                "start":255,
-                "tween":"Linear"
-              }
-            },
-            "objectState":[
-              
-            ]
-          },
-          {
-            "time":0.13333333333333,
-            "tag":"SubLight",
-            "sprite":"res\/graphics\/board\/effect\/combo_4\/combo_4_sub_light.png",
-            "actions":{
-              "x":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "y":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "anchorX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "anchorY":{
-                "start":0.5,
-                "tween":"Linear"
-              },
-              "scaleX":{
-                "start":0.33333333333333,
                 "tween":"Linear",
                 "startTime":0.13333333333333,
-                "endTime":0.18333333333333,
-                "end":0.58333333333333
-              },
-              "scaleY":{
-                "start":1.5,
-                "tween":"Linear"
-              },
-              "skewX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "skewY":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotationX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotationY":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotation":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "zIndex":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "opacity":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "r":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "g":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "b":{
-                "start":255,
-                "tween":"Linear"
-              }
-            },
-            "objectState":[
-              
-            ]
-          },
-          {
-            "time":0.18333333333333,
-            "tag":"SubLight",
-            "sprite":"res\/graphics\/board\/effect\/combo_4\/combo_4_sub_light.png",
-            "actions":{
-              "x":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "y":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "anchorX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "anchorY":{
-                "start":0.5,
-                "tween":"Linear"
-              },
-              "scaleX":{
-                "start":0.58333333333333,
-                "tween":"Linear",
-                "startTime":0.18333333333333,
                 "endTime":0.26666666666667,
                 "end":1
               },
@@ -16215,306 +16032,10 @@
             "actions":{
               "x":{
                 "start":0,
-                "tween":"Linear"
-              },
-              "y":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "anchorX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "anchorY":{
-                "start":0.5,
-                "tween":"Linear"
-              },
-              "scaleX":{
-                "start":1,
-                "tween":"Linear"
-              },
-              "scaleY":{
-                "start":1.5,
-                "tween":"Linear"
-              },
-              "skewX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "skewY":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotationX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotationY":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotation":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "zIndex":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "opacity":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "r":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "g":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "b":{
-                "start":255,
-                "tween":"Linear"
-              }
-            },
-            "objectState":[
-              
-            ]
-          },
-          {
-            "time":0.26666666666667,
-            "tag":"SubLight",
-            "sprite":"res\/graphics\/board\/effect\/combo_4\/combo_4_sub_light.png",
-            "actions":{
-              "x":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "y":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "anchorX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "anchorY":{
-                "start":0.5,
-                "tween":"Linear"
-              },
-              "scaleX":{
-                "start":1,
-                "tween":"Linear"
-              },
-              "scaleY":{
-                "start":1.5,
-                "tween":"Linear"
-              },
-              "skewX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "skewY":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotationX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotationY":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotation":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "zIndex":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "opacity":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "r":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "g":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "b":{
-                "start":255,
-                "tween":"Linear"
-              }
-            },
-            "objectState":[
-              
-            ]
-          },
-          {
-            "time":0.26666666666667,
-            "tag":"SubLight",
-            "sprite":"res\/graphics\/board\/effect\/combo_4\/combo_4_sub_light.png",
-            "actions":{
-              "x":{
-                "start":0,
                 "tween":"Linear",
                 "startTime":0.26666666666667,
                 "endTime":0.43333333333333,
                 "end":80
-              },
-              "y":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "anchorX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "anchorY":{
-                "start":0.5,
-                "tween":"Linear"
-              },
-              "scaleX":{
-                "start":1,
-                "tween":"Linear"
-              },
-              "scaleY":{
-                "start":1.5,
-                "tween":"Linear"
-              },
-              "skewX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "skewY":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotationX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotationY":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotation":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "zIndex":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "opacity":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "r":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "g":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "b":{
-                "start":255,
-                "tween":"Linear"
-              }
-            },
-            "objectState":[
-              
-            ]
-          },
-          {
-            "time":0.43333333333333,
-            "tag":"SubLight",
-            "sprite":"res\/graphics\/board\/effect\/combo_4\/combo_4_sub_light.png",
-            "actions":{
-              "x":{
-                "start":80,
-                "tween":"Linear"
-              },
-              "y":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "anchorX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "anchorY":{
-                "start":0.5,
-                "tween":"Linear"
-              },
-              "scaleX":{
-                "start":1,
-                "tween":"Linear"
-              },
-              "scaleY":{
-                "start":1.5,
-                "tween":"Linear"
-              },
-              "skewX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "skewY":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotationX":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotationY":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "rotation":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "zIndex":{
-                "start":0,
-                "tween":"Linear"
-              },
-              "opacity":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "r":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "g":{
-                "start":255,
-                "tween":"Linear"
-              },
-              "b":{
-                "start":255,
-                "tween":"Linear"
-              }
-            },
-            "objectState":[
-              
-            ]
-          },
-          {
-            "time":0.43333333333333,
-            "tag":"SubLight",
-            "sprite":"res\/graphics\/board\/effect\/combo_4\/combo_4_sub_light.png",
-            "actions":{
-              "x":{
-                "start":80,
-                "tween":"Linear"
               },
               "y":{
                 "start":0,
@@ -16604,6 +16125,89 @@
               },
               "scaleX":{
                 "start":2.5714285714286,
+                "tween":"Linear",
+                "startTime":0.43333333333333,
+                "endTime":0.5,
+                "end":3
+              },
+              "scaleY":{
+                "start":1.5,
+                "tween":"Linear"
+              },
+              "skewX":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "skewY":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "rotationX":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "rotationY":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "rotation":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "zIndex":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "opacity":{
+                "start":255,
+                "tween":"Linear",
+                "startTime":0.43333333333333,
+                "endTime":0.5,
+                "end":125
+              },
+              "r":{
+                "start":255,
+                "tween":"Linear"
+              },
+              "g":{
+                "start":255,
+                "tween":"Linear"
+              },
+              "b":{
+                "start":255,
+                "tween":"Linear"
+              }
+            },
+            "objectState":[
+              
+            ]
+          },
+          {
+            "time":0.43333333333333,
+            "tag":"SubLight",
+            "sprite":"combo_4_sub_light.png",
+            "actions":{
+              "x":{
+                "start":80,
+                "tween":"Linear",
+                "startTime":0.43333333333333,
+                "endTime":0.51666666666667,
+                "end":120
+              },
+              "y":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "anchorX":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "anchorY":{
+                "start":0.5,
+                "tween":"Linear"
+              },
+              "scaleX":{
+                "start":1,
                 "tween":"Linear"
               },
               "scaleY":{
@@ -16636,6 +16240,240 @@
               },
               "opacity":{
                 "start":255,
+                "tween":"Linear",
+                "startTime":0.43333333333333,
+                "endTime":0.51666666666667,
+                "end":125
+              },
+              "r":{
+                "start":255,
+                "tween":"Linear"
+              },
+              "g":{
+                "start":255,
+                "tween":"Linear"
+              },
+              "b":{
+                "start":255,
+                "tween":"Linear"
+              }
+            },
+            "objectState":[
+              
+            ]
+          },
+          {
+            "time":0.5,
+            "tag":"MainLight",
+            "sprite":"combo_4_main_light.png",
+            "actions":{
+              "x":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "y":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "anchorX":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "anchorY":{
+                "start":0.5,
+                "tween":"Linear"
+              },
+              "scaleX":{
+                "start":3,
+                "tween":"Linear"
+              },
+              "scaleY":{
+                "start":1.5,
+                "tween":"Linear"
+              },
+              "skewX":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "skewY":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "rotationX":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "rotationY":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "rotation":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "zIndex":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "opacity":{
+                "start":125,
+                "tween":"Linear",
+                "startTime":0.5,
+                "endTime":0.65,
+                "end":0
+              },
+              "r":{
+                "start":255,
+                "tween":"Linear"
+              },
+              "g":{
+                "start":255,
+                "tween":"Linear"
+              },
+              "b":{
+                "start":255,
+                "tween":"Linear"
+              }
+            },
+            "objectState":[
+              
+            ]
+          },
+          {
+            "time":0.51666666666667,
+            "tag":"SubLight",
+            "sprite":"combo_4_sub_light.png",
+            "actions":{
+              "x":{
+                "start":120,
+                "tween":"Linear",
+                "startTime":0.51666666666667,
+                "endTime":0.66666666666667,
+                "end":0
+              },
+              "y":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "anchorX":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "anchorY":{
+                "start":0.5,
+                "tween":"Linear"
+              },
+              "scaleX":{
+                "start":1,
+                "tween":"Linear"
+              },
+              "scaleY":{
+                "start":1.5,
+                "tween":"Linear"
+              },
+              "skewX":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "skewY":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "rotationX":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "rotationY":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "rotation":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "zIndex":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "opacity":{
+                "start":125,
+                "tween":"Linear",
+                "startTime":0.51666666666667,
+                "endTime":0.66666666666667,
+                "end":0
+              },
+              "r":{
+                "start":255,
+                "tween":"Linear"
+              },
+              "g":{
+                "start":255,
+                "tween":"Linear"
+              },
+              "b":{
+                "start":255,
+                "tween":"Linear"
+              }
+            },
+            "objectState":[
+              
+            ]
+          },
+          {
+            "time":0.65,
+            "tag":"MainLight",
+            "sprite":"res\/graphics\/board\/effect\/combo_4\/combo_4_main_light.png",
+            "actions":{
+              "x":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "y":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "anchorX":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "anchorY":{
+                "start":0.5,
+                "tween":"Linear"
+              },
+              "scaleX":{
+                "start":3,
+                "tween":"Linear"
+              },
+              "scaleY":{
+                "start":1.5,
+                "tween":"Linear"
+              },
+              "skewX":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "skewY":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "rotationX":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "rotationY":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "rotation":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "zIndex":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "opacity":{
+                "start":0,
                 "tween":"Linear"
               },
               "r":{
@@ -16652,6 +16490,111 @@
               }
             },
             "objectState":[
+              
+            ],
+            "event":""
+          },
+          {
+            "time":0.66666666666667,
+            "tag":"SubLight",
+            "sprite":"res\/graphics\/board\/effect\/combo_4\/combo_4_sub_light.png",
+            "actions":{
+              "x":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "y":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "anchorX":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "anchorY":{
+                "start":0.5,
+                "tween":"Linear"
+              },
+              "scaleX":{
+                "start":1,
+                "tween":"Linear"
+              },
+              "scaleY":{
+                "start":1.5,
+                "tween":"Linear"
+              },
+              "skewX":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "skewY":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "rotationX":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "rotationY":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "rotation":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "zIndex":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "opacity":{
+                "start":0,
+                "tween":"Linear"
+              },
+              "r":{
+                "start":255,
+                "tween":"Linear"
+              },
+              "g":{
+                "start":255,
+                "tween":"Linear"
+              },
+              "b":{
+                "start":255,
+                "tween":"Linear"
+              }
+            },
+            "objectState":[
+              
+            ],
+            "event":""
+          }
+        ]
+      },
+      "layers":{
+        "MainLight":{
+          "variableKeys":[
+            
+          ],
+          "objectStates":{
+            "":"res\/graphics\/board\/effect\/combo_4\/combo_4_main_light.png"
+          }
+        },
+        "SubLight":{
+          "variableKeys":[
+            
+          ],
+          "objectStates":{
+            "":"res\/graphics\/board\/effect\/combo_4\/combo_4_sub_light.png"
+          }
+        }
+      }
+    },
+    "delay":{
+      "variables":[
+        
+      ],
+      "variableDefault":[
               
             ]
           },
@@ -18261,11 +18204,6 @@
             
           ],
           "objectStates":{
-            "":"res\/graphics\/ui\/popup_target\/flashcard.png"
-          }
-        }
-      }
-    },
     "avatar":{
       "variables":[
         
