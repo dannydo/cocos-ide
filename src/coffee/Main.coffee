@@ -6,7 +6,7 @@ loaded = ->
       cc.view.setDesignResolutionSize(640, 960, cc.ResolutionPolicy.SHOW_ALL);
 
     cc.view.resizeWithBrowserSize(false);
-    cc.LoaderScene.preload resource.load, ->
+    cc.LoaderScene.preload [], ->
             cc.director.runScene(new MainScene());
         , this
 
