@@ -1,5 +1,5 @@
 <?php
-require_once "resource.php";
+#require_once "resource.php";
 
 
 header('Content-Type: text/javascript');
