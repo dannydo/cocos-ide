@@ -1,5 +1,5 @@
 {
-  "time":1405394785778,
+  "time":1405573022374,
   "object":{
     "gem":{
       "variables":{
@@ -14466,10 +14466,9 @@
                 "tween":"Linear"
               }
             },
-            "objectState":{
-              "type":"sfx",
-              "state":"on"
-            }
+            "objectState":[
+              
+            ]
           },
           {
             "time":0.16666666666667,
@@ -14541,10 +14540,9 @@
                 "tween":"Linear"
               }
             },
-            "objectState":{
-              "type":"sfx",
-              "state":"on"
-            }
+            "objectState":[
+              
+            ]
           }
         ],
         "release":[
@@ -14624,10 +14622,9 @@
                 "tween":"Linear"
               }
             },
-            "objectState":{
-              "type":"sfx",
-              "state":"on"
-            }
+            "objectState":[
+              
+            ]
           },
           {
             "time":0.16666666666667,
@@ -14699,10 +14696,9 @@
                 "tween":"Linear"
               }
             },
-            "objectState":{
-              "type":"sfx",
-              "state":"on"
-            }
+            "objectState":[
+              
+            ]
           }
         ]
       },
