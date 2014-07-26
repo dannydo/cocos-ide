@@ -86,15 +86,14 @@ else
       time: newTime
       object: object
 
-    @loadObjectFile 'src/php/resourceManager/objectLoad.php', (file)=>
-      if currentTime isnt file.time
-        if confirm('You are not a newest version. Are you really want to save?')
-          @saveObjectFile('src/php/resourceManager/objectSave.php', newFile)
-          @saveObjectFile('src/php/resourceManager/saveGameData.php', object)
-        else 
-          newTime = currentTime
-      else
-        @saveObjectFile('src/php/resourceManager/objectSave.php', newFile)
-        @saveObjectFile('src/php/resourceManager/saveGameData.php', object)
+    # @loadObjectFile 'src/php/resourceManager/objectLoad.php', (file)=>
+    #   if currentTime isnt file.time
+    #     if confirm('You are not a newest version. Are you really want to save?')
+    #       @saveObjectFile('src/php/resourceManager/objectSave.php', newFile)
+    #     else 
+    #       newTime = currentTime
+    #   else
+    #     @saveObjectFile('src/php/resourceManager/objectSave.php', newFile)
+    @saveObjectFile('src/php/resourceManager/objectSave.php', newFile)
 
     newTime

@@ -2,9 +2,10 @@
 class kiss.ResourceManager 
   constructor:({@app, @bindingName}={})->
     @objectFileTime = 0
-    @bindEvent = {}
-    @objectList = {}
-    @resouceMode = 'graphics'
+    @bindEvent      = {}
+    @objectList     = {}
+    @objectBackup   = {}
+    @resouceMode    = 'graphics'
     @form = {}
     if window?
       @_bootAngularJs();
@@ -107,7 +108,13 @@ class kiss.ResourceManager
     if @selectedObject.layers[layerName]?
       @selectedLayer = false
       delete @selectedObject.layers[layerName]
+      @deleteAnimation {layerName: layerName}
   
+  deleteAnimation: ({layerName})->
+    for animationName, animation of @selectedObject.animations
+      for index, action of animation.splice 0, animation.length 
+        if action.tag isnt layerName
+          animation.push action
 
 
   selectLayer: ({layerName})->
@@ -473,12 +480,23 @@ class kiss.ResourceManager
       req.send()
 
   saveObject: ->
-    @objectFileTime = _.saveObjectList(@objectFileTime, @objectList)
+    objectChanges = {}
+
+    for objectName, object of @objectList
+      if not _.isEqual(object, @objectBackup[objectName])
+        objectChanges[objectName] = object
+
+    for objectName, object of @objectBackup
+      if not @objectList[objectName]?
+        objectChanges[objectName] = {}
+
+    @objectFileTime = _.saveObjectList(@objectFileTime, objectChanges)
 
   loadObject: ->
     _.loadObjectFile 'src/php/resourceManager/objectLoad.php', (file)=>
       @objectFileTime = file.time
-      @objectList = file.object
+      @objectList     = file.object
+      @objectBackup   = _.clone @objectList, true
       
       for key, value of @objectList
         break

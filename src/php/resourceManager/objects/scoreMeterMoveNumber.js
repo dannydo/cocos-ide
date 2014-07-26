@@ -1,0 +1,44 @@
+{
+  "variableDefault":{
+    "number":"1"
+  },
+  "sounds":[
+    
+  ],
+  "animations":[
+    
+  ],
+  "variables":{
+    "number":[
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+    ]
+  },
+  "layers":{
+    "number":{
+      "variableKeys":[
+        "number"
+      ],
+      "objectStates":[
+        "res\/graphics\/board\/hud\/move_number\/move_number_0.png",
+        "res\/graphics\/board\/hud\/move_number\/move_number_1.png",
+        "res\/graphics\/board\/hud\/move_number\/move_number_2.png",
+        "res\/graphics\/board\/hud\/move_number\/move_number_3.png",
+        "res\/graphics\/board\/hud\/move_number\/move_number_4.png",
+        "res\/graphics\/board\/hud\/move_number\/move_number_5.png",
+        "res\/graphics\/board\/hud\/move_number\/move_number_6.png",
+        "res\/graphics\/board\/hud\/move_number\/move_number_7.png",
+        "res\/graphics\/board\/hud\/move_number\/move_number_8.png",
+        "res\/graphics\/board\/hud\/move_number\/move_number_9.png"
+      ]
+    }
+  }
+}

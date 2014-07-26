@@ -16,7 +16,9 @@ class kiss.objectList
   _bind:()->
     _.loadObjectFile 'src/php/resourceManager/objectLoad.php', (objectFile)=>
       @objectFileTime = objectFile.time
-      @objectList = objectFile.object
+      @objectList     = objectFile.object
+      @objectBackup   = _.clone @objectList, true
+
       @getObjectPosition()
       @renderObject()
 
@@ -163,8 +165,17 @@ class kiss.objectList
       @getAnimationPosition()
 
   saveObject: ->
-    console.log @objectList
-    @objectFileTime = _.saveObjectList(@objectFileTime, @objectList)
+    objectChanges = {}
+
+    for objectName, object of @objectList
+      if not _.isEqual(object, @objectBackup[objectName])
+        objectChanges[objectName] = object
+
+    for objectName, object of @objectBackup
+      if not @objectList[objectName]?
+        objectChanges[objectName] = {}
+
+    @objectFileTime = _.saveObjectList(@objectFileTime, objectChanges)
   
   getObjectPosition:()->
     @objectListPosition = []

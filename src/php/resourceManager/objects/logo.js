@@ -1,0 +1,25 @@
+{
+  "variables":{
+    "type":[
+      "startPage",
+      "menu"
+    ]
+  },
+  "variableDefault":{
+    "type":"startPage"
+  },
+  "animations":[
+    
+  ],
+  "layers":{
+    "body":{
+      "variableKeys":[
+        "type"
+      ],
+      "objectStates":{
+        "startPage":"res\/graphics\/ui\/panel_start\/startLogo.png",
+        "menu":"res\/graphics\/ui\/panel_setting\/settingLogo.png"
+      }
+    }
+  }
+}
