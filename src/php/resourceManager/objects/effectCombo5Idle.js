@@ -21,12 +21,12 @@
         "color"
       ],
       "objectStates":{
-        "white":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_white.png",
-        "green":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_green.png",
-        "red":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_red.png",
-        "blue":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_blue.png",
-        "pink":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_pink.png",
-        "orange":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_yellow.png"
+        "white":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_white.png",
+        "green":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_green.png",
+        "red":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_red.png",
+        "blue":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_blue.png",
+        "pink":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_pink.png",
+        "orange":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_yellow.png"
       }
     },
     "halo2":{
@@ -34,12 +34,12 @@
         "color"
       ],
       "objectStates":{
-        "white":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_white.png",
-        "green":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_green.png",
-        "red":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_red.png",
-        "blue":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_blue.png",
-        "pink":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_pink.png",
-        "orange":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_yellow.png"
+        "white":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_white.png",
+        "green":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_green.png",
+        "red":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_red.png",
+        "blue":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_blue.png",
+        "pink":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_pink.png",
+        "orange":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_yellow.png"
       }
     }
   },

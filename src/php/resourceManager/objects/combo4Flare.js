@@ -332,7 +332,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/board\/effect\/combo_4\/combo_4_flare.png"
+        "":"res\/graphics\/in-game\/effect\/combo_4\/combo_4_flare.png"
       }
     }
   }

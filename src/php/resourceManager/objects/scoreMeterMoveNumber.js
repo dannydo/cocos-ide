@@ -28,16 +28,16 @@
         "number"
       ],
       "objectStates":[
-        "res\/graphics\/board\/hud\/move_number\/move_number_0.png",
-        "res\/graphics\/board\/hud\/move_number\/move_number_1.png",
-        "res\/graphics\/board\/hud\/move_number\/move_number_2.png",
-        "res\/graphics\/board\/hud\/move_number\/move_number_3.png",
-        "res\/graphics\/board\/hud\/move_number\/move_number_4.png",
-        "res\/graphics\/board\/hud\/move_number\/move_number_5.png",
-        "res\/graphics\/board\/hud\/move_number\/move_number_6.png",
-        "res\/graphics\/board\/hud\/move_number\/move_number_7.png",
-        "res\/graphics\/board\/hud\/move_number\/move_number_8.png",
-        "res\/graphics\/board\/hud\/move_number\/move_number_9.png"
+        "res\/graphics\/graphic_font\/move_number\/move_number_0.png",
+        "res\/graphics\/graphic_font\/move_number\/move_number_1.png",
+        "res\/graphics\/graphic_font\/move_number\/move_number_2.png",
+        "res\/graphics\/graphic_font\/move_number\/move_number_3.png",
+        "res\/graphics\/graphic_font\/move_number\/move_number_4.png",
+        "res\/graphics\/graphic_font\/move_number\/move_number_5.png",
+        "res\/graphics\/graphic_font\/move_number\/move_number_6.png",
+        "res\/graphics\/graphic_font\/move_number\/move_number_7.png",
+        "res\/graphics\/graphic_font\/move_number\/move_number_8.png",
+        "res\/graphics\/graphic_font\/move_number\/move_number_9.png"
       ]
     }
   }

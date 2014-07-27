@@ -1,9 +1,7 @@
 {
   "variables":{
     "type":[
-      "playNow",
       "menu",
-      "popUpOk",
       "popUpYes",
       "popUpNo",
       "popUpCancel",
@@ -12,7 +10,9 @@
       "no1",
       "me",
       "facebookLogin",
-      "facebookLogout"
+      "facebookLogout",
+      "btn_back",
+      "btn_main_green"
     ]
   },
   "variableDefault":{
@@ -338,18 +338,18 @@
         "type"
       ],
       "objectStates":{
-        "playNow":"res\/graphics\/ui\/panel_start\/btn_play.png",
-        "menu":"res\/graphics\/ui\/panel_setting\/buttonSetting.png",
-        "popUpOk":"res\/graphics\/ui\/popup\/popUpButtonOk.png",
-        "popUpYes":"res\/graphics\/ui\/popup\/popUpButtonYes.png",
-        "popUpNo":"res\/graphics\/ui\/popup\/popUpButtonNo.png",
-        "popUpCancel":"res\/graphics\/ui\/popup\/popUpButtonClose.png",
-        "targetPopupClose":"res\/graphics\/ui\/popup_target\/btn_close.png",
-        "play":"res\/graphics\/ui\/popup_target\/play.png",
-        "no1":"res\/graphics\/ui\/popup_target\/btn-no1.png",
-        "me":"res\/graphics\/ui\/popup_target\/btn_me.png",
-        "facebookLogin":"res\/graphics\/ui\/panel_setting\/button\/btn_login.png",
-        "facebookLogout":"res\/graphics\/ui\/panel_setting\/button\/btn_logout.png"
+        "menu":"res\/graphics\/ui\/common_button\/btn_setting.png",
+        "popUpYes":"res\/graphics\/ui\/common_button\/yes.png",
+        "popUpNo":"res\/graphics\/ui\/common_button\/Untitled-1.png",
+        "popUpCancel":"res\/graphics\/ui\/common_button\/button_close_red.png",
+        "targetPopupClose":"res\/graphics\/ui\/common_button\/btn_close_green.png",
+        "play":"res\/graphics\/ui\/popup_target\/popup_target_play_btn.png",
+        "no1":"res\/graphics\/ui\/popup_target\/leaderboar_no1btn.png",
+        "me":"res\/graphics\/ui\/popup_target\/leaderboar_mebtn.png",
+        "facebookLogin":"res\/graphics\/ui\/popup_setting\/btn_login_fb.png",
+        "facebookLogout":"res\/graphics\/ui\/popup_setting\/btn_login_fb.png",
+        "btn_back":"res\/graphics\/ui\/common_button\/btn_back.png",
+        "btn_main_green":"res\/graphics\/ui\/common_button\/main_button_green.png"
       }
     }
   }

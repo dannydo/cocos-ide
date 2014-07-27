@@ -466,12 +466,12 @@
         "frames"
       ],
       "objectStates":{
-        "1":"res\/graphics\/board\/effect\/shield_break\/shield_break_01.png",
-        "2":"res\/graphics\/board\/effect\/shield_break\/shield_break_02.png",
-        "3":"res\/graphics\/board\/effect\/shield_break\/shield_break_03.png",
-        "4":"res\/graphics\/board\/effect\/shield_break\/shield_break_04.png",
-        "5":"res\/graphics\/board\/effect\/shield_break\/shield_break_05.png",
-        "6":"res\/graphics\/board\/effect\/shield_break\/shield_break_06.png"
+        "1":"res\/graphics\/in-game\/effect\/shield_break\/shield_break_01.png",
+        "2":"res\/graphics\/in-game\/effect\/shield_break\/shield_break_02.png",
+        "3":"res\/graphics\/in-game\/effect\/shield_break\/shield_break_03.png",
+        "4":"res\/graphics\/in-game\/effect\/shield_break\/shield_break_04.png",
+        "5":"res\/graphics\/in-game\/effect\/shield_break\/shield_break_05.png",
+        "6":"res\/graphics\/in-game\/effect\/shield_break\/shield_break_06.png"
       }
     }
   }

@@ -2,7 +2,9 @@
   "variables":{
     "backgroundType":[
       "1",
-      "2"
+      "2",
+      "3",
+      "4"
     ]
   },
   "variableDefault":{
@@ -21,7 +23,9 @@
       ],
       "objectStates":{
         "1":"res\/graphics\/ui\/popup_target\/score_bg_1.png",
-        "2":"res\/graphics\/ui\/popup_target\/score_bg_2.png"
+        "2":"res\/graphics\/ui\/popup_target\/score_bg_2.png",
+        "3":"res\/graphics\/ui\/popup_target\/score_bg_3.png",
+        "4":"res\/graphics\/ui\/popup_target\/score_bg_4.png"
       }
     }
   }

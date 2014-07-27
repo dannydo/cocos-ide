@@ -21,7 +21,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/ui\/popup_target\/booter_bg.png"
+        "":"res\/graphics\/ui\/common_icon\/booter_bg.png"
       }
     },
     "icon":{
@@ -29,9 +29,9 @@
         "type"
       ],
       "objectStates":{
-        "booster1":"res\/graphics\/ui\/popup_target\/booter_1.png",
-        "booster2":"res\/graphics\/ui\/popup_target\/booter_2.png",
-        "booster3":"res\/graphics\/ui\/popup_target\/booter_3.png"
+        "booster1":"res\/graphics\/ui\/common_icon\/booter_1.png",
+        "booster2":"res\/graphics\/ui\/common_icon\/booter_2.png",
+        "booster3":"res\/graphics\/ui\/common_icon\/booter_3.png"
       }
     }
   }

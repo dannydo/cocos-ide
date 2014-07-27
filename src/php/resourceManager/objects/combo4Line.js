@@ -790,7 +790,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/board\/effect\/combo_4\/combo_4_main_light.png"
+        "":"res\/graphics\/in-game\/effect\/combo_4\/combo_4_main_light.png"
       }
     },
     "SubLight":{
@@ -798,7 +798,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/board\/effect\/combo_4\/combo_4_sub_light.png"
+        "":"res\/graphics\/in-game\/effect\/combo_4\/combo_4_sub_light.png"
       }
     }
   }

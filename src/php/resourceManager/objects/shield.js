@@ -20,11 +20,11 @@
         "level"
       ],
       "objectStates":{
-        "1":"res\/graphics\/board\/shield\/shield_01.png",
-        "2":"res\/graphics\/board\/shield\/shield_02.png",
-        "3":"res\/graphics\/board\/shield\/shield_03.png",
-        "4":"res\/graphics\/board\/shield\/shield_04.png",
-        "5":"res\/graphics\/board\/shield\/shield_05.png"
+        "1":"res\/graphics\/in-game\/obstacle\/shield\/shield_01.png",
+        "2":"res\/graphics\/in-game\/obstacle\/shield\/shield_02.png",
+        "3":"res\/graphics\/in-game\/obstacle\/shield\/shield_03.png",
+        "4":"res\/graphics\/in-game\/obstacle\/shield\/shield_04.png",
+        "5":"res\/graphics\/in-game\/obstacle\/shield\/shield_05.png"
       }
     }
   }

@@ -729,7 +729,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/board\/effect\/flare.png"
+        "":"res\/graphics\/in-game\/effect\/flare.png"
       }
     },
     "ring":{
@@ -737,7 +737,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/board\/effect\/gem_ring.png"
+        "":"res\/graphics\/in-game\/effect\/gem_ring.png"
       }
     }
   }

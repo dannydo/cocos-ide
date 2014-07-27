@@ -17,7 +17,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/ui\/popup_target\/avatar_border.png"
+        "":"res\/graphics\/ui\/avatar_border.png"
       }
     }
   }

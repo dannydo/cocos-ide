@@ -1,0 +1,34 @@
+{
+  "variableDefault":{
+    "level":"1"
+  },
+  "sounds":[
+    
+  ],
+  "animations":[
+    
+  ],
+  "variables":{
+    "level":[
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ]
+  },
+  "layers":{
+    "body":{
+      "variableKeys":[
+        "level"
+      ],
+      "objectStates":{
+        "1":"res\/graphics\/in-game\/hud\/text_effect\/nice.png",
+        "2":"res\/graphics\/in-game\/hud\/text_effect\/lovely.png",
+        "3":"res\/graphics\/in-game\/hud\/text_effect\/beautiful.png",
+        "4":"res\/graphics\/in-game\/hud\/text_effect\/briliant.png",
+        "5":"res\/graphics\/in-game\/hud\/text_effect\/artistic.png"
+      }
+    }
+  }
+}

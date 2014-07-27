@@ -6,11 +6,10 @@
       "menu",
       "game",
       "overlay",
-      "popUp",
-      "targetRibbon",
+      "popup_large",
       "targetPopup",
       "leaderboard",
-      "popUpWaiting"
+      "popup_small"
     ],
     "state":[
       "off",
@@ -641,16 +640,15 @@
         "type"
       ],
       "objectStates":{
-        "loadingPage":"res\/graphics\/ui\/panel_loading\/loadingBackground.png",
-        "startPage":"res\/graphics\/ui\/chapter\/worldmap_bg_1.png",
-        "menu":"res\/graphics\/ui\/panel_setting\/settingBackground.png",
-        "game":"res\/graphics\/ui\/panel_board\/boardBackground.png",
-        "overlay":"res\/graphics\/ui\/overlayBackground.png",
-        "popUp":"res\/graphics\/ui\/popup\/popUpBackground.png",
-        "targetRibbon":"res\/graphics\/ui\/popup_target\/ribbon.png",
+        "loadingPage":"res\/graphics\/ui\/loading_screen\/loadingBackground.png",
+        "startPage":"res\/graphics\/ui\/worldmap_background\/worldmap_bg.png",
+        "menu":"res\/graphics\/ui\/popup_setting\/popup_setting_bg.png",
+        "game":"res\/graphics\/in-game\/hud\/gameboard_background.png",
+        "overlay":"res\/graphics\/ui\/overlay_background.png",
+        "popup_large":"res\/graphics\/ui\/common_panel\/popup_panel_large.png",
         "targetPopup":"res\/graphics\/ui\/popup_target\/popup_target_bg.png",
         "leaderboard":"res\/graphics\/ui\/popup_target\/leaderboard_bg.png",
-        "popUpWaiting":"res\/graphics\/ui\/popup\/panel_popup_waiting.png"
+        "popup_small":"res\/graphics\/ui\/common_panel\/popup_panel_small.png"
       }
     }
   }

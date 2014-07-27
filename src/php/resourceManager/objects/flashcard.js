@@ -17,7 +17,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/ui\/popup_target\/flashcard.png"
+        "":"res\/graphics\/flashcard\/flashcard.png"
       }
     }
   }

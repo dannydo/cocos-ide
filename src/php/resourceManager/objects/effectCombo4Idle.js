@@ -14,7 +14,15 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/board\/effect\/combo_idle\/combo4_bolt.png"
+        "":"res\/graphics\/in-game\/effect\/combo_idle\/combo4_bolt.png"
+      }
+    },
+    "gem":{
+      "variableKeys":[
+        
+      ],
+      "objectStates":{
+        "":"res\/graphics\/in-game\/gem\/blue\/blue_combo_4.png"
       }
     }
   },
@@ -425,5 +433,8 @@
         ]
       }
     ]
+  },
+  "layerHidden":{
+    "gem":true
   }
 }

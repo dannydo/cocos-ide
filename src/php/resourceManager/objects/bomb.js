@@ -30,11 +30,11 @@
         "Transform"
       ],
       "objectStates":{
-        "1":"res\/graphics\/board\/lock\/lock_count_down.png",
-        "2":"res\/graphics\/board\/effect\/lock_form\/lock_form_01.png",
-        "3":"res\/graphics\/board\/effect\/lock_form\/lock_form_02.png",
-        "4":"res\/graphics\/board\/effect\/lock_form\/lock_form_03.png",
-        "5":"res\/graphics\/board\/lock\/lock.png"
+        "1":"res\/graphics\/in-game\/obstacle\/lock\/lock_count_down.png",
+        "2":"res\/graphics\/in-game\/effect\/lock_form\/lock_form_01.png",
+        "3":"res\/graphics\/in-game\/effect\/lock_form\/lock_form_02.png",
+        "4":"res\/graphics\/in-game\/effect\/lock_form\/lock_form_03.png",
+        "5":"res\/graphics\/in-game\/obstacle\/lock\/lock.png"
       }
     },
     "gem":{
@@ -42,7 +42,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/board\/blue\/blue_combo_4.png"
+        "":"res\/graphics\/in-game\/gem\/blue\/blue_idle.png"
       }
     },
     "number":{
@@ -50,16 +50,16 @@
         "number"
       ],
       "objectStates":[
-        "res\/graphics\/board\/lock\/lock_number_00.png",
-        "res\/graphics\/board\/lock\/lock_number_01.png",
-        "res\/graphics\/board\/lock\/lock_number_02.png",
-        "res\/graphics\/board\/lock\/lock_number_03.png",
-        "res\/graphics\/board\/lock\/lock_number_04.png",
-        "res\/graphics\/board\/lock\/lock_number_05.png",
-        "res\/graphics\/board\/lock\/lock_number_06.png",
-        "res\/graphics\/board\/lock\/lock_number_07.png",
-        "res\/graphics\/board\/lock\/lock_number_08.png",
-        "res\/graphics\/board\/lock\/lock_number_09.png"
+        "res\/graphics\/graphic_font\/countdown_number\/countdown_number_0.png",
+        "res\/graphics\/graphic_font\/countdown_number\/countdown_number_1.png",
+        "res\/graphics\/graphic_font\/countdown_number\/countdown_number_2.png",
+        "res\/graphics\/graphic_font\/countdown_number\/countdown_number_3.png",
+        "res\/graphics\/graphic_font\/countdown_number\/countdown_number_4.png",
+        "res\/graphics\/graphic_font\/countdown_number\/countdown_number_5.png",
+        "res\/graphics\/graphic_font\/countdown_number\/countdown_number_6.png",
+        "res\/graphics\/graphic_font\/countdown_number\/countdown_number_7.png",
+        "res\/graphics\/graphic_font\/countdown_number\/countdown_number_8.png",
+        "res\/graphics\/graphic_font\/countdown_number\/countdown_number_9.png"
       ]
     }
   },

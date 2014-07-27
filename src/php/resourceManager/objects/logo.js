@@ -1,8 +1,7 @@
 {
   "variables":{
     "type":[
-      "startPage",
-      "menu"
+      "startPage"
     ]
   },
   "variableDefault":{
@@ -17,8 +16,7 @@
         "type"
       ],
       "objectStates":{
-        "startPage":"res\/graphics\/ui\/panel_start\/startLogo.png",
-        "menu":"res\/graphics\/ui\/panel_setting\/settingLogo.png"
+        "startPage":"res\/graphics\/ui\/logo\/logo.png"
       }
     }
   }

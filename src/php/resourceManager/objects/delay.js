@@ -166,7 +166,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/board\/rocket\/rocket_explosion.png"
+        "":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion.png"
       }
     }
   }

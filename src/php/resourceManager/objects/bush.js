@@ -616,7 +616,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/board\/bush\/bush_base.png"
+        "":"res\/graphics\/in-game\/hud\/bush\/bush_base.png"
       }
     },
     "top":{
@@ -624,13 +624,13 @@
         "frame"
       ],
       "objectStates":{
-        "1":"res\/graphics\/board\/bush\/bush_shake_01.png",
-        "2":"res\/graphics\/board\/bush\/bush_shake_02.png",
-        "3":"res\/graphics\/board\/bush\/bush_shake_03.png",
-        "4":"res\/graphics\/board\/bush\/bush_shake_04.png",
-        "5":"res\/graphics\/board\/bush\/bush_shake_05.png",
-        "6":"res\/graphics\/board\/bush\/bush_shake_06.png",
-        "7":"res\/graphics\/board\/bush\/bush_shake_07.png"
+        "1":"res\/graphics\/in-game\/hud\/bush\/bush_shake_01.png",
+        "2":"res\/graphics\/in-game\/hud\/bush\/bush_shake_02.png",
+        "3":"res\/graphics\/in-game\/hud\/bush\/bush_shake_03.png",
+        "4":"res\/graphics\/in-game\/hud\/bush\/bush_shake_04.png",
+        "5":"res\/graphics\/in-game\/hud\/bush\/bush_shake_05.png",
+        "6":"res\/graphics\/in-game\/hud\/bush\/bush_shake_06.png",
+        "7":"res\/graphics\/in-game\/hud\/bush\/bush_shake_07.png"
       }
     }
   }

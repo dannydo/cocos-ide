@@ -818,7 +818,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/board\/effect\/letter\/letter_flare.png"
+        "":"res\/graphics\/in-game\/effect\/letter\/letter_flare.png"
       }
     },
     "ring":{
@@ -826,7 +826,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/board\/effect\/letter\/letter_ring.png"
+        "":"res\/graphics\/in-game\/effect\/letter\/letter_ring.png"
       }
     },
     "star":{
@@ -834,7 +834,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/board\/effect\/letter\/letter_star.png"
+        "":"res\/graphics\/in-game\/effect\/letter\/letter_star.png"
       }
     }
   }

@@ -14,7 +14,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/board\/lock\/lock.png"
+        "":"res\/graphics\/in-game\/obstacle\/lock\/lock.png"
       }
     }
   }

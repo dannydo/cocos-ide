@@ -543,7 +543,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/board\/hud\/header\/headerBackground.png"
+        "":"res\/graphics\/in-game\/hud\/header\/headerBackground.png"
       }
     },
     "leftEye":{
@@ -551,7 +551,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/board\/hud\/header\/headerLeftEye.png"
+        "":"res\/graphics\/in-game\/hud\/header\/headerLeftEye.png"
       }
     },
     "rightEye":{
@@ -559,7 +559,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/board\/hud\/header\/headerRightEye.png"
+        "":"res\/graphics\/in-game\/hud\/header\/headerRightEye.png"
       }
     },
     "body":{
@@ -567,7 +567,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/board\/hud\/header\/headerMiddle.png"
+        "":"res\/graphics\/in-game\/hud\/header\/headerMiddle.png"
       }
     },
     "mouth":{
@@ -575,7 +575,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/board\/hud\/header\/headerMouth.png"
+        "":"res\/graphics\/in-game\/hud\/header\/headerMouth.png"
       }
     },
     "leftEyeSocket":{
@@ -583,7 +583,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/board\/hud\/header\/headerLeft.png"
+        "":"res\/graphics\/in-game\/hud\/header\/headerLeft.png"
       }
     },
     "rightEyeSocket":{
@@ -591,7 +591,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/board\/hud\/header\/headerRight.png"
+        "":"res\/graphics\/in-game\/hud\/header\/headerRight.png"
       }
     }
   }

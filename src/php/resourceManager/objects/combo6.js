@@ -1080,20 +1080,20 @@
         "Frames"
       ],
       "objectStates":{
-        "1":"res\/graphics\/board\/effect\/combo_6\/combo_6_01.png",
-        "2":"res\/graphics\/board\/effect\/combo_6\/combo_6_02.png",
-        "3":"res\/graphics\/board\/effect\/combo_6\/combo_6_03.png",
-        "4":"res\/graphics\/board\/effect\/combo_6\/combo_6_04.png",
-        "5":"res\/graphics\/board\/effect\/combo_6\/combo_6_05.png",
-        "6":"res\/graphics\/board\/effect\/combo_6\/combo_6_06.png",
-        "7":"res\/graphics\/board\/effect\/combo_6\/combo_6_07.png",
-        "8":"res\/graphics\/board\/effect\/combo_6\/combo_6_08.png",
-        "9":"res\/graphics\/board\/effect\/combo_6\/combo_6_09.png",
-        "10":"res\/graphics\/board\/effect\/combo_6\/combo_6_10.png",
-        "11":"res\/graphics\/board\/effect\/combo_6\/combo_6_11.png",
-        "12":"res\/graphics\/board\/effect\/combo_6\/combo_6_12.png",
-        "13":"res\/graphics\/board\/effect\/combo_6\/combo_6_13.png",
-        "14":"res\/graphics\/board\/effect\/combo_6\/combo_6_14.png"
+        "1":"res\/graphics\/in-game\/effect\/combo_6\/combo_6_01.png",
+        "2":"res\/graphics\/in-game\/effect\/combo_6\/combo_6_02.png",
+        "3":"res\/graphics\/in-game\/effect\/combo_6\/combo_6_03.png",
+        "4":"res\/graphics\/in-game\/effect\/combo_6\/combo_6_04.png",
+        "5":"res\/graphics\/in-game\/effect\/combo_6\/combo_6_05.png",
+        "6":"res\/graphics\/in-game\/effect\/combo_6\/combo_6_06.png",
+        "7":"res\/graphics\/in-game\/effect\/combo_6\/combo_6_07.png",
+        "8":"res\/graphics\/in-game\/effect\/combo_6\/combo_6_08.png",
+        "9":"res\/graphics\/in-game\/effect\/combo_6\/combo_6_09.png",
+        "10":"res\/graphics\/in-game\/effect\/combo_6\/combo_6_10.png",
+        "11":"res\/graphics\/in-game\/effect\/combo_6\/combo_6_11.png",
+        "12":"res\/graphics\/in-game\/effect\/combo_6\/combo_6_12.png",
+        "13":"res\/graphics\/in-game\/effect\/combo_6\/combo_6_13.png",
+        "14":"res\/graphics\/in-game\/effect\/combo_6\/combo_6_14.png"
       }
     }
   }

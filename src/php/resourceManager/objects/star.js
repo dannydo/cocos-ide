@@ -20,8 +20,8 @@
         "type"
       ],
       "objectStates":{
-        "starDisable":"res\/graphics\/ui\/popup_target\/star_disable.png",
-        "starEnable":"res\/graphics\/ui\/popup_target\/star_active.png"
+        "starDisable":"res\/graphics\/ui\/common_icon\/star_disable.png",
+        "starEnable":"res\/graphics\/ui\/common_icon\/star_active.png"
       }
     }
   }

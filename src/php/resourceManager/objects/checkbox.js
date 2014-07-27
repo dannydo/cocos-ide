@@ -3,7 +3,8 @@
     "type":[
       "sfx",
       "voice",
-      "music"
+      "music",
+      "checkbox"
     ],
     "state":[
       "on",
@@ -339,12 +340,14 @@
         "state"
       ],
       "objectStates":{
-        "sfx,on":"res\/graphics\/ui\/panel_setting\/checkbox\/btn_sfx.png",
-        "voice,on":"res\/graphics\/ui\/panel_setting\/checkbox\/btn_voice.png",
-        "music,on":"res\/graphics\/ui\/panel_setting\/checkbox\/btn_music.png",
-        "sfx,off":"res\/graphics\/ui\/panel_setting\/checkbox\/btn_sound_off.png",
-        "voice,off":"res\/graphics\/ui\/panel_setting\/checkbox\/btn_voice_off.png",
-        "music,off":"res\/graphics\/ui\/panel_setting\/checkbox\/btn_music_off.png"
+        "sfx,on":"res\/graphics\/ui\/popup_setting\/ico_sfx_on.png",
+        "voice,on":"res\/graphics\/ui\/popup_setting\/ico_voice_on.png",
+        "music,on":"res\/graphics\/ui\/popup_setting\/ico_music_on.png",
+        "sfx,off":"res\/graphics\/ui\/popup_setting\/ico_sfx_off.png",
+        "voice,off":"res\/graphics\/ui\/popup_setting\/ico_voice_off.png",
+        "music,off":"res\/graphics\/ui\/popup_setting\/ico_music_off.png",
+        "checkbox,on":"res\/graphics\/ui\/common_button\/checkbox_check.png",
+        "checkbox,off":"res\/graphics\/ui\/common_button\/checkbox_uncheck.png"
       }
     }
   }

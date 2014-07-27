@@ -17,8 +17,8 @@
         "isDestroyed"
       ],
       "objectStates":{
-        "true":"res\/graphics\/board\/hud\/header\/headerEggDestroyed.png",
-        "false":"res\/graphics\/board\/hud\/header\/headerEgg.png"
+        "true":"res\/graphics\/in-game\/hud\/header\/headerEggDestroyed.png",
+        "false":"res\/graphics\/in-game\/hud\/header\/headerEgg.png"
       }
     }
   },

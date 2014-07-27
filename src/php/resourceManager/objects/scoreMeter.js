@@ -14,7 +14,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/board\/hud\/score\/score_meter.png"
+        "":"res\/graphics\/in-game\/hud\/score\/score_meter.png"
       }
     },
     "progress":{
@@ -22,7 +22,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/board\/hud\/score\/score_yellow_bar.png"
+        "":"res\/graphics\/in-game\/hud\/score\/score_yellow_bar.png"
       }
     }
   },

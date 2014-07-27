@@ -19,7 +19,7 @@
         
       ],
       "objectStates":{
-        "":"res\/graphics\/ui\/popup_target\/ico_send_life.png"
+        "":"res\/graphics\/ui\/common_icon\/ico_send_life.png"
       }
     }
   }

@@ -20,8 +20,8 @@
         "state"
       ],
       "objectStates":{
-        "enable":"res\/graphics\/board\/hud\/score\/score_gold_star.png",
-        "disable":"res\/graphics\/board\/hud\/score\/score_gray_star.png"
+        "enable":"res\/graphics\/in-game\/hud\/score\/score_gold_star.png",
+        "disable":"res\/graphics\/in-game\/hud\/score\/score_gray_star.png"
       }
     }
   }
