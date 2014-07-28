@@ -12,7 +12,11 @@
       "facebookLogin",
       "facebookLogout",
       "btn_back",
-      "btn_main_green"
+      "btn_main_green",
+      "flashcard",
+      "tutorialButton",
+      "buyLife",
+      "askLife"
     ]
   },
   "variableDefault":{
@@ -347,9 +351,13 @@
         "no1":"res\/graphics\/ui\/popup_target\/leaderboar_no1btn.png",
         "me":"res\/graphics\/ui\/popup_target\/leaderboar_mebtn.png",
         "facebookLogin":"res\/graphics\/ui\/popup_setting\/btn_login_fb.png",
-        "facebookLogout":"res\/graphics\/ui\/popup_setting\/btn_login_fb.png",
+        "facebookLogout":"res\/graphics\/ui\/popup_setting\/btn_logout_fb.png",
         "btn_back":"res\/graphics\/ui\/common_button\/btn_back.png",
-        "btn_main_green":"res\/graphics\/ui\/common_button\/main_button_green.png"
+        "btn_main_green":"res\/graphics\/ui\/common_button\/main_button_green.png",
+        "flashcard":"res\/graphics\/ui\/common_button\/btn_flashcard.png",
+        "tutorialButton":"res\/graphics\/ui\/popup_setting\/btn_tutorial.png",
+        "buyLife":"res\/graphics\/ui\/popup_buy_life\/buy_life_btn.png",
+        "askLife":"res\/graphics\/ui\/popup_buy_life\/ask_friend_btn.png"
       }
     }
   }
