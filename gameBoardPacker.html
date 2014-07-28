@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Game Board Packer</title>
+
+    <script type="text/javascript">
+      var kiss = {}
+    </script>
+
+    <script src="library/coffeescript.js"></script>
+    <script src="library/growingPacker.js"></script>
+    <script src="../engine/res/Resources.js"></script>
+    <script src="src/html/packerImage.coffee" type="text/coffeescript"></script>
+
+    <script type="text/coffeescript">
+      packerImage = new kiss.PackerImage()
+
+      resourcesGame = {};
+      for key, value of kiss.resources
+        if key.indexOf("res\/graphics\/in-game") != -1
+          resourcesGame[key] = value
+
+      dataPacker = packerImage.packer({resources: resourcesGame});
+      packerImage.savePacker(dataPacker, 'gamePackerResources.json')
+
+      req = new XMLHttpRequest()
+      req.addEventListener 'readystatechange', =>
+        if req.readyState is 4                        # ReadyState Compelte
+          successResultCodes = [200, 304]
+          if req.status in successResultCodes
+
+          else
+            console.log 'Error loading data...'
+
+      url = 'src/php/generatePackerImage.php?filename=gamePackerResources.json'
+      req.open 'GET', url, false
+      req.send()
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

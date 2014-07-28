@@ -2,6 +2,11 @@
 
 require_once "../directory_listing.php";
 require_once "./json.php";
+require_once "./trimImage.php";
+
+ini_set('max_execution_time', 0);
+set_time_limit(0);
+error_reporting(E_ALL);
 
 $file_names = directory_listing("../../../../engine/res");
 
@@ -56,14 +61,26 @@ foreach($imageList as $file_name){
   $key = lcfirst (str_replace(" ", "", ucwords($key)));
   $filenameUsed = str_replace("../../../", "", $file_name);
 
+  //echo $file_name . "\n";
+
+  $boundRect = array();
+  if (strpos($file_name, "res/graphics/in-game") !== false) {
+    $boundRect = trimImage($file_name);
+  }
+
   $images[$filenameUsed] = array(
     'width'  => $width,
     'height' => $height,
+    'boundRect' => $boundRect
   );
+  unset($boundRect);
 }
+`rm -rf temp`;
 
 $jsonData          = str_replace('..\/engine\/res\/', 'res\/', json_encode($images));
 $imagesizeFilePath = '../../../../engine/res/Resources.js';
+//$imagesizeFilePath = 'Resources.js';
+
 $resouceImagesize  = 'var resources;
 
 resources = ' . jsonBeautifier($jsonData) . ';
