@@ -1,39 +1,211 @@
 {
   "variableDefault":{
-    "level":"1"
+    "number":"0"
   },
   "sounds":[
     
   ],
   "variables":{
-    "level":[
+    "number":[
+      "0",
       "1",
       "2",
       "3",
       "4",
-      "5"
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
     ]
   },
   "layers":{
     "body":{
       "variableKeys":[
-        "level"
+        "number"
       ],
-      "objectStates":{
-        "1":"res\/graphics\/in-game\/hud\/text_effect\/nice.png",
-        "2":"res\/graphics\/in-game\/hud\/text_effect\/lovely.png",
-        "3":"res\/graphics\/in-game\/hud\/text_effect\/beautiful.png",
-        "4":"res\/graphics\/in-game\/hud\/text_effect\/briliant.png",
-        "5":"res\/graphics\/in-game\/hud\/text_effect\/artistic.png"
-      }
+      "objectStates":[
+        "res\/graphics\/graphic_font\/score_number\/score_number_0.png",
+        "res\/graphics\/graphic_font\/score_number\/score_number_1.png",
+        "res\/graphics\/graphic_font\/score_number\/score_number_2.png",
+        "res\/graphics\/graphic_font\/score_number\/score_number_3.png",
+        "res\/graphics\/graphic_font\/score_number\/score_number_4.png",
+        "res\/graphics\/graphic_font\/score_number\/score_number_5.png",
+        "res\/graphics\/graphic_font\/score_number\/score_number_6.png",
+        "res\/graphics\/graphic_font\/score_number\/score_number_7.png",
+        "res\/graphics\/graphic_font\/score_number\/score_number_8.png",
+        "res\/graphics\/graphic_font\/score_number\/score_number_9.png"
+      ]
     }
   },
   "animations":{
-    "textFly":[
+    "scoreAppear":[
       {
         "time":0,
         "tag":"body",
-        "sprite":"res\/graphics\/in-game\/hud\/text_effect\/nice.png",
+        "sprite":"res\/graphics\/graphic_font\/score_number\/score_number_0.png",
+        "actions":{
+          "x":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "y":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "anchorX":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "anchorY":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "scaleX":{
+            "start":0.2,
+            "tween":"Linear",
+            "startTime":0,
+            "endTime":0.16666666666667,
+            "end":1.3
+          },
+          "scaleY":{
+            "start":0.2,
+            "tween":"Linear",
+            "startTime":0,
+            "endTime":0.16666666666667,
+            "end":1.3
+          },
+          "skewX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotation":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "zIndex":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "opacity":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "r":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "g":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "b":{
+            "start":255,
+            "tween":"Linear"
+          }
+        },
+        "objectState":{
+          "number":"0"
+        },
+        "event":""
+      },
+      {
+        "time":0.16666666666667,
+        "tag":"body",
+        "sprite":"res\/graphics\/graphic_font\/score_number\/score_number_0.png",
+        "actions":{
+          "x":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "y":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "anchorX":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "anchorY":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "scaleX":{
+            "start":1.3,
+            "tween":"Linear",
+            "startTime":0.16666666666667,
+            "endTime":0.2,
+            "end":1
+          },
+          "scaleY":{
+            "start":1.3,
+            "tween":"Linear",
+            "startTime":0.16666666666667,
+            "endTime":0.2,
+            "end":1
+          },
+          "skewX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotation":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "zIndex":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "opacity":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "r":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "g":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "b":{
+            "start":255,
+            "tween":"Linear"
+          }
+        },
+        "objectState":{
+          "number":"0"
+        },
+        "event":""
+      },
+      {
+        "time":0.21666666666667,
+        "tag":"body",
+        "sprite":"res\/graphics\/graphic_font\/score_number\/score_number_0.png",
         "actions":{
           "x":{
             "start":0,
@@ -42,9 +214,9 @@
           "y":{
             "start":0,
             "tween":"Linear",
-            "startTime":0,
+            "startTime":0.2,
             "endTime":0.5,
-            "end":120
+            "end":60
           },
           "anchorX":{
             "start":0.5,
@@ -87,11 +259,8 @@
             "tween":"Linear"
           },
           "opacity":{
-            "start":0,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.5,
-            "end":255
+            "start":255,
+            "tween":"Linear"
           },
           "r":{
             "start":255,
@@ -107,21 +276,21 @@
           }
         },
         "objectState":{
-          "level":"1"
+          "number":"0"
         },
         "event":""
       },
       {
         "time":0.5,
         "tag":"body",
-        "sprite":"res\/graphics\/in-game\/hud\/text_effect\/nice.png",
+        "sprite":"res\/graphics\/graphic_font\/score_number\/score_number_0.png",
         "actions":{
           "x":{
             "start":0,
             "tween":"Linear"
           },
           "y":{
-            "start":120,
+            "start":60,
             "tween":"Linear"
           },
           "anchorX":{
@@ -166,171 +335,9 @@
           },
           "opacity":{
             "start":255,
-            "tween":"Linear"
-          },
-          "r":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "g":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "b":{
-            "start":255,
-            "tween":"Linear"
-          }
-        },
-        "objectState":{
-          "level":"1"
-        },
-        "event":""
-      },
-      {
-        "time":0.66666666666667,
-        "tag":"body",
-        "sprite":"res\/graphics\/in-game\/hud\/text_effect\/nice.png",
-        "actions":{
-          "x":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "y":{
-            "start":120,
             "tween":"Linear",
-            "startTime":0.66666666666667,
-            "endTime":0.91666666666667,
-            "end":130
-          },
-          "anchorX":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "anchorY":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "scaleX":{
-            "start":1,
-            "tween":"Linear",
-            "startTime":0.66666666666667,
-            "endTime":0.91666666666667,
-            "end":1.3
-          },
-          "scaleY":{
-            "start":1,
-            "tween":"Linear",
-            "startTime":0.66666666666667,
-            "endTime":0.91666666666667,
-            "end":1.3
-          },
-          "skewX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "skewY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotation":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "zIndex":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "opacity":{
-            "start":255,
-            "tween":"Linear",
-            "startTime":0.66666666666667,
-            "endTime":0.91666666666667,
-            "end":100
-          },
-          "r":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "g":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "b":{
-            "start":255,
-            "tween":"Linear"
-          }
-        },
-        "objectState":{
-          "level":"1"
-        },
-        "event":""
-      },
-      {
-        "time":0.91666666666667,
-        "tag":"body",
-        "sprite":"res\/graphics\/in-game\/hud\/text_effect\/nice.png",
-        "actions":{
-          "x":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "y":{
-            "start":130,
-            "tween":"Linear"
-          },
-          "anchorX":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "anchorY":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "scaleX":{
-            "start":1.3,
-            "tween":"Linear"
-          },
-          "scaleY":{
-            "start":1.3,
-            "tween":"Linear"
-          },
-          "skewX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "skewY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotation":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "zIndex":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "opacity":{
-            "start":100,
-            "tween":"Linear",
-            "startTime":0.91666666666667,
-            "endTime":0.93333333333333,
+            "startTime":0.5,
+            "endTime":0.58333333333333,
             "end":0
           },
           "r":{
@@ -347,21 +354,21 @@
           }
         },
         "objectState":{
-          "level":"1"
+          "number":"0"
         },
         "event":""
       },
       {
-        "time":0.93333333333333,
+        "time":0.58333333333333,
         "tag":"body",
-        "sprite":"res\/graphics\/in-game\/hud\/text_effect\/nice.png",
+        "sprite":"res\/graphics\/graphic_font\/score_number\/score_number_0.png",
         "actions":{
           "x":{
             "start":0,
             "tween":"Linear"
           },
           "y":{
-            "start":130,
+            "start":60,
             "tween":"Linear"
           },
           "anchorX":{
@@ -373,11 +380,11 @@
             "tween":"Linear"
           },
           "scaleX":{
-            "start":1.3,
+            "start":1,
             "tween":"Linear"
           },
           "scaleY":{
-            "start":1.3,
+            "start":1,
             "tween":"Linear"
           },
           "skewX":{
@@ -422,7 +429,7 @@
           }
         },
         "objectState":{
-          "level":"1"
+          "number":"0"
         },
         "event":""
       }

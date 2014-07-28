@@ -4447,7 +4447,7 @@
         "red,on,1":"res\/graphics\/in-game\/gem\/red\/red_idle_snap.png",
         "blue,on,1":"res\/graphics\/in-game\/gem\/blue\/blue_idle_snap.png",
         "green,on,1":"res\/graphics\/in-game\/gem\/green\/green_idle_snap.png",
-        "pink,on,1":"res\/graphics\/in-game\/gem\/pink\/pink_combo_4_snap.png",
+        "pink,on,1":"res\/graphics\/in-game\/gem\/pink\/pink_idle_snap.png",
         "orange,on,1":"res\/graphics\/in-game\/gem\/orange\/orange_idle_snap.png",
         "white,on,1":"res\/graphics\/in-game\/gem\/white\/white_idle_snap.png",
         "red,off,2":"res\/graphics\/in-game\/gem\/red\/red_combo_4.png",

@@ -1,47 +1,37 @@
 {
-  "variables":{
-    "isDestroyed":[
-      "false",
-      "true"
-    ]
-  },
-  "variableDefault":{
-    "isDestroyed":"true"
-  },
+  "variables":[
+    
+  ],
+  "variableDefault":[
+    
+  ],
   "sounds":[
     
   ],
   "layers":{
     "body":{
       "variableKeys":[
-        "isDestroyed"
+        
       ],
       "objectStates":{
-        "true":"res\/graphics\/in-game\/hud\/header\/headerEggDestroyed.png",
-        "false":"res\/graphics\/in-game\/hud\/header\/headerEgg.png"
+        "":"res\/graphics\/in-game\/effect\/letter\/letter_bubble.png"
       }
     }
   },
   "animations":{
-    "dfgdf":[
+    "GetLetter":[
       {
         "time":0,
         "tag":"body",
-        "sprite":"res\/graphics\/board\/hud\/header\/headerEgg.png",
+        "sprite":"res\/graphics\/in-game\/effect\/letter\/letter_bubble.png",
         "actions":{
           "x":{
-            "start":-17,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.066666666666667,
-            "end":0
+            "start":0,
+            "tween":"Linear"
           },
           "y":{
-            "start":26,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.066666666666667,
-            "end":0
+            "start":0,
+            "tween":"Linear"
           },
           "anchorX":{
             "start":0.5,
@@ -52,12 +42,18 @@
             "tween":"Linear"
           },
           "scaleX":{
-            "start":1,
-            "tween":"Linear"
+            "start":0.3,
+            "tween":"Linear",
+            "startTime":0,
+            "endTime":0.1,
+            "end":2.5
           },
           "scaleY":{
-            "start":1,
-            "tween":"Linear"
+            "start":0.3,
+            "tween":"Linear",
+            "startTime":0,
+            "endTime":0.1,
+            "end":2.5
           },
           "skewX":{
             "start":0,
@@ -84,7 +80,7 @@
             "tween":"Linear"
           },
           "opacity":{
-            "start":255,
+            "start":100,
             "tween":"Linear"
           },
           "r":{
@@ -100,15 +96,15 @@
             "tween":"Linear"
           }
         },
-        "objectState":{
-          "isDestroyed":"false"
-        },
+        "objectState":[
+          
+        ],
         "event":""
       },
       {
-        "time":0.066666666666667,
+        "time":0.1,
         "tag":"body",
-        "sprite":"res\/graphics\/board\/hud\/header\/headerEgg.png",
+        "sprite":"res\/graphics\/in-game\/effect\/letter\/letter_bubble.png",
         "actions":{
           "x":{
             "start":0,
@@ -127,11 +123,95 @@
             "tween":"Linear"
           },
           "scaleX":{
-            "start":1,
+            "start":2.5,
+            "tween":"Linear",
+            "startTime":0.1,
+            "endTime":0.33333333333333,
+            "end":0.65
+          },
+          "scaleY":{
+            "start":2.5,
+            "tween":"Linear",
+            "startTime":0.1,
+            "endTime":0.33333333333333,
+            "end":0.65
+          },
+          "skewX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotation":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "zIndex":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "opacity":{
+            "start":100,
+            "tween":"Linear",
+            "startTime":0.1,
+            "endTime":0.33333333333333,
+            "end":255
+          },
+          "r":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "g":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "b":{
+            "start":255,
+            "tween":"Linear"
+          }
+        },
+        "objectState":[
+          
+        ],
+        "event":""
+      },
+      {
+        "time":0.33333333333333,
+        "tag":"body",
+        "sprite":"res\/graphics\/in-game\/effect\/letter\/letter_bubble.png",
+        "actions":{
+          "x":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "y":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "anchorX":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "anchorY":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "scaleX":{
+            "start":0.65,
             "tween":"Linear"
           },
           "scaleY":{
-            "start":1,
+            "start":0.65,
             "tween":"Linear"
           },
           "skewX":{
@@ -175,16 +255,174 @@
             "tween":"Linear"
           }
         },
-        "objectState":{
-          "isDestroyed":"false"
-        }
+        "objectState":[
+          
+        ],
+        "event":""
+      }
+    ],
+    "LetterFly":[
+      {
+        "time":0,
+        "tag":"body",
+        "sprite":"res\/graphics\/in-game\/effect\/letter\/letter_bubble.png",
+        "actions":{
+          "x":{
+            "start":0,
+            "tween":"Linear",
+            "startTime":0,
+            "endTime":0.083333333333333,
+            "end":80
+          },
+          "y":{
+            "start":0,
+            "tween":"Linear",
+            "startTime":0,
+            "endTime":0.083333333333333,
+            "end":80
+          },
+          "anchorX":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "anchorY":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "scaleX":{
+            "start":0.65,
+            "tween":"Linear"
+          },
+          "scaleY":{
+            "start":0.65,
+            "tween":"Linear"
+          },
+          "skewX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotation":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "zIndex":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "opacity":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "r":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "g":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "b":{
+            "start":255,
+            "tween":"Linear"
+          }
+        },
+        "objectState":[
+          
+        ]
+      },
+      {
+        "time":0.083333333333333,
+        "tag":"body",
+        "sprite":"res\/graphics\/in-game\/effect\/letter\/letter_bubble.png",
+        "actions":{
+          "x":{
+            "start":80,
+            "tween":"Linear"
+          },
+          "y":{
+            "start":80,
+            "tween":"Linear"
+          },
+          "anchorX":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "anchorY":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "scaleX":{
+            "start":0.65,
+            "tween":"Linear"
+          },
+          "scaleY":{
+            "start":0.65,
+            "tween":"Linear"
+          },
+          "skewX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotation":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "zIndex":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "opacity":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "r":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "g":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "b":{
+            "start":255,
+            "tween":"Linear"
+          }
+        },
+        "objectState":[
+          
+        ],
+        "event":""
       }
     ],
     "FillLetter":[
       {
         "time":0,
         "tag":"body",
-        "sprite":"res\/graphics\/in-game\/hud\/header\/headerEgg.png",
+        "sprite":"res\/graphics\/in-game\/effect\/letter\/letter_bubble.png",
         "actions":{
           "x":{
             "start":0,
@@ -203,18 +441,12 @@
             "tween":"Linear"
           },
           "scaleX":{
-            "start":1,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.016666666666667,
-            "end":1.3
+            "start":0.65,
+            "tween":"Linear"
           },
           "scaleY":{
-            "start":1,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.016666666666667,
-            "end":1.3
+            "start":0.65,
+            "tween":"Linear"
           },
           "skewX":{
             "start":0,
@@ -257,95 +489,15 @@
             "tween":"Linear"
           }
         },
-        "objectState":{
-          "isDestroyed":"false"
-        }
-      },
-      {
-        "time":0.016666666666667,
-        "tag":"body",
-        "sprite":"res\/graphics\/in-game\/hud\/header\/headerEgg.png",
-        "actions":{
-          "x":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "y":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "anchorX":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "anchorY":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "scaleX":{
-            "start":1.3,
-            "tween":"Linear",
-            "startTime":0.016666666666667,
-            "endTime":0.05,
-            "end":1
-          },
-          "scaleY":{
-            "start":1.3,
-            "tween":"Linear",
-            "startTime":0.016666666666667,
-            "endTime":0.05,
-            "end":1
-          },
-          "skewX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "skewY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotation":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "zIndex":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "opacity":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "r":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "g":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "b":{
-            "start":255,
-            "tween":"Linear"
-          }
-        },
-        "objectState":{
-          "isDestroyed":"false"
-        },
+        "objectState":[
+          
+        ],
         "event":""
       },
       {
         "time":0.05,
         "tag":"body",
-        "sprite":"res\/graphics\/in-game\/hud\/header\/headerEggDestroyed.png",
+        "sprite":"res\/graphics\/in-game\/effect\/letter\/letter_bubble.png",
         "actions":{
           "x":{
             "start":0,
@@ -364,12 +516,18 @@
             "tween":"Linear"
           },
           "scaleX":{
-            "start":1,
-            "tween":"Linear"
+            "start":0.65,
+            "tween":"Linear",
+            "startTime":0.05,
+            "endTime":0.21666666666667,
+            "end":4
           },
           "scaleY":{
-            "start":1,
-            "tween":"Linear"
+            "start":0.65,
+            "tween":"Linear",
+            "startTime":0.05,
+            "endTime":0.21666666666667,
+            "end":4
           },
           "skewX":{
             "start":0,
@@ -397,7 +555,10 @@
           },
           "opacity":{
             "start":255,
-            "tween":"Linear"
+            "tween":"Linear",
+            "startTime":0.05,
+            "endTime":0.21666666666667,
+            "end":0
           },
           "r":{
             "start":255,
@@ -412,15 +573,14 @@
             "tween":"Linear"
           }
         },
-        "objectState":{
-          "isDestroyed":"true"
-        },
-        "event":""
+        "objectState":[
+          
+        ]
       },
       {
-        "time":0.066666666666667,
+        "time":0.21666666666667,
         "tag":"body",
-        "sprite":"res\/graphics\/in-game\/hud\/header\/headerEggDestroyed.png",
+        "sprite":"res\/graphics\/in-game\/effect\/letter\/letter_bubble.png",
         "actions":{
           "x":{
             "start":0,
@@ -439,18 +599,12 @@
             "tween":"Linear"
           },
           "scaleX":{
-            "start":1,
-            "tween":"Linear",
-            "startTime":0.066666666666667,
-            "endTime":0.11666666666667,
-            "end":1.3
+            "start":4,
+            "tween":"Linear"
           },
           "scaleY":{
-            "start":1,
-            "tween":"Linear",
-            "startTime":0.066666666666667,
-            "endTime":0.11666666666667,
-            "end":1.3
+            "start":4,
+            "tween":"Linear"
           },
           "skewX":{
             "start":0,
@@ -477,7 +631,7 @@
             "tween":"Linear"
           },
           "opacity":{
-            "start":255,
+            "start":0,
             "tween":"Linear"
           },
           "r":{
@@ -493,84 +647,10 @@
             "tween":"Linear"
           }
         },
-        "objectState":{
-          "isDestroyed":"true"
-        },
+        "objectState":[
+          
+        ],
         "event":""
-      },
-      {
-        "time":0.11666666666667,
-        "tag":"body",
-        "sprite":"res\/graphics\/in-game\/hud\/header\/headerEggDestroyed.png",
-        "actions":{
-          "x":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "y":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "anchorX":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "anchorY":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "scaleX":{
-            "start":1.3,
-            "tween":"Linear"
-          },
-          "scaleY":{
-            "start":1.3,
-            "tween":"Linear"
-          },
-          "skewX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "skewY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotation":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "zIndex":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "opacity":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "r":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "g":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "b":{
-            "start":255,
-            "tween":"Linear"
-          }
-        },
-        "objectState":{
-          "isDestroyed":"true"
-        }
       }
     ]
   }

@@ -1,39 +1,29 @@
 {
-  "variableDefault":{
-    "level":"1"
-  },
+  "variables":[
+    
+  ],
+  "variableDefault":[
+    
+  ],
   "sounds":[
     
   ],
-  "variables":{
-    "level":[
-      "1",
-      "2",
-      "3",
-      "4",
-      "5"
-    ]
-  },
   "layers":{
     "body":{
       "variableKeys":[
-        "level"
+        
       ],
       "objectStates":{
-        "1":"res\/graphics\/in-game\/hud\/text_effect\/nice.png",
-        "2":"res\/graphics\/in-game\/hud\/text_effect\/lovely.png",
-        "3":"res\/graphics\/in-game\/hud\/text_effect\/beautiful.png",
-        "4":"res\/graphics\/in-game\/hud\/text_effect\/briliant.png",
-        "5":"res\/graphics\/in-game\/hud\/text_effect\/artistic.png"
+        "":"res\/graphics\/in-game\/effect\/flare.png"
       }
     }
   },
   "animations":{
-    "textFly":[
+    "GetLetter":[
       {
         "time":0,
         "tag":"body",
-        "sprite":"res\/graphics\/in-game\/hud\/text_effect\/nice.png",
+        "sprite":"res\/graphics\/in-game\/effect\/flare.png",
         "actions":{
           "x":{
             "start":0,
@@ -41,10 +31,7 @@
           },
           "y":{
             "start":0,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.5,
-            "end":120
+            "tween":"Linear"
           },
           "anchorX":{
             "start":0.5,
@@ -56,11 +43,17 @@
           },
           "scaleX":{
             "start":1,
-            "tween":"Linear"
+            "tween":"Linear",
+            "startTime":0,
+            "endTime":0.1,
+            "end":5
           },
           "scaleY":{
             "start":1,
-            "tween":"Linear"
+            "tween":"Linear",
+            "startTime":0,
+            "endTime":0.1,
+            "end":5
           },
           "skewX":{
             "start":0,
@@ -71,26 +64,35 @@
             "tween":"Linear"
           },
           "rotationX":{
-            "start":0,
-            "tween":"Linear"
+            "start":-20,
+            "tween":"Linear",
+            "startTime":0,
+            "endTime":0.1,
+            "end":133
           },
           "rotationY":{
-            "start":0,
-            "tween":"Linear"
+            "start":-20,
+            "tween":"Linear",
+            "startTime":0,
+            "endTime":0.1,
+            "end":133
           },
           "rotation":{
-            "start":0,
-            "tween":"Linear"
+            "start":-20,
+            "tween":"Linear",
+            "startTime":0,
+            "endTime":0.1,
+            "end":133
           },
           "zIndex":{
             "start":0,
             "tween":"Linear"
           },
           "opacity":{
-            "start":0,
+            "start":127.5,
             "tween":"Linear",
             "startTime":0,
-            "endTime":0.5,
+            "endTime":0.1,
             "end":255
           },
           "r":{
@@ -106,22 +108,22 @@
             "tween":"Linear"
           }
         },
-        "objectState":{
-          "level":"1"
-        },
+        "objectState":[
+          
+        ],
         "event":""
       },
       {
-        "time":0.5,
+        "time":0.1,
         "tag":"body",
-        "sprite":"res\/graphics\/in-game\/hud\/text_effect\/nice.png",
+        "sprite":"res\/graphics\/in-game\/effect\/flare.png",
         "actions":{
           "x":{
             "start":0,
             "tween":"Linear"
           },
           "y":{
-            "start":120,
+            "start":0,
             "tween":"Linear"
           },
           "anchorX":{
@@ -133,12 +135,18 @@
             "tween":"Linear"
           },
           "scaleX":{
-            "start":1,
-            "tween":"Linear"
+            "start":5,
+            "tween":"Linear",
+            "startTime":0.1,
+            "endTime":0.33333333333333,
+            "end":2
           },
           "scaleY":{
-            "start":1,
-            "tween":"Linear"
+            "start":5,
+            "tween":"Linear",
+            "startTime":0.1,
+            "endTime":0.33333333333333,
+            "end":2
           },
           "skewX":{
             "start":0,
@@ -149,16 +157,25 @@
             "tween":"Linear"
           },
           "rotationX":{
-            "start":0,
-            "tween":"Linear"
+            "start":133,
+            "tween":"Linear",
+            "startTime":0.1,
+            "endTime":0.33333333333333,
+            "end":270
           },
           "rotationY":{
-            "start":0,
-            "tween":"Linear"
+            "start":133,
+            "tween":"Linear",
+            "startTime":0.1,
+            "endTime":0.33333333333333,
+            "end":270
           },
           "rotation":{
-            "start":0,
-            "tween":"Linear"
+            "start":133,
+            "tween":"Linear",
+            "startTime":0.1,
+            "endTime":0.33333333333333,
+            "end":270
           },
           "zIndex":{
             "start":0,
@@ -181,109 +198,22 @@
             "tween":"Linear"
           }
         },
-        "objectState":{
-          "level":"1"
-        },
+        "objectState":[
+          
+        ],
         "event":""
       },
       {
-        "time":0.66666666666667,
+        "time":0.33333333333333,
         "tag":"body",
-        "sprite":"res\/graphics\/in-game\/hud\/text_effect\/nice.png",
+        "sprite":"res\/graphics\/in-game\/effect\/flare.png",
         "actions":{
           "x":{
             "start":0,
             "tween":"Linear"
           },
           "y":{
-            "start":120,
-            "tween":"Linear",
-            "startTime":0.66666666666667,
-            "endTime":0.91666666666667,
-            "end":130
-          },
-          "anchorX":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "anchorY":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "scaleX":{
-            "start":1,
-            "tween":"Linear",
-            "startTime":0.66666666666667,
-            "endTime":0.91666666666667,
-            "end":1.3
-          },
-          "scaleY":{
-            "start":1,
-            "tween":"Linear",
-            "startTime":0.66666666666667,
-            "endTime":0.91666666666667,
-            "end":1.3
-          },
-          "skewX":{
             "start":0,
-            "tween":"Linear"
-          },
-          "skewY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotation":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "zIndex":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "opacity":{
-            "start":255,
-            "tween":"Linear",
-            "startTime":0.66666666666667,
-            "endTime":0.91666666666667,
-            "end":100
-          },
-          "r":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "g":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "b":{
-            "start":255,
-            "tween":"Linear"
-          }
-        },
-        "objectState":{
-          "level":"1"
-        },
-        "event":""
-      },
-      {
-        "time":0.91666666666667,
-        "tag":"body",
-        "sprite":"res\/graphics\/in-game\/hud\/text_effect\/nice.png",
-        "actions":{
-          "x":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "y":{
-            "start":130,
             "tween":"Linear"
           },
           "anchorX":{
@@ -295,11 +225,11 @@
             "tween":"Linear"
           },
           "scaleX":{
-            "start":1.3,
+            "start":2,
             "tween":"Linear"
           },
           "scaleY":{
-            "start":1.3,
+            "start":2,
             "tween":"Linear"
           },
           "skewX":{
@@ -311,15 +241,15 @@
             "tween":"Linear"
           },
           "rotationX":{
-            "start":0,
+            "start":270,
             "tween":"Linear"
           },
           "rotationY":{
-            "start":0,
+            "start":270,
             "tween":"Linear"
           },
           "rotation":{
-            "start":0,
+            "start":270,
             "tween":"Linear"
           },
           "zIndex":{
@@ -327,10 +257,10 @@
             "tween":"Linear"
           },
           "opacity":{
-            "start":100,
+            "start":255,
             "tween":"Linear",
-            "startTime":0.91666666666667,
-            "endTime":0.93333333333333,
+            "startTime":0.33333333333333,
+            "endTime":0.35,
             "end":0
           },
           "r":{
@@ -346,22 +276,22 @@
             "tween":"Linear"
           }
         },
-        "objectState":{
-          "level":"1"
-        },
+        "objectState":[
+          
+        ],
         "event":""
       },
       {
-        "time":0.93333333333333,
+        "time":0.35,
         "tag":"body",
-        "sprite":"res\/graphics\/in-game\/hud\/text_effect\/nice.png",
+        "sprite":"res\/graphics\/in-game\/effect\/flare.png",
         "actions":{
           "x":{
             "start":0,
             "tween":"Linear"
           },
           "y":{
-            "start":130,
+            "start":0,
             "tween":"Linear"
           },
           "anchorX":{
@@ -373,11 +303,11 @@
             "tween":"Linear"
           },
           "scaleX":{
-            "start":1.3,
+            "start":2,
             "tween":"Linear"
           },
           "scaleY":{
-            "start":1.3,
+            "start":2,
             "tween":"Linear"
           },
           "skewX":{
@@ -389,15 +319,15 @@
             "tween":"Linear"
           },
           "rotationX":{
-            "start":0,
+            "start":270,
             "tween":"Linear"
           },
           "rotationY":{
-            "start":0,
+            "start":270,
             "tween":"Linear"
           },
           "rotation":{
-            "start":0,
+            "start":270,
             "tween":"Linear"
           },
           "zIndex":{
@@ -421,9 +351,9 @@
             "tween":"Linear"
           }
         },
-        "objectState":{
-          "level":"1"
-        },
+        "objectState":[
+          
+        ],
         "event":""
       }
     ]
