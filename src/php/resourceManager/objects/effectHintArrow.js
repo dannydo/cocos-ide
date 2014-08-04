@@ -1,54 +1,29 @@
 {
-  "variableDefault":{
-    "color":"white"
-  },
+  "variables":[
+    
+  ],
+  "variableDefault":[
+    
+  ],
   "sounds":[
     
   ],
-  "variables":{
-    "color":[
-      "white",
-      "green",
-      "red",
-      "blue",
-      "pink",
-      "orange"
-    ]
-  },
   "layers":{
-    "halo1":{
+    "arrow":{
       "variableKeys":[
-        "color"
+        
       ],
       "objectStates":{
-        "white":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_white.png",
-        "green":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_green.png",
-        "red":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_red.png",
-        "blue":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_blue.png",
-        "pink":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_pink.png",
-        "orange":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_yellow.png"
-      }
-    },
-    "halo2":{
-      "variableKeys":[
-        "color"
-      ],
-      "objectStates":{
-        "white":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_white.png",
-        "green":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_green.png",
-        "red":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_red.png",
-        "blue":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_blue.png",
-        "pink":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_pink.png",
-        "orange":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_yellow.png"
+        "":"res\/graphics\/in-game\/effect\/arrow.png"
       }
     }
   },
   "animations":{
-    "Combo5Idle":[
+    "hintArrow":[
       {
         "time":0,
-        "tag":"halo1",
-        "sprite":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_white.png",
+        "tag":"arrow",
+        "sprite":"res\/graphics\/in-game\/effect\/arrow.png",
         "actions":{
           "x":{
             "start":0,
@@ -56,10 +31,13 @@
           },
           "y":{
             "start":0,
-            "tween":"Linear"
+            "tween":"Linear",
+            "startTime":0,
+            "endTime":0.33333333333333,
+            "end":-11.25
           },
           "anchorX":{
-            "start":0.5,
+            "start":1,
             "tween":"Linear"
           },
           "anchorY":{
@@ -67,8 +45,11 @@
             "tween":"Linear"
           },
           "scaleX":{
-            "start":1,
-            "tween":"Linear"
+            "start":0.3,
+            "tween":"Linear",
+            "startTime":0,
+            "endTime":0.33333333333333,
+            "end":0.94615384615385
           },
           "scaleY":{
             "start":1,
@@ -83,33 +64,27 @@
             "tween":"Linear"
           },
           "rotationX":{
-            "start":0,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.5,
-            "end":360
+            "start":270,
+            "tween":"Linear"
           },
           "rotationY":{
-            "start":0,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.5,
-            "end":360
+            "start":270,
+            "tween":"Linear"
           },
           "rotation":{
-            "start":0,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.5,
-            "end":360
+            "start":270,
+            "tween":"Linear"
           },
           "zIndex":{
             "start":0,
             "tween":"Linear"
           },
           "opacity":{
-            "start":255,
-            "tween":"Linear"
+            "start":0,
+            "tween":"Linear",
+            "startTime":0,
+            "endTime":0.33333333333333,
+            "end":255
           },
           "r":{
             "start":255,
@@ -124,183 +99,29 @@
             "tween":"Linear"
           }
         },
-        "objectState":{
-          "color":"white"
-        }
-      },
-      {
-        "time":0,
-        "tag":"halo2",
-        "sprite":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_white.png",
-        "actions":{
-          "x":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "y":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "anchorX":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "anchorY":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "scaleX":{
-            "start":1,
-            "tween":"Linear"
-          },
-          "scaleY":{
-            "start":1,
-            "tween":"Linear"
-          },
-          "skewX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "skewY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationX":{
-            "start":0,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.5,
-            "end":-360
-          },
-          "rotationY":{
-            "start":0,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.5,
-            "end":-360
-          },
-          "rotation":{
-            "start":0,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.5,
-            "end":-360
-          },
-          "zIndex":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "opacity":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "r":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "g":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "b":{
-            "start":255,
-            "tween":"Linear"
-          }
-        },
-        "objectState":{
-          "color":"white"
-        }
-      },
-      {
-        "time":3,
-        "tag":"halo1",
-        "sprite":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_white.png",
-        "actions":{
-          "x":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "y":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "anchorX":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "anchorY":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "scaleX":{
-            "start":1,
-            "tween":"Linear"
-          },
-          "scaleY":{
-            "start":1,
-            "tween":"Linear"
-          },
-          "skewX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "skewY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationX":{
-            "start":360,
-            "tween":"Linear"
-          },
-          "rotationY":{
-            "start":360,
-            "tween":"Linear"
-          },
-          "rotation":{
-            "start":360,
-            "tween":"Linear"
-          },
-          "zIndex":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "opacity":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "r":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "g":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "b":{
-            "start":255,
-            "tween":"Linear"
-          }
-        },
-        "objectState":{
-          "color":"white"
-        },
+        "objectState":[
+          
+        ],
         "event":""
       },
       {
-        "time":3,
-        "tag":"halo2",
-        "sprite":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_white.png",
+        "time":0.33333333333333,
+        "tag":"arrow",
+        "sprite":"res\/graphics\/in-game\/effect\/arrow.png",
         "actions":{
           "x":{
             "start":0,
             "tween":"Linear"
           },
           "y":{
-            "start":0,
-            "tween":"Linear"
+            "start":-11.25,
+            "tween":"Linear",
+            "startTime":0.33333333333333,
+            "endTime":0.35,
+            "end":-12.1875
           },
           "anchorX":{
-            "start":0.5,
+            "start":1,
             "tween":"Linear"
           },
           "anchorY":{
@@ -308,8 +129,11 @@
             "tween":"Linear"
           },
           "scaleX":{
-            "start":1,
-            "tween":"Linear"
+            "start":0.94615384615385,
+            "tween":"Linear",
+            "startTime":0.33333333333333,
+            "endTime":0.35,
+            "end":1
           },
           "scaleY":{
             "start":1,
@@ -324,15 +148,15 @@
             "tween":"Linear"
           },
           "rotationX":{
-            "start":-360,
+            "start":270,
             "tween":"Linear"
           },
           "rotationY":{
-            "start":-360,
+            "start":270,
             "tween":"Linear"
           },
           "rotation":{
-            "start":-360,
+            "start":270,
             "tween":"Linear"
           },
           "zIndex":{
@@ -356,14 +180,246 @@
             "tween":"Linear"
           }
         },
-        "objectState":{
-          "color":"white"
+        "objectState":[
+          
+        ]
+      },
+      {
+        "time":0.35,
+        "tag":"arrow",
+        "sprite":"res\/graphics\/in-game\/effect\/arrow.png",
+        "actions":{
+          "x":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "y":{
+            "start":-12.1875,
+            "tween":"Linear",
+            "startTime":0.35,
+            "endTime":0.56666666666667,
+            "end":-24.375
+          },
+          "anchorX":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "anchorY":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "scaleX":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "scaleY":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "skewX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationX":{
+            "start":270,
+            "tween":"Linear"
+          },
+          "rotationY":{
+            "start":270,
+            "tween":"Linear"
+          },
+          "rotation":{
+            "start":270,
+            "tween":"Linear"
+          },
+          "zIndex":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "opacity":{
+            "start":255,
+            "tween":"Linear",
+            "startTime":0.35,
+            "endTime":0.56666666666667,
+            "end":200
+          },
+          "r":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "g":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "b":{
+            "start":255,
+            "tween":"Linear"
+          }
         },
+        "objectState":[
+          
+        ]
+      },
+      {
+        "time":0.56666666666667,
+        "tag":"arrow",
+        "sprite":"res\/graphics\/in-game\/effect\/arrow.png",
+        "actions":{
+          "x":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "y":{
+            "start":-24.375,
+            "tween":"Linear",
+            "startTime":0.56666666666667,
+            "endTime":0.75,
+            "end":-30
+          },
+          "anchorX":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "anchorY":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "scaleX":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "scaleY":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "skewX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationX":{
+            "start":270,
+            "tween":"Linear"
+          },
+          "rotationY":{
+            "start":270,
+            "tween":"Linear"
+          },
+          "rotation":{
+            "start":270,
+            "tween":"Linear"
+          },
+          "zIndex":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "opacity":{
+            "start":200,
+            "tween":"Linear",
+            "startTime":0.56666666666667,
+            "endTime":0.75,
+            "end":0
+          },
+          "r":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "g":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "b":{
+            "start":255,
+            "tween":"Linear"
+          }
+        },
+        "objectState":[
+          
+        ],
+        "event":""
+      },
+      {
+        "time":0.75,
+        "tag":"arrow",
+        "sprite":"res\/graphics\/in-game\/effect\/arrow.png",
+        "actions":{
+          "x":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "y":{
+            "start":-30,
+            "tween":"Linear"
+          },
+          "anchorX":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "anchorY":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "scaleX":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "scaleY":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "skewX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationX":{
+            "start":270,
+            "tween":"Linear"
+          },
+          "rotationY":{
+            "start":270,
+            "tween":"Linear"
+          },
+          "rotation":{
+            "start":270,
+            "tween":"Linear"
+          },
+          "zIndex":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "opacity":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "r":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "g":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "b":{
+            "start":255,
+            "tween":"Linear"
+          }
+        },
+        "objectState":[
+          
+        ],
         "event":""
       }
     ]
-  },
-  "variableLock":{
-    "color":true
   }
 }

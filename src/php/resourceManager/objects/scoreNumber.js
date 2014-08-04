@@ -1,37 +1,52 @@
 {
-  "variables":[
-    
-  ],
-  "variableDefault":[
-    
-  ],
+  "variableDefault":{
+    "number":"0"
+  },
   "sounds":[
     
   ],
+  "variables":{
+    "number":[
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+    ]
+  },
   "layers":{
-    "Bolt":{
+    "number":{
       "variableKeys":[
-        
+        "number"
       ],
-      "objectStates":{
-        "":"res\/graphics\/in-game\/effect\/combo_idle\/combo4_bolt.png"
-      }
-    },
-    "gem":{
-      "variableKeys":[
-        
-      ],
-      "objectStates":{
-        "":"res\/graphics\/in-game\/gem\/blue\/blue_combo_4.png"
-      }
+      "objectStates":[
+        "res\/graphics\/graphic_font\/score_number\/score_number_0.png",
+        "res\/graphics\/graphic_font\/score_number\/score_number_1.png",
+        "res\/graphics\/graphic_font\/score_number\/score_number_2.png",
+        "res\/graphics\/graphic_font\/score_number\/score_number_3.png",
+        "res\/graphics\/graphic_font\/score_number\/score_number_4.png",
+        "res\/graphics\/graphic_font\/score_number\/score_number_5.png",
+        "res\/graphics\/graphic_font\/score_number\/score_number_6.png",
+        "res\/graphics\/graphic_font\/score_number\/score_number_7.png",
+        "res\/graphics\/graphic_font\/score_number\/score_number_8.png",
+        "res\/graphics\/graphic_font\/score_number\/score_number_9.png"
+      ]
     }
   },
+  "layerHidden":[
+    
+  ],
   "animations":{
-    "Combo4Idle":[
+    "effect":[
       {
         "time":0,
-        "tag":"Bolt",
-        "sprite":"res\/graphics\/board\/effect\/combo_idle\/combo4_bolt.png",
+        "tag":"number",
+        "sprite":"res\/graphics\/graphic_font\/score_number\/score_number_0.png",
         "actions":{
           "x":{
             "start":0,
@@ -50,18 +65,18 @@
             "tween":"Linear"
           },
           "scaleX":{
-            "start":0.6,
+            "start":0.5,
             "tween":"Linear",
             "startTime":0,
-            "endTime":0.25,
-            "end":0.65
+            "endTime":0.16666666666667,
+            "end":1.5
           },
           "scaleY":{
-            "start":0.6,
+            "start":0.5,
             "tween":"Linear",
             "startTime":0,
-            "endTime":0.25,
-            "end":0.65
+            "endTime":0.16666666666667,
+            "end":1.5
           },
           "skewX":{
             "start":0,
@@ -88,11 +103,8 @@
             "tween":"Linear"
           },
           "opacity":{
-            "start":200,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.25,
-            "end":255
+            "start":255,
+            "tween":"Linear"
           },
           "r":{
             "start":255,
@@ -107,15 +119,96 @@
             "tween":"Linear"
           }
         },
-        "objectState":[
-          
-        ],
+        "objectState":{
+          "number":"0"
+        },
+        "event":""
+      },
+      {
+        "time":0.16666666666667,
+        "tag":"number",
+        "sprite":"res\/graphics\/graphic_font\/score_number\/score_number_0.png",
+        "actions":{
+          "x":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "y":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "anchorX":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "anchorY":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "scaleX":{
+            "start":1.5,
+            "tween":"Linear",
+            "startTime":0.16666666666667,
+            "endTime":0.25,
+            "end":1
+          },
+          "scaleY":{
+            "start":1.5,
+            "tween":"Linear",
+            "startTime":0.16666666666667,
+            "endTime":0.25,
+            "end":1
+          },
+          "skewX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotation":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "zIndex":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "opacity":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "r":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "g":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "b":{
+            "start":255,
+            "tween":"Linear"
+          }
+        },
+        "objectState":{
+          "number":"0"
+        },
         "event":""
       },
       {
         "time":0.25,
-        "tag":"Bolt",
-        "sprite":"res\/graphics\/board\/effect\/combo_idle\/combo4_bolt.png",
+        "tag":"number",
+        "sprite":"res\/graphics\/graphic_font\/score_number\/score_number_0.png",
         "actions":{
           "x":{
             "start":0,
@@ -123,7 +216,10 @@
           },
           "y":{
             "start":0,
-            "tween":"Linear"
+            "tween":"Linear",
+            "startTime":0.25,
+            "endTime":0.5,
+            "end":80
           },
           "anchorX":{
             "start":0.5,
@@ -134,18 +230,12 @@
             "tween":"Linear"
           },
           "scaleX":{
-            "start":0.65,
-            "tween":"Linear",
-            "startTime":0.25,
-            "endTime":0.5,
-            "end":0.7
+            "start":1,
+            "tween":"Linear"
           },
           "scaleY":{
-            "start":0.65,
-            "tween":"Linear",
-            "startTime":0.25,
-            "endTime":0.5,
-            "end":0.7
+            "start":1,
+            "tween":"Linear"
           },
           "skewX":{
             "start":0,
@@ -188,22 +278,22 @@
             "tween":"Linear"
           }
         },
-        "objectState":[
-          
-        ],
+        "objectState":{
+          "number":"0"
+        },
         "event":""
       },
       {
         "time":0.5,
-        "tag":"Bolt",
-        "sprite":"res\/graphics\/board\/effect\/combo_idle\/combo4_bolt.png",
+        "tag":"number",
+        "sprite":"res\/graphics\/graphic_font\/score_number\/score_number_0.png",
         "actions":{
           "x":{
             "start":0,
             "tween":"Linear"
           },
           "y":{
-            "start":0,
+            "start":80,
             "tween":"Linear"
           },
           "anchorX":{
@@ -215,99 +305,12 @@
             "tween":"Linear"
           },
           "scaleX":{
-            "start":0.7,
-            "tween":"Linear",
-            "startTime":0.5,
-            "endTime":0.75,
-            "end":0.65
+            "start":1,
+            "tween":"Linear"
           },
           "scaleY":{
-            "start":0.7,
-            "tween":"Linear",
-            "startTime":0.5,
-            "endTime":0.75,
-            "end":0.65
-          },
-          "skewX":{
-            "start":0,
+            "start":1,
             "tween":"Linear"
-          },
-          "skewY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotation":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "zIndex":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "opacity":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "r":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "g":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "b":{
-            "start":255,
-            "tween":"Linear"
-          }
-        },
-        "objectState":[
-          
-        ],
-        "event":""
-      },
-      {
-        "time":0.75,
-        "tag":"Bolt",
-        "sprite":"res\/graphics\/board\/effect\/combo_idle\/combo4_bolt.png",
-        "actions":{
-          "x":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "y":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "anchorX":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "anchorY":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "scaleX":{
-            "start":0.65,
-            "tween":"Linear",
-            "startTime":0.75,
-            "endTime":1,
-            "end":0.6
-          },
-          "scaleY":{
-            "start":0.65,
-            "tween":"Linear",
-            "startTime":0.75,
-            "endTime":1,
-            "end":0.6
           },
           "skewX":{
             "start":0,
@@ -336,8 +339,8 @@
           "opacity":{
             "start":255,
             "tween":"Linear",
-            "startTime":0.75,
-            "endTime":1,
+            "startTime":0.5,
+            "endTime":0.66666666666667,
             "end":200
           },
           "r":{
@@ -353,22 +356,21 @@
             "tween":"Linear"
           }
         },
-        "objectState":[
-          
-        ],
-        "event":""
+        "objectState":{
+          "number":"0"
+        }
       },
       {
-        "time":1,
-        "tag":"Bolt",
-        "sprite":"res\/graphics\/board\/effect\/combo_idle\/combo4_bolt.png",
+        "time":0.66666666666667,
+        "tag":"number",
+        "sprite":"res\/graphics\/graphic_font\/score_number\/score_number_0.png",
         "actions":{
           "x":{
             "start":0,
             "tween":"Linear"
           },
           "y":{
-            "start":0,
+            "start":80,
             "tween":"Linear"
           },
           "anchorX":{
@@ -380,11 +382,11 @@
             "tween":"Linear"
           },
           "scaleX":{
-            "start":0.6,
+            "start":1,
             "tween":"Linear"
           },
           "scaleY":{
-            "start":0.6,
+            "start":1,
             "tween":"Linear"
           },
           "skewX":{
@@ -413,6 +415,84 @@
           },
           "opacity":{
             "start":200,
+            "tween":"Linear",
+            "startTime":0.66666666666667,
+            "endTime":0.68333333333333,
+            "end":0
+          },
+          "r":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "g":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "b":{
+            "start":255,
+            "tween":"Linear"
+          }
+        },
+        "objectState":{
+          "number":"0"
+        },
+        "event":""
+      },
+      {
+        "time":0.68333333333333,
+        "tag":"number",
+        "sprite":"res\/graphics\/graphic_font\/score_number\/score_number_0.png",
+        "actions":{
+          "x":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "y":{
+            "start":80,
+            "tween":"Linear"
+          },
+          "anchorX":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "anchorY":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "scaleX":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "scaleY":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "skewX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotation":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "zIndex":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "opacity":{
+            "start":0,
             "tween":"Linear"
           },
           "r":{
@@ -428,13 +508,14 @@
             "tween":"Linear"
           }
         },
-        "objectState":[
-          
-        ]
+        "objectState":{
+          "number":"0"
+        },
+        "event":""
       }
     ]
   },
-  "layerHidden":{
-    "gem":true
+  "variableLock":{
+    "number":true
   }
 }

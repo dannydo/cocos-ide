@@ -1,54 +1,38 @@
 {
   "variableDefault":{
-    "color":"white"
+    "result":"empty"
   },
   "sounds":[
     
   ],
   "variables":{
-    "color":[
-      "white",
-      "green",
-      "red",
-      "blue",
-      "pink",
-      "orange"
+    "result":[
+      "wrong",
+      "right",
+      "empty"
     ]
   },
   "layers":{
-    "halo1":{
+    "result":{
       "variableKeys":[
-        "color"
+        "result"
       ],
       "objectStates":{
-        "white":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_white.png",
-        "green":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_green.png",
-        "red":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_red.png",
-        "blue":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_blue.png",
-        "pink":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_pink.png",
-        "orange":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_yellow.png"
-      }
-    },
-    "halo2":{
-      "variableKeys":[
-        "color"
-      ],
-      "objectStates":{
-        "white":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_white.png",
-        "green":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_green.png",
-        "red":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_red.png",
-        "blue":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_blue.png",
-        "pink":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_pink.png",
-        "orange":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_yellow.png"
+        "wrong":"res\/graphics\/flashcard\/flashcard_collect_game\/ico_wrong.png",
+        "right":"res\/graphics\/flashcard\/flashcard_collect_game\/ico_right.png",
+        "empty":false
       }
     }
   },
+  "variableLock":{
+    "result":true
+  },
   "animations":{
-    "Combo5Idle":[
+    "showResult":[
       {
         "time":0,
-        "tag":"halo1",
-        "sprite":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_white.png",
+        "tag":"result",
+        "sprite":"res\/graphics\/flashcard\/flashcard_collect_game\/ico_wrong.png",
         "actions":{
           "x":{
             "start":0,
@@ -67,12 +51,18 @@
             "tween":"Linear"
           },
           "scaleX":{
-            "start":1,
-            "tween":"Linear"
+            "start":0,
+            "tween":"Linear",
+            "startTime":0,
+            "endTime":0.33333333333333,
+            "end":1.5
           },
           "scaleY":{
-            "start":1,
-            "tween":"Linear"
+            "start":0,
+            "tween":"Linear",
+            "startTime":0,
+            "endTime":0.33333333333333,
+            "end":1.5
           },
           "skewX":{
             "start":0,
@@ -84,32 +74,26 @@
           },
           "rotationX":{
             "start":0,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.5,
-            "end":360
+            "tween":"Linear"
           },
           "rotationY":{
             "start":0,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.5,
-            "end":360
+            "tween":"Linear"
           },
           "rotation":{
             "start":0,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.5,
-            "end":360
+            "tween":"Linear"
           },
           "zIndex":{
             "start":0,
             "tween":"Linear"
           },
           "opacity":{
-            "start":255,
-            "tween":"Linear"
+            "start":0,
+            "tween":"Linear",
+            "startTime":0,
+            "endTime":0.33333333333333,
+            "end":255
           },
           "r":{
             "start":255,
@@ -125,13 +109,13 @@
           }
         },
         "objectState":{
-          "color":"white"
+          "result":"wrong"
         }
       },
       {
-        "time":0,
-        "tag":"halo2",
-        "sprite":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_white.png",
+        "time":0.33333333333333,
+        "tag":"result",
+        "sprite":"res\/graphics\/flashcard\/flashcard_collect_game\/ico_wrong.png",
         "actions":{
           "x":{
             "start":0,
@@ -150,12 +134,18 @@
             "tween":"Linear"
           },
           "scaleX":{
-            "start":1,
-            "tween":"Linear"
+            "start":1.5,
+            "tween":"Linear",
+            "startTime":0.33333333333333,
+            "endTime":0.41666666666667,
+            "end":0.9
           },
           "scaleY":{
-            "start":1,
-            "tween":"Linear"
+            "start":1.5,
+            "tween":"Linear",
+            "startTime":0.33333333333333,
+            "endTime":0.41666666666667,
+            "end":0.9
           },
           "skewX":{
             "start":0,
@@ -167,97 +157,14 @@
           },
           "rotationX":{
             "start":0,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.5,
-            "end":-360
-          },
-          "rotationY":{
-            "start":0,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.5,
-            "end":-360
-          },
-          "rotation":{
-            "start":0,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.5,
-            "end":-360
-          },
-          "zIndex":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "opacity":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "r":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "g":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "b":{
-            "start":255,
-            "tween":"Linear"
-          }
-        },
-        "objectState":{
-          "color":"white"
-        }
-      },
-      {
-        "time":3,
-        "tag":"halo1",
-        "sprite":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_white.png",
-        "actions":{
-          "x":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "y":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "anchorX":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "anchorY":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "scaleX":{
-            "start":1,
-            "tween":"Linear"
-          },
-          "scaleY":{
-            "start":1,
-            "tween":"Linear"
-          },
-          "skewX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "skewY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationX":{
-            "start":360,
             "tween":"Linear"
           },
           "rotationY":{
-            "start":360,
+            "start":0,
             "tween":"Linear"
           },
           "rotation":{
-            "start":360,
+            "start":0,
             "tween":"Linear"
           },
           "zIndex":{
@@ -282,14 +189,95 @@
           }
         },
         "objectState":{
-          "color":"white"
+          "result":"wrong"
         },
         "event":""
       },
       {
-        "time":3,
-        "tag":"halo2",
-        "sprite":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_white.png",
+        "time":0.41666666666667,
+        "tag":"result",
+        "sprite":"res\/graphics\/flashcard\/flashcard_collect_game\/ico_wrong.png",
+        "actions":{
+          "x":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "y":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "anchorX":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "anchorY":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "scaleX":{
+            "start":0.9,
+            "tween":"Linear",
+            "startTime":0.41666666666667,
+            "endTime":0.5,
+            "end":1
+          },
+          "scaleY":{
+            "start":0.9,
+            "tween":"Linear",
+            "startTime":0.41666666666667,
+            "endTime":0.5,
+            "end":1
+          },
+          "skewX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotation":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "zIndex":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "opacity":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "r":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "g":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "b":{
+            "start":255,
+            "tween":"Linear"
+          }
+        },
+        "objectState":{
+          "result":"wrong"
+        },
+        "event":""
+      },
+      {
+        "time":0.5,
+        "tag":"result",
+        "sprite":"res\/graphics\/flashcard\/flashcard_collect_game\/ico_wrong.png",
         "actions":{
           "x":{
             "start":0,
@@ -324,15 +312,15 @@
             "tween":"Linear"
           },
           "rotationX":{
-            "start":-360,
+            "start":0,
             "tween":"Linear"
           },
           "rotationY":{
-            "start":-360,
+            "start":0,
             "tween":"Linear"
           },
           "rotation":{
-            "start":-360,
+            "start":0,
             "tween":"Linear"
           },
           "zIndex":{
@@ -357,13 +345,91 @@
           }
         },
         "objectState":{
-          "color":"white"
+          "result":"wrong"
+        },
+        "event":""
+      }
+    ],
+    "init":[
+      {
+        "time":0,
+        "tag":"result",
+        "sprite":"res\/graphics\/flashcard\/flashcard_collect_game\/ico_wrong.png",
+        "actions":{
+          "x":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "y":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "anchorX":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "anchorY":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "scaleX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "scaleY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotation":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "zIndex":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "opacity":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "r":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "g":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "b":{
+            "start":255,
+            "tween":"Linear"
+          }
+        },
+        "objectState":{
+          "result":"wrong"
         },
         "event":""
       }
     ]
   },
-  "variableLock":{
-    "color":true
+  "layerHidden":{
+    "answer_bg":true,
+    "answer_tag":true
   }
 }

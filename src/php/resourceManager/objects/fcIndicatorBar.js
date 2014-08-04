@@ -1,38 +1,37 @@
 {
-  "variableDefault":{
-    "state":"haveSentence"
-  },
+  "variables":[
+    
+  ],
+  "variableDefault":[
+    
+  ],
+  "sounds":[
+    
+  ],
   "layers":{
-    "flashcard":{
+    "background":{
       "variableKeys":[
         
       ],
       "objectStates":{
-        "":"res\/graphics\/flashcard\/flashcard\/fc_bg.png"
+        "":"res\/graphics\/flashcard\/flashcard_collection\/fc_meter_bg.png"
       }
     },
-    "sentence":{
+    "fill":{
       "variableKeys":[
-        "state"
+        
       ],
       "objectStates":{
-        "haveSentence":"res\/graphics\/flashcard\/flashcard\/fc_sentences_bg.png",
-        "noSentence":"res\/graphics\/ui\/blank_cell.png"
+        "":"res\/graphics\/flashcard\/flashcard_collection\/fc_meter_fillbar.png"
       }
     }
-  },
-  "variables":{
-    "state":[
-      "haveSentence",
-      "noSentence"
-    ]
   },
   "animations":{
     "init":[
       {
         "time":0,
-        "tag":"flashcard",
-        "sprite":"res\/graphics\/flashcard\/flashcard\/fc_bg.png",
+        "tag":"background",
+        "sprite":"res\/graphics\/flashcard\/flashcard_collection\/fc_meter_bg.png",
         "actions":{
           "x":{
             "start":0,
@@ -43,7 +42,7 @@
             "tween":"Linear"
           },
           "anchorX":{
-            "start":0.5,
+            "start":0,
             "tween":"Linear"
           },
           "anchorY":{
@@ -79,7 +78,7 @@
             "tween":"Linear"
           },
           "zIndex":{
-            "start":1,
+            "start":0,
             "tween":"Linear"
           },
           "opacity":{
@@ -99,26 +98,26 @@
             "tween":"Linear"
           }
         },
-        "objectState":{
-          "state":"haveSentence"
-        },
+        "objectState":[
+          
+        ],
         "event":""
       },
       {
         "time":0,
-        "tag":"sentence",
-        "sprite":"res\/graphics\/flashcard\/flashcard\/fc_sentences_bg.png",
+        "tag":"fill",
+        "sprite":"res\/graphics\/flashcard\/flashcard_collection\/fc_meter_fillbar.png",
         "actions":{
           "x":{
-            "start":-12,
+            "start":1,
             "tween":"Linear"
           },
           "y":{
-            "start":-325,
+            "start":-1,
             "tween":"Linear"
           },
           "anchorX":{
-            "start":0.5,
+            "start":0,
             "tween":"Linear"
           },
           "anchorY":{
@@ -154,7 +153,7 @@
             "tween":"Linear"
           },
           "zIndex":{
-            "start":0,
+            "start":1,
             "tween":"Linear"
           },
           "opacity":{
@@ -174,17 +173,11 @@
             "tween":"Linear"
           }
         },
-        "objectState":{
-          "state":"haveSentence"
-        },
+        "objectState":[
+          
+        ],
         "event":""
       }
     ]
-  },
-  "variableLock":{
-    "state":true
-  },
-  "sounds":[
-    
-  ]
+  }
 }

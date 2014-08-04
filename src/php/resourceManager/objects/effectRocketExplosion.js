@@ -1,54 +1,41 @@
 {
   "variableDefault":{
-    "color":"white"
+    "frame":"6"
   },
   "sounds":[
     
   ],
   "variables":{
-    "color":[
-      "white",
-      "green",
-      "red",
-      "blue",
-      "pink",
-      "orange"
+    "frame":[
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
     ]
   },
   "layers":{
-    "halo1":{
+    "explode":{
       "variableKeys":[
-        "color"
+        "frame"
       ],
       "objectStates":{
-        "white":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_white.png",
-        "green":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_green.png",
-        "red":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_red.png",
-        "blue":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_blue.png",
-        "pink":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_pink.png",
-        "orange":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_yellow.png"
-      }
-    },
-    "halo2":{
-      "variableKeys":[
-        "color"
-      ],
-      "objectStates":{
-        "white":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_white.png",
-        "green":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_green.png",
-        "red":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_red.png",
-        "blue":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_blue.png",
-        "pink":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_pink.png",
-        "orange":"res\/graphics\/in-game\/effect\/combo_idle\/combo5_halo_yellow.png"
+        "1":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_0.png",
+        "2":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_1.png",
+        "3":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_2.png",
+        "4":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_3.png",
+        "5":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_4.png",
+        "6":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_5.png"
       }
     }
   },
   "animations":{
-    "Combo5Idle":[
+    "effect":[
       {
         "time":0,
-        "tag":"halo1",
-        "sprite":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_white.png",
+        "tag":"explode",
+        "sprite":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_0.png",
         "actions":{
           "x":{
             "start":0,
@@ -84,24 +71,15 @@
           },
           "rotationX":{
             "start":0,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.5,
-            "end":360
+            "tween":"Linear"
           },
           "rotationY":{
             "start":0,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.5,
-            "end":360
+            "tween":"Linear"
           },
           "rotation":{
             "start":0,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.5,
-            "end":360
+            "tween":"Linear"
           },
           "zIndex":{
             "start":0,
@@ -125,13 +103,13 @@
           }
         },
         "objectState":{
-          "color":"white"
+          "frame":"1"
         }
       },
       {
-        "time":0,
-        "tag":"halo2",
-        "sprite":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_white.png",
+        "time":0.083333333333333,
+        "tag":"explode",
+        "sprite":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_1.png",
         "actions":{
           "x":{
             "start":0,
@@ -167,97 +145,14 @@
           },
           "rotationX":{
             "start":0,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.5,
-            "end":-360
-          },
-          "rotationY":{
-            "start":0,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.5,
-            "end":-360
-          },
-          "rotation":{
-            "start":0,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.5,
-            "end":-360
-          },
-          "zIndex":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "opacity":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "r":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "g":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "b":{
-            "start":255,
-            "tween":"Linear"
-          }
-        },
-        "objectState":{
-          "color":"white"
-        }
-      },
-      {
-        "time":3,
-        "tag":"halo1",
-        "sprite":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_white.png",
-        "actions":{
-          "x":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "y":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "anchorX":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "anchorY":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "scaleX":{
-            "start":1,
-            "tween":"Linear"
-          },
-          "scaleY":{
-            "start":1,
-            "tween":"Linear"
-          },
-          "skewX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "skewY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationX":{
-            "start":360,
             "tween":"Linear"
           },
           "rotationY":{
-            "start":360,
+            "start":0,
             "tween":"Linear"
           },
           "rotation":{
-            "start":360,
+            "start":0,
             "tween":"Linear"
           },
           "zIndex":{
@@ -282,14 +177,14 @@
           }
         },
         "objectState":{
-          "color":"white"
+          "frame":"2"
         },
         "event":""
       },
       {
-        "time":3,
-        "tag":"halo2",
-        "sprite":"res\/graphics\/board\/effect\/combo_idle\/combo5_halo_white.png",
+        "time":0.16666666666667,
+        "tag":"explode",
+        "sprite":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_2.png",
         "actions":{
           "x":{
             "start":0,
@@ -324,15 +219,15 @@
             "tween":"Linear"
           },
           "rotationX":{
-            "start":-360,
+            "start":0,
             "tween":"Linear"
           },
           "rotationY":{
-            "start":-360,
+            "start":0,
             "tween":"Linear"
           },
           "rotation":{
-            "start":-360,
+            "start":0,
             "tween":"Linear"
           },
           "zIndex":{
@@ -357,13 +252,235 @@
           }
         },
         "objectState":{
-          "color":"white"
+          "frame":"3"
+        },
+        "event":""
+      },
+      {
+        "time":0.25,
+        "tag":"explode",
+        "sprite":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_3.png",
+        "actions":{
+          "x":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "y":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "anchorX":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "anchorY":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "scaleX":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "scaleY":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "skewX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotation":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "zIndex":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "opacity":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "r":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "g":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "b":{
+            "start":255,
+            "tween":"Linear"
+          }
+        },
+        "objectState":{
+          "frame":"4"
+        },
+        "event":""
+      },
+      {
+        "time":0.33333333333333,
+        "tag":"explode",
+        "sprite":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_4.png",
+        "actions":{
+          "x":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "y":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "anchorX":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "anchorY":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "scaleX":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "scaleY":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "skewX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotation":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "zIndex":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "opacity":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "r":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "g":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "b":{
+            "start":255,
+            "tween":"Linear"
+          }
+        },
+        "objectState":{
+          "frame":"5"
+        },
+        "event":""
+      },
+      {
+        "time":0.41666666666667,
+        "tag":"explode",
+        "sprite":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_5.png",
+        "actions":{
+          "x":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "y":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "anchorX":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "anchorY":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "scaleX":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "scaleY":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "skewX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotation":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "zIndex":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "opacity":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "r":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "g":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "b":{
+            "start":255,
+            "tween":"Linear"
+          }
+        },
+        "objectState":{
+          "frame":"6"
         },
         "event":""
       }
     ]
-  },
-  "variableLock":{
-    "color":true
   }
 }

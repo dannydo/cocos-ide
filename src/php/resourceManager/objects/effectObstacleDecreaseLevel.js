@@ -474,5 +474,8 @@
         "6":"res\/graphics\/in-game\/effect\/shield_break\/shield_break_06.png"
       }
     }
-  }
+  },
+  "sounds":[
+    
+  ]
 }

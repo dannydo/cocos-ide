@@ -1,50 +1,43 @@
 {
+  "variableDefault":{
+    "type":"start"
+  },
   "variables":{
     "type":[
-      "loadingPage",
-      "startPage",
-      "settingMenu",
-      "game",
-      "overlay",
-      "popupLarge",
-      "targetPopup",
-      "leaderboard",
-      "popupSmall",
-      "footerCloud",
-      "addLifePopup",
-      "flashcardHolder",
-      "woodBg",
-      "blank",
-      "noMoveMessage",
-      "answerZone",
-      "blueCircles",
-      "woodPanel",
-      "fcChapterFrame",
-      "fcIndicatorBg"
-    ],
-    "state":[
-      "off",
-      "on"
+      "start",
+      "win",
+      "lose"
     ]
   },
-  "variableDefault":{
-    "type":"startPage",
-    "state":"off"
+  "layers":{
+    "cloud":{
+      "variableKeys":[
+        "type"
+      ],
+      "objectStates":{
+        "start":"res\/graphics\/in-game\/hud\/text_effect\/level_start.png",
+        "win":"res\/graphics\/in-game\/hud\/text_effect\/level_completed.png",
+        "lose":"res\/graphics\/in-game\/hud\/text_effect\/level_fail.png"
+      }
+    }
   },
   "animations":{
-    "fadeIn":[
+    "Appear":[
       {
         "time":0,
-        "tag":"body",
-        "sprite":"loadingBackground.png",
+        "tag":"cloud",
+        "sprite":"res\/graphics\/in-game\/hud\/text_effect\/level_start.png",
         "actions":{
           "x":{
             "start":0,
             "tween":"Linear"
           },
           "y":{
-            "start":0,
-            "tween":"Linear"
+            "start":400,
+            "tween":"Linear",
+            "startTime":0,
+            "endTime":0.25,
+            "end":-50
           },
           "anchorX":{
             "start":0.5,
@@ -90,7 +83,7 @@
             "start":0,
             "tween":"Linear",
             "startTime":0,
-            "endTime":0.5,
+            "endTime":0.25,
             "end":255
           },
           "r":{
@@ -107,21 +100,25 @@
           }
         },
         "objectState":{
-          "type":"loadingPage"
-        }
+          "type":"start"
+        },
+        "event":""
       },
       {
-        "time":0.33333333333333,
-        "tag":"body",
-        "sprite":"loadingBackground.png",
+        "time":0.25,
+        "tag":"cloud",
+        "sprite":"res\/graphics\/in-game\/hud\/text_effect\/level_start.png",
         "actions":{
           "x":{
             "start":0,
             "tween":"Linear"
           },
           "y":{
-            "start":0,
-            "tween":"Linear"
+            "start":-50,
+            "tween":"Linear",
+            "startTime":0.25,
+            "endTime":0.33333333333333,
+            "end":25
           },
           "anchorX":{
             "start":0.5,
@@ -181,71 +178,70 @@
           }
         },
         "objectState":{
-          "type":"loadingPage"
-        }
-      }
-    ],
-    "fadeOut":[
+          "type":"start"
+        },
+        "event":""
+      },
       {
-        "time":0,
-        "tag":"body",
-        "sprite":"loadingBackground.png",
+        "time":0.33333333333333,
+        "tag":"cloud",
+        "sprite":"res\/graphics\/in-game\/hud\/text_effect\/level_start.png",
         "actions":{
           "x":{
             "start":0,
             "tween":"Linear"
           },
           "y":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "anchorX":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "anchorY":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "scaleX":{
-            "start":1,
-            "tween":"Linear"
-          },
-          "scaleY":{
-            "start":1,
-            "tween":"Linear"
-          },
-          "skewX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "skewY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotation":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "zIndex":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "opacity":{
-            "start":255,
+            "start":25,
             "tween":"Linear",
-            "startTime":0,
+            "startTime":0.33333333333333,
             "endTime":0.5,
             "end":0
           },
+          "anchorX":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "anchorY":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "scaleX":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "scaleY":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "skewX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotation":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "zIndex":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "opacity":{
+            "start":255,
+            "tween":"Linear"
+          },
           "r":{
             "start":255,
             "tween":"Linear"
@@ -260,13 +256,14 @@
           }
         },
         "objectState":{
-          "type":"loadingPage"
-        }
+          "type":"start"
+        },
+        "event":""
       },
       {
-        "time":0.33333333333333,
-        "tag":"body",
-        "sprite":"loadingBackground.png",
+        "time":0.5,
+        "tag":"cloud",
+        "sprite":"res\/graphics\/in-game\/hud\/text_effect\/level_start.png",
         "actions":{
           "x":{
             "start":0,
@@ -317,7 +314,7 @@
             "tween":"Linear"
           },
           "opacity":{
-            "start":0,
+            "start":255,
             "tween":"Linear"
           },
           "r":{
@@ -334,22 +331,20 @@
           }
         },
         "objectState":{
-          "type":"loadingPage"
+          "type":"start"
         }
-      }
-    ],
-    "menuIn":[
+      },
       {
-        "time":0,
-        "tag":"body",
-        "sprite":"loadingBackground.png",
+        "time":0.66666666666667,
+        "tag":"cloud",
+        "sprite":"res\/graphics\/in-game\/hud\/text_effect\/level_start.png",
         "actions":{
           "x":{
             "start":0,
             "tween":"Linear",
-            "startTime":0,
-            "endTime":0.33333333333333,
-            "end":505
+            "startTime":0.66666666666667,
+            "endTime":0.78333333333333,
+            "end":-70
           },
           "y":{
             "start":0,
@@ -413,96 +408,21 @@
           }
         },
         "objectState":{
-          "type":"loadingPage"
-        }
+          "type":"start"
+        },
+        "event":""
       },
       {
-        "time":0.33333333333333,
-        "tag":"body",
-        "sprite":"loadingBackground.png",
+        "time":0.78333333333333,
+        "tag":"cloud",
+        "sprite":"res\/graphics\/in-game\/hud\/text_effect\/level_start.png",
         "actions":{
           "x":{
-            "start":505,
-            "tween":"Linear"
-          },
-          "y":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "anchorX":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "anchorY":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "scaleX":{
-            "start":1,
-            "tween":"Linear"
-          },
-          "scaleY":{
-            "start":1,
-            "tween":"Linear"
-          },
-          "skewX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "skewY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotation":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "zIndex":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "opacity":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "r":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "g":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "b":{
-            "start":255,
-            "tween":"Linear"
-          }
-        },
-        "objectState":{
-          "type":"loadingPage"
-        }
-      }
-    ],
-    "menuOut":[
-      {
-        "time":0,
-        "tag":"body",
-        "sprite":"loadingBackground.png",
-        "actions":{
-          "x":{
-            "start":505,
+            "start":-70,
             "tween":"Linear",
-            "startTime":0,
-            "endTime":0.33333333333333,
-            "end":0
+            "startTime":0.78333333333333,
+            "endTime":1.1666666666667,
+            "end":800
           },
           "y":{
             "start":0,
@@ -566,16 +486,17 @@
           }
         },
         "objectState":{
-          "type":"loadingPage"
-        }
+          "type":"start"
+        },
+        "event":""
       },
       {
-        "time":0.33333333333333,
-        "tag":"body",
-        "sprite":"loadingBackground.png",
+        "time":1.1666666666667,
+        "tag":"cloud",
+        "sprite":"res\/graphics\/in-game\/hud\/text_effect\/level_start.png",
         "actions":{
           "x":{
-            "start":0,
+            "start":800,
             "tween":"Linear"
           },
           "y":{
@@ -640,121 +561,18 @@
           }
         },
         "objectState":{
-          "type":"loadingPage"
-        }
-      }
-    ],
-    "hide":[
-      {
-        "time":0,
-        "tag":"body",
-        "sprite":"res\/graphics\/ui\/worldmap_background\/worldmap_bg.png",
-        "actions":{
-          "x":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "y":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "anchorX":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "anchorY":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "scaleX":{
-            "start":1,
-            "tween":"Linear"
-          },
-          "scaleY":{
-            "start":1,
-            "tween":"Linear"
-          },
-          "skewX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "skewY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotation":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "zIndex":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "opacity":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "r":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "g":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "b":{
-            "start":255,
-            "tween":"Linear"
-          }
-        },
-        "objectState":{
-          "type":"startPage",
-          "state":"off"
+          "type":"start"
         },
         "event":""
       }
     ]
   },
-  "layers":{
-    "body":{
-      "variableKeys":[
-        "type"
-      ],
-      "objectStates":{
-        "loadingPage":"res\/graphics\/ui\/loading_screen\/studio_logo.png",
-        "startPage":"res\/graphics\/ui\/worldmap_background\/worldmap_bg.png",
-        "settingMenu":"res\/graphics\/ui\/popup_setting\/popup_setting_bg.png",
-        "game":"res\/graphics\/in-game\/hud\/gameboard_background.png",
-        "overlay":"res\/graphics\/ui\/overlay_background.png",
-        "popupLarge":"res\/graphics\/ui\/common_panel\/popup_panel_large.png",
-        "targetPopup":"res\/graphics\/ui\/popup_target\/popup_target_bg.png",
-        "leaderboard":"res\/graphics\/ui\/popup_target\/leaderboard_bg.png",
-        "popupSmall":"res\/graphics\/ui\/common_panel\/popup_panel_small.png",
-        "footerCloud":"res\/graphics\/ui\/worldmap_ui\/cloud.png",
-        "addLifePopup":"res\/graphics\/ui\/popup_buy_life\/popup_buy_life_bg.png",
-        "flashcardHolder":"res\/graphics\/flashcard\/browse_flashcard\/fc_holder.png",
-        "woodBg":"res\/graphics\/flashcard\/browse_flashcard\/wood_bg.png",
-        "blank":"res\/graphics\/ui\/blank_cell.png",
-        "noMoveMessage":"res\/graphics\/ui\/popup_buy_move\/nomove_conversation.png",
-        "answerZone":"res\/graphics\/flashcard\/flashcard_collect_game\/answer_zone_bg.png",
-        "blueCircles":"res\/graphics\/flashcard\/flashcard_collection\/fc_collection_bg.png",
-        "woodPanel":"res\/graphics\/flashcard\/flashcard_collection\/fc_wood_footer_bg.png",
-        "fcChapterFrame":"res\/graphics\/flashcard\/flashcard_collection\/chapter_frame_large.png",
-        "fcIndicatorBg":"res\/graphics\/flashcard\/flashcard_collection\/fc_thumb_container_0.png"
-      }
-    }
+  "variableLock":{
+    "type":true
   },
   "sounds":{
-    "dragFail":"Drag_fail_sfx",
-    "dragSuccess":"Drag_success_sfx",
-    "ingame":"OMW_BG_ingame"
+    "win":"Win_sfx",
+    "fail":"LevelFailed",
+    "letfind":"LetsFind"
   }
 }

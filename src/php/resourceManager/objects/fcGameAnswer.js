@@ -1,45 +1,44 @@
 {
-  "variableDefault":{
-    "state":"haveSentence"
-  },
+  "variables":[
+    
+  ],
+  "variableDefault":[
+    
+  ],
+  "sounds":[
+    
+  ],
   "layers":{
-    "flashcard":{
+    "answer_tag":{
       "variableKeys":[
         
       ],
       "objectStates":{
-        "":"res\/graphics\/flashcard\/flashcard\/fc_bg.png"
+        "":"res\/graphics\/flashcard\/flashcard_collect_game\/answer_tag.png"
       }
     },
-    "sentence":{
+    "answer_bg":{
       "variableKeys":[
-        "state"
+        
       ],
       "objectStates":{
-        "haveSentence":"res\/graphics\/flashcard\/flashcard\/fc_sentences_bg.png",
-        "noSentence":"res\/graphics\/ui\/blank_cell.png"
+        "":"res\/graphics\/flashcard\/flashcard_collect_game\/answer_bg.png"
       }
     }
-  },
-  "variables":{
-    "state":[
-      "haveSentence",
-      "noSentence"
-    ]
   },
   "animations":{
     "init":[
       {
         "time":0,
-        "tag":"flashcard",
-        "sprite":"res\/graphics\/flashcard\/flashcard\/fc_bg.png",
+        "tag":"answer_tag",
+        "sprite":"res\/graphics\/flashcard\/flashcard_collect_game\/answer_tag.png",
         "actions":{
           "x":{
-            "start":0,
+            "start":-20,
             "tween":"Linear"
           },
           "y":{
-            "start":0,
+            "start":-101,
             "tween":"Linear"
           },
           "anchorX":{
@@ -99,22 +98,22 @@
             "tween":"Linear"
           }
         },
-        "objectState":{
-          "state":"haveSentence"
-        },
+        "objectState":[
+          
+        ],
         "event":""
       },
       {
         "time":0,
-        "tag":"sentence",
-        "sprite":"res\/graphics\/flashcard\/flashcard\/fc_sentences_bg.png",
+        "tag":"answer_bg",
+        "sprite":"res\/graphics\/flashcard\/flashcard_collect_game\/answer_bg.png",
         "actions":{
           "x":{
-            "start":-12,
+            "start":0,
             "tween":"Linear"
           },
           "y":{
-            "start":-325,
+            "start":0,
             "tween":"Linear"
           },
           "anchorX":{
@@ -174,17 +173,10 @@
             "tween":"Linear"
           }
         },
-        "objectState":{
-          "state":"haveSentence"
-        },
-        "event":""
+        "objectState":[
+          
+        ]
       }
     ]
-  },
-  "variableLock":{
-    "state":true
-  },
-  "sounds":[
-    
-  ]
+  }
 }
