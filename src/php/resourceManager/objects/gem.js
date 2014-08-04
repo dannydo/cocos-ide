@@ -1577,9 +1577,9 @@
         }
       },
       {
-        "time":0.33333333333333,
+        "time":0.16666666666667,
         "tag":"body",
-        "sprite":"res\/graphics\/board\/red\/red_idle.png",
+        "sprite":"res\/graphics\/in-game\/gem\/red\/red_idle.png",
         "actions":{
           "x":{
             "start":0,
@@ -1598,11 +1598,11 @@
             "tween":"Linear"
           },
           "scaleX":{
-            "start":0,
+            "start":0.5,
             "tween":"Linear"
           },
           "scaleY":{
-            "start":0,
+            "start":0.5,
             "tween":"Linear"
           },
           "skewX":{
@@ -1630,7 +1630,7 @@
             "tween":"Linear"
           },
           "opacity":{
-            "start":0,
+            "start":127.5,
             "tween":"Linear"
           },
           "r":{
@@ -1649,9 +1649,8 @@
         "objectState":{
           "color":"red",
           "snap":"off",
-          "combo":1
-        },
-        "event":""
+          "combo":"1"
+        }
       }
     ],
     "Hint":[
@@ -4391,14 +4390,14 @@
             "tween":"Linear"
           },
           "scaleX":{
-            "start":0,
+            "start":0.49999999999999,
             "tween":"Linear",
             "startTime":0,
             "endTime":0.16666666666667,
             "end":1
           },
           "scaleY":{
-            "start":0,
+            "start":0.49999999999999,
             "tween":"Linear",
             "startTime":0,
             "endTime":0.16666666666667,
@@ -4429,7 +4428,7 @@
             "tween":"Linear"
           },
           "opacity":{
-            "start":0,
+            "start":127.5,
             "tween":"Linear",
             "startTime":0,
             "endTime":0.16666666666667,
@@ -4451,14 +4450,321 @@
         "objectState":{
           "color":"red",
           "snap":"off",
-          "combo":"1"
-        },
-        "event":""
+          "combo":1
+        }
       },
       {
         "time":0.16666666666667,
         "tag":"body",
         "sprite":"red_idle.png",
+        "actions":{
+          "x":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "y":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "anchorX":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "anchorY":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "scaleX":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "scaleY":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "skewX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotation":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "zIndex":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "opacity":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "r":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "g":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "b":{
+            "start":255,
+            "tween":"Linear"
+          }
+        },
+        "objectState":{
+          "color":"red",
+          "snap":"off",
+          "combo":"1"
+        }
+      }
+    ],
+    "RocketDelay":[
+      {
+        "time":0,
+        "tag":"body",
+        "sprite":"res\/graphics\/in-game\/gem\/red\/red_idle.png",
+        "actions":{
+          "x":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "y":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "anchorX":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "anchorY":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "scaleX":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "scaleY":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "skewX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotation":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "zIndex":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "opacity":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "r":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "g":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "b":{
+            "start":255,
+            "tween":"Linear"
+          }
+        },
+        "objectState":{
+          "color":"red",
+          "snap":"off",
+          "combo":"1"
+        }
+      },
+      {
+        "time":0.2,
+        "tag":"body",
+        "sprite":"res\/graphics\/in-game\/gem\/red\/red_idle.png",
+        "actions":{
+          "x":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "y":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "anchorX":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "anchorY":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "scaleX":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "scaleY":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "skewX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotation":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "zIndex":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "opacity":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "r":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "g":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "b":{
+            "start":255,
+            "tween":"Linear"
+          }
+        },
+        "objectState":{
+          "color":"red",
+          "snap":"off",
+          "combo":"1"
+        }
+      }
+    ],
+    "DestroyDelay":[
+      {
+        "time":0,
+        "tag":"body",
+        "sprite":"res\/graphics\/in-game\/gem\/red\/red_idle.png",
+        "actions":{
+          "x":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "y":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "anchorX":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "anchorY":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "scaleX":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "scaleY":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "skewX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotation":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "zIndex":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "opacity":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "r":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "g":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "b":{
+            "start":255,
+            "tween":"Linear"
+          }
+        },
+        "objectState":{
+          "color":"red",
+          "snap":"off",
+          "combo":"1"
+        }
+      },
+      {
+        "time":0.05,
+        "tag":"body",
+        "sprite":"res\/graphics\/in-game\/gem\/red\/red_idle.png",
         "actions":{
           "x":{
             "start":0,
@@ -4627,6 +4933,9 @@
     "activateTripleCombo":"Active_triple_combo_sfx",
     "activateCombo4":"Combo4_effect_sfx",
     "activateCombo5":"Combo5_effect_sfx",
-    "activateCombo6":"Combo6_effect_sfx"
+    "activateCombo6":"Combo6_effect_sfx",
+    "activateCombo":"Basic_match_3_sfx",
+    "letterFill":"Letter_filled_sfx",
+    "letterDestory":"One_letter_destroy_sfx"
   }
 }

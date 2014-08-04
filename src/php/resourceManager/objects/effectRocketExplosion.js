@@ -1,42 +1,41 @@
 {
+  "variableDefault":{
+    "frame":"6"
+  },
+  "sounds":[
+    
+  ],
   "variables":{
-    "type":[
-      "loadingPage",
-      "startPage",
-      "settingMenu",
-      "game",
-      "overlay",
-      "popupLarge",
-      "targetPopup",
-      "leaderboard",
-      "popupSmall",
-      "footerCloud",
-      "addLifePopup",
-      "flashcardHolder",
-      "woodBg",
-      "blank",
-      "noMoveMessage",
-      "answerZone",
-      "blueCircles",
-      "woodPanel",
-      "fcChapterFrame",
-      "fcIndicatorBg"
-    ],
-    "state":[
-      "off",
-      "on"
+    "frame":[
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
     ]
   },
-  "variableDefault":{
-    "type":"startPage",
-    "state":"off"
+  "layers":{
+    "explode":{
+      "variableKeys":[
+        "frame"
+      ],
+      "objectStates":{
+        "1":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_0.png",
+        "2":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_1.png",
+        "3":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_2.png",
+        "4":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_3.png",
+        "5":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_4.png",
+        "6":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_5.png"
+      }
+    }
   },
   "animations":{
-    "fadeIn":[
+    "effect":[
       {
         "time":0,
-        "tag":"body",
-        "sprite":"loadingBackground.png",
+        "tag":"explode",
+        "sprite":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_0.png",
         "actions":{
           "x":{
             "start":0,
@@ -87,11 +86,8 @@
             "tween":"Linear"
           },
           "opacity":{
-            "start":0,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.5,
-            "end":255
+            "start":255,
+            "tween":"Linear"
           },
           "r":{
             "start":255,
@@ -107,13 +103,13 @@
           }
         },
         "objectState":{
-          "type":"loadingPage"
+          "frame":"1"
         }
       },
       {
-        "time":0.33333333333333,
-        "tag":"body",
-        "sprite":"loadingBackground.png",
+        "time":0.083333333333333,
+        "tag":"explode",
+        "sprite":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_1.png",
         "actions":{
           "x":{
             "start":0,
@@ -181,15 +177,14 @@
           }
         },
         "objectState":{
-          "type":"loadingPage"
-        }
-      }
-    ],
-    "fadeOut":[
+          "frame":"2"
+        },
+        "event":""
+      },
       {
-        "time":0,
-        "tag":"body",
-        "sprite":"loadingBackground.png",
+        "time":0.16666666666667,
+        "tag":"explode",
+        "sprite":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_2.png",
         "actions":{
           "x":{
             "start":0,
@@ -241,10 +236,7 @@
           },
           "opacity":{
             "start":255,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.5,
-            "end":0
+            "tween":"Linear"
           },
           "r":{
             "start":255,
@@ -260,96 +252,93 @@
           }
         },
         "objectState":{
-          "type":"loadingPage"
-        }
+          "frame":"3"
+        },
+        "event":""
+      },
+      {
+        "time":0.25,
+        "tag":"explode",
+        "sprite":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_3.png",
+        "actions":{
+          "x":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "y":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "anchorX":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "anchorY":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "scaleX":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "scaleY":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "skewX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotation":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "zIndex":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "opacity":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "r":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "g":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "b":{
+            "start":255,
+            "tween":"Linear"
+          }
+        },
+        "objectState":{
+          "frame":"4"
+        },
+        "event":""
       },
       {
         "time":0.33333333333333,
-        "tag":"body",
-        "sprite":"loadingBackground.png",
+        "tag":"explode",
+        "sprite":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_4.png",
         "actions":{
           "x":{
             "start":0,
             "tween":"Linear"
-          },
-          "y":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "anchorX":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "anchorY":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "scaleX":{
-            "start":1,
-            "tween":"Linear"
-          },
-          "scaleY":{
-            "start":1,
-            "tween":"Linear"
-          },
-          "skewX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "skewY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotation":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "zIndex":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "opacity":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "r":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "g":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "b":{
-            "start":255,
-            "tween":"Linear"
-          }
-        },
-        "objectState":{
-          "type":"loadingPage"
-        }
-      }
-    ],
-    "menuIn":[
-      {
-        "time":0,
-        "tag":"body",
-        "sprite":"loadingBackground.png",
-        "actions":{
-          "x":{
-            "start":0,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.33333333333333,
-            "end":505
           },
           "y":{
             "start":0,
@@ -413,166 +402,14 @@
           }
         },
         "objectState":{
-          "type":"loadingPage"
-        }
+          "frame":"5"
+        },
+        "event":""
       },
       {
-        "time":0.33333333333333,
-        "tag":"body",
-        "sprite":"loadingBackground.png",
-        "actions":{
-          "x":{
-            "start":505,
-            "tween":"Linear"
-          },
-          "y":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "anchorX":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "anchorY":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "scaleX":{
-            "start":1,
-            "tween":"Linear"
-          },
-          "scaleY":{
-            "start":1,
-            "tween":"Linear"
-          },
-          "skewX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "skewY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotation":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "zIndex":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "opacity":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "r":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "g":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "b":{
-            "start":255,
-            "tween":"Linear"
-          }
-        },
-        "objectState":{
-          "type":"loadingPage"
-        }
-      }
-    ],
-    "menuOut":[
-      {
-        "time":0,
-        "tag":"body",
-        "sprite":"loadingBackground.png",
-        "actions":{
-          "x":{
-            "start":505,
-            "tween":"Linear",
-            "startTime":0,
-            "endTime":0.33333333333333,
-            "end":0
-          },
-          "y":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "anchorX":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "anchorY":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "scaleX":{
-            "start":1,
-            "tween":"Linear"
-          },
-          "scaleY":{
-            "start":1,
-            "tween":"Linear"
-          },
-          "skewX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "skewY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotation":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "zIndex":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "opacity":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "r":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "g":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "b":{
-            "start":255,
-            "tween":"Linear"
-          }
-        },
-        "objectState":{
-          "type":"loadingPage"
-        }
-      },
-      {
-        "time":0.33333333333333,
-        "tag":"body",
-        "sprite":"loadingBackground.png",
+        "time":0.41666666666667,
+        "tag":"explode",
+        "sprite":"res\/graphics\/in-game\/bonus_time\/rocket\/rocket_explosion_5.png",
         "actions":{
           "x":{
             "start":0,
@@ -640,121 +477,10 @@
           }
         },
         "objectState":{
-          "type":"loadingPage"
-        }
-      }
-    ],
-    "hide":[
-      {
-        "time":0,
-        "tag":"body",
-        "sprite":"res\/graphics\/ui\/worldmap_background\/worldmap_bg.png",
-        "actions":{
-          "x":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "y":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "anchorX":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "anchorY":{
-            "start":0.5,
-            "tween":"Linear"
-          },
-          "scaleX":{
-            "start":1,
-            "tween":"Linear"
-          },
-          "scaleY":{
-            "start":1,
-            "tween":"Linear"
-          },
-          "skewX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "skewY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationX":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotationY":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "rotation":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "zIndex":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "opacity":{
-            "start":0,
-            "tween":"Linear"
-          },
-          "r":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "g":{
-            "start":255,
-            "tween":"Linear"
-          },
-          "b":{
-            "start":255,
-            "tween":"Linear"
-          }
-        },
-        "objectState":{
-          "type":"startPage",
-          "state":"off"
+          "frame":"6"
         },
         "event":""
       }
     ]
-  },
-  "layers":{
-    "body":{
-      "variableKeys":[
-        "type"
-      ],
-      "objectStates":{
-        "loadingPage":"res\/graphics\/ui\/loading_screen\/studio_logo.png",
-        "startPage":"res\/graphics\/ui\/worldmap_background\/worldmap_bg.png",
-        "settingMenu":"res\/graphics\/ui\/popup_setting\/popup_setting_bg.png",
-        "game":"res\/graphics\/in-game\/hud\/gameboard_background.png",
-        "overlay":"res\/graphics\/ui\/overlay_background.png",
-        "popupLarge":"res\/graphics\/ui\/common_panel\/popup_panel_large.png",
-        "targetPopup":"res\/graphics\/ui\/popup_target\/popup_target_bg.png",
-        "leaderboard":"res\/graphics\/ui\/popup_target\/leaderboard_bg.png",
-        "popupSmall":"res\/graphics\/ui\/common_panel\/popup_panel_small.png",
-        "footerCloud":"res\/graphics\/ui\/worldmap_ui\/cloud.png",
-        "addLifePopup":"res\/graphics\/ui\/popup_buy_life\/popup_buy_life_bg.png",
-        "flashcardHolder":"res\/graphics\/flashcard\/browse_flashcard\/fc_holder.png",
-        "woodBg":"res\/graphics\/flashcard\/browse_flashcard\/wood_bg.png",
-        "blank":"res\/graphics\/ui\/blank_cell.png",
-        "noMoveMessage":"res\/graphics\/ui\/popup_buy_move\/nomove_conversation.png",
-        "answerZone":"res\/graphics\/flashcard\/flashcard_collect_game\/answer_zone_bg.png",
-        "blueCircles":"res\/graphics\/flashcard\/flashcard_collection\/fc_collection_bg.png",
-        "woodPanel":"res\/graphics\/flashcard\/flashcard_collection\/fc_wood_footer_bg.png",
-        "fcChapterFrame":"res\/graphics\/flashcard\/flashcard_collection\/chapter_frame_large.png",
-        "fcIndicatorBg":"res\/graphics\/flashcard\/flashcard_collection\/fc_thumb_container_0.png"
-      }
-    }
-  },
-  "sounds":{
-    "dragFail":"Drag_fail_sfx",
-    "dragSuccess":"Drag_success_sfx",
-    "ingame":"OMW_BG_ingame"
   }
 }
