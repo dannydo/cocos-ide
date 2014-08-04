@@ -11,6 +11,7 @@
   <script src="library/zepto.js"></script>
   <script src="library/angular.js"></script>
   <script src="library/XMLHttpRequest.js"></script>
+
 <style>
   html, body, .container-fluid, .row {
     height: 100%;
@@ -153,6 +154,8 @@
                 <input type="button" ng-click="ci.deleteSound({objectName:objectName, soundName:soundName})" value="x">
                 <span class='{{ci.soundRename == soundName  && "hidden" || " "}}'>{{soundName}} {{filename  && "(" + filename + ")" || " "}}</span>
                 <input type="text" class='{{ci.soundRename == soundName && " " || "hidden"}}' ng-enter='ci.renameSound({soundName:soundName, soundRename:$event.target.value})' value="{{soundName}}" />
+                
+                <input class='{{filename == "" && "hidden" || " "}}' type="button" ng-click="ci.playSound({playSoundUrl:ci.resourceList.sounds[filename]})" value="play" />
               </div>
             </div>
           </div>
@@ -195,6 +198,9 @@
             <input type="text" 
               class='{{ci.combinationRename == v && " " || "hidden"}}' 
               ng-enter='ci.renameCombination({combinationName:v, combinationRename:$event.target.value})' value="{{v}}" />
+
+            <input class='pull-right {{ci.isVariableDefault({variableName: ci.selectedVariableName, combinationName:v}) == true  && "hidden" || " "}}' type="checkbox" ng-click="ci.setVariableDefault({variableName: ci.selectedVariableName, combinationName:v})">
+            <input class='pull-right {{ci.isVariableDefault({variableName: ci.selectedVariableName, combinationName:v}) == false  && "hidden" || " "}}' type="checkbox" ng-click="ci.setVariableDefault({variableName: ci.selectedVariableName, combinationName:v})" checked="checked">
         </div>
       </fieldset>
 
@@ -252,18 +258,32 @@
       <fieldset class='well well-sm {{ci.resourceList.graphics && " " || "hidden"}}'>
         <h3>Resource</h3>
 
-        <div class="sound-item" ng-repeat="(k, v) in ci.resourceList.sounds"
-          ng-if="ci.resouceMode == 'sounds'" ng-mousedown="ci.dragSoundFilename=v">
+        <div class="sound-item"
+            ng-if="ci.resouceMode == 'sounds'"
+            ng-repeat="(k, v) in ci.resourceList.sounds"
+            ng-mousedown="ci.dragSoundFilename=v">
+
             {{ci.getFilename(v)}}
             <input type="button" ng-click="ci.playSound({playSoundUrl:v})" value="play" />
         </div>
         <audio id="audio" class="hidden" audioplayer controls></audio>
 
-        <div class="graphic-item" ng-repeat="(k, v) in ci.resourceList.graphics" 
-          ng-style="{'background-image':'url('+v+')'}"
-          ng-mousedown="ci.dragGraphicName=v"
-          ng-if="ci.resouceMode == 'graphics'">
-            <span>{{ci.getFilename(v)}}</span>
+        <div ng-if="ci.resouceMode == 'graphics'">
+          <ul class="nav nav-tabs">
+            <li ng-repeat="(folder, images) in ci.resourceList.graphics" class='{{ci.selectedGroup == folder && "active" || " "}}'>
+              <a ng-click="ci.selectGraphichGroup(folder)">{{folder}}</a>
+            </li>
+          </ul>
+          <br />
+
+          <div ng-repeat="(folder, images) in ci.resourceList.graphics" class='{{ci.selectedGroup == folder && " " || "hidden"}}'>
+            <div class="graphic-item" ng-repeat="(k, image) in images"
+              ng-style="{'background-image':'url('+image+')'}"
+              ng-mousedown="ci.dragGraphicName=image">
+
+              <span>{{ci.getFilename(image)}}</span>
+            </div>
+          </div>
         </div>
         <div class="clear: both;"></div>
       </fieldset>

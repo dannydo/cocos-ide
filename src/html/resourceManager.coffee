@@ -6,6 +6,7 @@ class kiss.ResourceManager
     @objectList     = {}
     @objectBackup   = {}
     @resouceMode    = 'graphics'
+    @selectedGroup  = ''
     @form = {}
     if window?
       @_bootAngularJs();
@@ -36,6 +37,9 @@ class kiss.ResourceManager
       @app.controller 'ResourceManager', ['$scope', ($scope) => @scope = $scope; return @]
       angular.element(document).ready ->
         angular.bootstrap($(".ResourceManager")[0], ['CocosStudio']);
+
+  selectGraphichGroup: (group)->
+    @selectedGroup = group
 
   addObject: ({objectName}={})=>
     objectName ?= @form.objectName
@@ -219,6 +223,25 @@ class kiss.ResourceManager
       else 
         false
     else 
+      false
+
+
+  setVariableDefault: ({variableName, combinationName})->
+    console.log variableName, combinationName
+    if @selectedObject.variableDefault[variableName]
+      @selectedObject.variableDefault[variableName] = combinationName
+
+
+  isVariableDefault: ({variableName, combinationName})->
+    if variableName and combinationName
+      if @selectedObject.variableDefault[variableName]
+        if @selectedObject.variableDefault[variableName] == combinationName
+          true
+        else
+          false
+      else
+        false
+    else
       false
 
 
@@ -420,6 +443,7 @@ class kiss.ResourceManager
     path.split('/').pop().split('.').shift();
 
   getVariableNameByObjectStates:(objectStates)->
+    objectStates = objectStates.toString()
     objectStates = objectStates.split(',')
 
     variables = {}
@@ -473,6 +497,10 @@ class kiss.ResourceManager
           if req.status in successResultCodes
             data = CoffeeScript.eval '(' + req.responseText + ')'
             @resourceList = data
+
+            for folder, images of @resourceList.graphics
+              @selectedGroup = folder
+              break;
           else
             console.log 'Error loading data...'
 
