@@ -177,7 +177,7 @@
             <input type="button" ng-click="ci.deleteVariable({variableName:k})" value="x">
             <span class='{{ci.variableRename == k  && "hidden" || " "}}'>{{k}}</span>
             <input type="text" class='{{ci.variableRename == k && " " || "hidden"}}' ng-enter='ci.renameVariable({variableName:k, variableRename:$event.target.value})' value="{{k}}" />
-            ({{v.length}}) [{{v.join(", ")}}]
+            [<span ng-repeat="(combinationKey, combinationValue) in v">{{combinationValue}}, </span>]
 
             <input class='pull-right {{ci.isVariableLock({variableName:k}) == true  && "hidden" || " "}}' type="checkbox" ng-click="ci.setVariableLock({variableName:k, isLock: true})">
             <input class='pull-right {{ci.isVariableLock({variableName:k}) == false  && "hidden" || " "}}' type="checkbox" ng-click="ci.setVariableLock({variableName:k, isLock: false})" checked="checked">

@@ -5,18 +5,22 @@ function convertVariableToString($json) {
     foreach ($json as $objectName => $variables) {
         foreach ($variables as $variableName => $combinations) {
             if (in_array($variableName, array('variables', 'variableDefault'))) {
+                unset($json[$objectName][$variableName]);
+                $variableName = (string) $variableName;
+
                 $newCombinations = array();
                 foreach ($combinations as $combinationName => $values) {
+                    $combinationName = (string) $combinationName;
+
                     if (is_array($values)) {
                         foreach ($values as $key => $value) {
-                            if (is_numeric($value)) {
-                                $newCombinations[$combinationName][] = $value . '';
-                            } else {
-                                $newCombinations[$combinationName][] = $value;
-                            }
+                            $value = (string) $value . "";
+                            $newCombinations[$combinationName][$value] = $value;
                         }
                     } else {
-                        $newCombinations[$combinationName] = $values . '';
+                        $values = (string) $values . "";
+
+                        $newCombinations[$combinationName] = (string) $values;
                     }
                 }
 
@@ -25,7 +29,8 @@ function convertVariableToString($json) {
         }
     }
 
-    //print_r($json);exit;
+    // echo "<pre>";
+    // print_r($json);exit;
     return $json;
 }
 

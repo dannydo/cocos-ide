@@ -1,5 +1,8 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 require_once "../directory_listing.php";
 require_once "./json.php";
 
@@ -14,6 +17,7 @@ foreach ($oldObjects as $oldObject) {
 	$data['object'][$objectName] = json_decode(correctImagePath(file_get_contents($oldObject)), true);
 }
 
+//$data['object'] = convertVariableToString($data['object']);
 
 function correctImagePath($content) {
 	return str_replace('res\/', '..\/engine\/res\/', $content);

@@ -227,9 +227,11 @@ class kiss.ResourceManager
 
 
   setVariableDefault: ({variableName, combinationName})->
-    console.log variableName, combinationName
-    if @selectedObject.variableDefault[variableName]
-      @selectedObject.variableDefault[variableName] = combinationName
+    if @selectedObject.variableDefault and Object.keys(@selectedObject.variableDefault).length is 0
+      delete @selectedObject.variableDefault
+
+    @selectedObject.variableDefault ?= {}
+    @selectedObject.variableDefault[variableName] = combinationName
 
 
   isVariableDefault: ({variableName, combinationName})->
@@ -247,9 +249,10 @@ class kiss.ResourceManager
 
   addCombination: ({combinationName}={})->
     combinationName ?= @form.combinationName
-
-    if combinationName and combinationName not in @selectedVariable
-      @selectedVariable.push combinationName
+    combinationName.toString()
+    
+    if combinationName and not @selectedVariable[combinationName]
+      @selectedVariable[combinationName] = combinationName
       @form.combinationName = ""
       @_objectStatesNewCombination
         variableName: @selectedVariableName
@@ -257,28 +260,29 @@ class kiss.ResourceManager
   
 
   deleteCombination: ({combinationName})->
-    if combinationName in @selectedVariable
+    if @selectedVariable[combinationName]
       if @selectedVariable.length == 1 
         @deleteVariable
           variableName: @selectedVariableName
       else
-        @selectedVariable.splice @selectedVariable.indexOf(combinationName), 1
+        delete @selectedVariable[combinationName]
+
         @_objectStatesDeleteCombination
           variableName: @selectedVariableName
           combinationName: combinationName
 
-        if @selectedObject.variableDefault[variableName] == combinationName
-          @selectedObject.variableDefault[variableName] = @selectedObject.variables[variableName][0]
+        if @selectedObject.variableDefault[@selectedVariableName] == combinationName
+          @selectedObject.variableDefault[@selectedVariableName] = @selectedObject.variables[@selectedVariableName][0]
   
 
   renameCombination: ({combinationName, combinationRename})->
-    if combinationName in @selectedVariable
+    if @selectedVariable[combinationName]
       @_objectStatesRenameCombination
         combinationName: combinationName
         combinationRename: combinationRename
 
-      combinationIndex = @selectedVariable.indexOf combinationName
-      @selectedVariable[combinationIndex] = combinationRename
+      delete @selectedVariable[combinationName]
+      @selectedVariable[combinationRename] = combinationRename
 
       if @selectedObject.variableDefault[@selectedVariableName] == combinationName
         @selectedObject.variableDefault[@selectedVariableName] = combinationRename
@@ -361,10 +365,7 @@ class kiss.ResourceManager
     layer.objectStates = objectStates
 
   _objectStatesRenameCombination: ({combinationName, combinationRename})->
-    if combinationName in @selectedVariable
-      combinationIndex = @selectedVariable.indexOf combinationName
-
-
+    if @selectedVariable[combinationName]
       for layerName of @selectedObject.layers
         layer = @selectedObject.layers[layerName]
         variableIndex = layer.variableKeys.indexOf @selectedVariableName
@@ -386,7 +387,6 @@ class kiss.ResourceManager
       variableIndex = layer.variableKeys.indexOf variableName
 
       if variableIndex isnt -1
-        console.log variableName, variableIndex
         for key, value of layer.objectStates
           key = key.split(",")
           key[variableIndex] = combinationName
@@ -518,12 +518,27 @@ class kiss.ResourceManager
       if not @objectList[objectName]?
         objectChanges[objectName] = {}
 
+
     @objectFileTime = _.saveObjectList(@objectFileTime, objectChanges)
 
   loadObject: ->
     _.loadObjectFile 'src/php/resourceManager/objectLoad.php', (file)=>
       @objectFileTime = file.time
       @objectList     = file.object
+
+      for objectName, object of @objectList
+        for key, variables of object
+          if key is 'variables'
+            for variableName, combinations of variables
+              if _.typeOf(combinations) == 'array'
+                delete object[key][variableName]
+
+                newCombinations = {}
+                for combinationKey, combination of combinations
+                  newCombinations[combination] = combination
+
+                @objectList[objectName][key][variableName] = newCombinations
+
       @objectBackup   = _.clone @objectList, true
       
       for key, value of @objectList

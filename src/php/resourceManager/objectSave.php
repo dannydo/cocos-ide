@@ -9,9 +9,10 @@ $requestBody    = file_get_contents('php://input');
 if (isset($requestBody)) {
 	$requestBody = str_replace('../engine/res/', 'res/', $requestBody);
 
-	$requestBody = convertVariableToString(json_decode($requestBody, true));
+	// $requestBody = convertVariableToString(json_decode($requestBody, true));
+	$requestBody = json_decode($requestBody);
 
-	foreach ($requestBody['object'] as $objectName => $object) {
+	foreach ($requestBody->object as $objectName => $object) {
 		$objectFileName = $objectName . '.js';
 
 		if (count($object) == 0) {
