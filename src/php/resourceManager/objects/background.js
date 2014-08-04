@@ -6,12 +6,21 @@
       "settingMenu",
       "game",
       "overlay",
-      "popup_large",
+      "popupLarge",
       "targetPopup",
       "leaderboard",
-      "popup_small",
+      "popupSmall",
       "footerCloud",
-      "addLifePopup"
+      "addLifePopup",
+      "flashcardHolder",
+      "woodBg",
+      "blank",
+      "noMoveMessage",
+      "answerZone",
+      "blueCircles",
+      "woodPanel",
+      "fcChapterFrame",
+      "fcIndicatorBg"
     ],
     "state":[
       "off",
@@ -634,6 +643,84 @@
           "type":"loadingPage"
         }
       }
+    ],
+    "hide":[
+      {
+        "time":0,
+        "tag":"body",
+        "sprite":"res\/graphics\/ui\/worldmap_background\/worldmap_bg.png",
+        "actions":{
+          "x":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "y":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "anchorX":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "anchorY":{
+            "start":0.5,
+            "tween":"Linear"
+          },
+          "scaleX":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "scaleY":{
+            "start":1,
+            "tween":"Linear"
+          },
+          "skewX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "skewY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationX":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotationY":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "rotation":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "zIndex":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "opacity":{
+            "start":0,
+            "tween":"Linear"
+          },
+          "r":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "g":{
+            "start":255,
+            "tween":"Linear"
+          },
+          "b":{
+            "start":255,
+            "tween":"Linear"
+          }
+        },
+        "objectState":{
+          "type":"startPage",
+          "state":"off"
+        },
+        "event":""
+      }
     ]
   },
   "layers":{
@@ -647,12 +734,21 @@
         "settingMenu":"res\/graphics\/ui\/popup_setting\/popup_setting_bg.png",
         "game":"res\/graphics\/in-game\/hud\/gameboard_background.png",
         "overlay":"res\/graphics\/ui\/overlay_background.png",
-        "popup_large":"res\/graphics\/ui\/common_panel\/popup_panel_large.png",
+        "popupLarge":"res\/graphics\/ui\/common_panel\/popup_panel_large.png",
         "targetPopup":"res\/graphics\/ui\/popup_target\/popup_target_bg.png",
         "leaderboard":"res\/graphics\/ui\/popup_target\/leaderboard_bg.png",
-        "popup_small":"res\/graphics\/ui\/common_panel\/popup_panel_small.png",
+        "popupSmall":"res\/graphics\/ui\/common_panel\/popup_panel_small.png",
         "footerCloud":"res\/graphics\/ui\/worldmap_ui\/cloud.png",
-        "addLifePopup":"res\/graphics\/ui\/popup_buy_life\/popup_buy_life_bg.png"
+        "addLifePopup":"res\/graphics\/ui\/popup_buy_life\/popup_buy_life_bg.png",
+        "flashcardHolder":"res\/graphics\/flashcard\/browse_flashcard\/fc_holder.png",
+        "woodBg":"res\/graphics\/flashcard\/browse_flashcard\/wood_bg.png",
+        "blank":"res\/graphics\/ui\/blank_cell.png",
+        "noMoveMessage":"res\/graphics\/ui\/popup_buy_move\/nomove_conversation.png",
+        "answerZone":"res\/graphics\/flashcard\/flashcard_collect_game\/answer_zone_bg.png",
+        "blueCircles":"res\/graphics\/flashcard\/flashcard_collection\/fc_collection_bg.png",
+        "woodPanel":"res\/graphics\/flashcard\/flashcard_collection\/fc_wood_footer_bg.png",
+        "fcChapterFrame":"res\/graphics\/flashcard\/flashcard_collection\/chapter_frame_large.png",
+        "fcIndicatorBg":"res\/graphics\/flashcard\/flashcard_collection\/fc_thumb_container_0.png"
       }
     }
   }

@@ -27,7 +27,7 @@
     }
   },
   "animations":{
-    "combo4_bolt":[
+    "Combo4Idle":[
       {
         "time":0,
         "tag":"Bolt",

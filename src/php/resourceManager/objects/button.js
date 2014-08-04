@@ -16,7 +16,14 @@
       "flashcard",
       "tutorialButton",
       "buyLife",
-      "askLife"
+      "askLife",
+      "buy5Move",
+      "endGame",
+      "speaker_yellow",
+      "speaker_white",
+      "collectFC",
+      "reviseGame",
+      "playAll"
     ]
   },
   "variableDefault":{
@@ -343,8 +350,8 @@
       ],
       "objectStates":{
         "menu":"res\/graphics\/ui\/common_button\/btn_setting.png",
-        "popUpYes":"res\/graphics\/ui\/common_button\/yes.png",
-        "popUpNo":"res\/graphics\/ui\/common_button\/Untitled-1.png",
+        "popUpYes":"res\/graphics\/ui\/common_button\/yes_btn.png",
+        "popUpNo":"res\/graphics\/ui\/common_button\/no_btn.png",
         "popUpCancel":"res\/graphics\/ui\/common_button\/button_close_red.png",
         "targetPopupClose":"res\/graphics\/ui\/common_button\/btn_close_green.png",
         "play":"res\/graphics\/ui\/popup_target\/popup_target_play_btn.png",
@@ -357,7 +364,14 @@
         "flashcard":"res\/graphics\/ui\/common_button\/btn_flashcard.png",
         "tutorialButton":"res\/graphics\/ui\/popup_setting\/btn_tutorial.png",
         "buyLife":"res\/graphics\/ui\/popup_buy_life\/buy_life_btn.png",
-        "askLife":"res\/graphics\/ui\/popup_buy_life\/ask_friend_btn.png"
+        "askLife":"res\/graphics\/ui\/popup_buy_life\/ask_friend_btn.png",
+        "buy5Move":"res\/graphics\/ui\/popup_buy_move\/play_on_btn.png",
+        "endGame":"res\/graphics\/ui\/popup_buy_move\/end_game_btn.png",
+        "speaker_yellow":"res\/graphics\/ui\/common_icon\/ico_speaker.png",
+        "speaker_white":"res\/graphics\/ui\/common_icon\/ico_speaker_1.png",
+        "collectFC":"res\/graphics\/flashcard\/flashcard_collect_game\/collect_btn.png",
+        "reviseGame":"res\/graphics\/flashcard\/flashcard_collection\/revise_flag.png",
+        "playAll":"res\/graphics\/flashcard\/flashcard_collection\/phay_all_btn.png"
       }
     }
   }

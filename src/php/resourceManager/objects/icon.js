@@ -1,7 +1,13 @@
 {
   "variables":{
     "type":[
-      "sendLife"
+      "sendLife",
+      "bulb",
+      "right",
+      "wrong",
+      "scroll",
+      "infomation",
+      "fcIndicatorNumber"
     ]
   },
   "variableDefault":{
@@ -16,10 +22,16 @@
   "layers":{
     "body":{
       "variableKeys":[
-        
+        "type"
       ],
       "objectStates":{
-        "":"res\/graphics\/ui\/common_icon\/ico_send_life.png"
+        "sendLife":"res\/graphics\/ui\/common_icon\/ico_send_life.png",
+        "bulb":"res\/graphics\/flashcard\/flashcard_collect_game\/ico_bulb.png",
+        "right":"res\/graphics\/flashcard\/flashcard_collect_game\/ico_right.png",
+        "wrong":"res\/graphics\/flashcard\/flashcard_collect_game\/ico_scroll.png",
+        "scroll":"res\/graphics\/flashcard\/flashcard_collect_game\/ico_wrong.png",
+        "infomation":"res\/graphics\/flashcard\/flashcard_collection\/fc_info_icon.png",
+        "fcIndicatorNumber":"res\/graphics\/flashcard\/flashcard_collection\/fc_number_board.png"
       }
     }
   }

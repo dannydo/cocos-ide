@@ -44,7 +44,7 @@
     }
   },
   "animations":{
-    "combo5_halo":[
+    "Combo5Idle":[
       {
         "time":0,
         "tag":"halo1",
@@ -362,5 +362,8 @@
         "event":""
       }
     ]
+  },
+  "variableLock":{
+    "color":true
   }
 }
