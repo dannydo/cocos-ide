@@ -18,7 +18,8 @@ if (isset($requestBody)) {
 		if (count($object) == 0) {
 			unlink($objectFilePath . '/' . $objectFileName);
 		} else {
-			$content 		= jsonBeautifier(json_encode($object));
+			$content = jsonBeautifier(json_encode($object));
+			$content = str_replace("_empty_", "", $content);
 
 	  		file_put_contents($objectFilePath . '/' . $objectFileName, $content);
 	  	}

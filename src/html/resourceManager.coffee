@@ -132,15 +132,15 @@ class kiss.ResourceManager
 
   deleteLayerVariable: ({layerName, variableName})->
     layer = @selectedObject.layers[layerName]
-    variableIndex = layer.variableKeys.indexOf variableName
+    variableIndex = @_getObjectIndexByValue(layer.variableKeys, variableName)
     
-    if variableIndex isnt -1
+    if variableIndex isnt false
       @_objectStatesDeleteVariable
         layer: layer
         variableDefault: @selectedObject.variableDefault[variableName]
         variableName: variableName
 
-      spliceIndex = layer.variableKeys.indexOf(variableName)
+      spliceIndex = @_getObjectIndexByValue(layer.variableKeys, variableName)
       layer.variableKeys.splice spliceIndex, 1
 
 
@@ -319,7 +319,7 @@ class kiss.ResourceManager
 
       for layerName of @selectedObject.layers
         layer = @selectedObject.layers[layerName]
-        variableIndex = layer.variableKeys.indexOf variableName
+        variableIndex = @_getObjectIndexByValue(layer.variableKeys, variableName)
         layer.variableKeys[variableIndex] = variableRename
 
       @selectedObject.variableDefault[variableRename] = variableDefault
@@ -353,9 +353,10 @@ class kiss.ResourceManager
           combinationName: combinationName
 
   _objectStatesDeleteVariable: ({layer, variableName, variableDefault})->
-    previous = layer.objectStates
-    objectStates = {}
-    variableIndex = layer.variableKeys.indexOf variableName
+    previous      = layer.objectStates
+    objectStates  = {}
+    variableIndex = @_getObjectIndexByValue(layer.variableKeys, variableName)
+
     for key, value of previous
       key = key.split(",")
       if key[variableIndex] == variableDefault 
@@ -367,8 +368,8 @@ class kiss.ResourceManager
   _objectStatesRenameCombination: ({combinationName, combinationRename})->
     if @selectedVariable[combinationName]
       for layerName of @selectedObject.layers
-        layer = @selectedObject.layers[layerName]
-        variableIndex = layer.variableKeys.indexOf @selectedVariableName
+        layer         = @selectedObject.layers[layerName]
+        variableIndex = @_getObjectIndexByValue(layer.variableKeys, variableName)
 
         objectStates = {}
         for key, value of layer.objectStates
@@ -383,10 +384,10 @@ class kiss.ResourceManager
   _objectStatesNewCombination: ({variableName, combinationName})->
     for layerName of @selectedObject.layers
       layer = @selectedObject.layers[layerName]
-      objectStates = layer.objectStates
-      variableIndex = layer.variableKeys.indexOf variableName
+      objectStates  = layer.objectStates
+      variableIndex = @_getObjectIndexByValue(layer.variableKeys, variableName)
 
-      if variableIndex isnt -1
+      if variableIndex isnt false
         for key, value of layer.objectStates
           key = key.split(",")
           key[variableIndex] = combinationName
@@ -394,9 +395,9 @@ class kiss.ResourceManager
 
   _objectStatesDeleteCombination: ({variableName, combinationName})->
     for layerName of @selectedObject.layers
-      layer = @selectedObject.layers[layerName]
-      objectStates = layer.objectStates
-      variableIndex = layer.variableKeys.indexOf variableName
+      layer         = @selectedObject.layers[layerName]
+      objectStates  = layer.objectStates
+      variableIndex = @_getObjectIndexByValue(layer.variableKeys, variableName)
 
       for key, value of layer.objectStates
         key = key.split(",")
@@ -444,12 +445,15 @@ class kiss.ResourceManager
 
   getVariableNameByObjectStates:(objectStates)->
     objectStates = objectStates.toString()
-    objectStates = objectStates.split(',')
+
+    states = {}
+    for key, value in objectStates.split(',')
+      states[value] = key
 
     variables = {}
-    for variableName, key  in @selectedLayer.variableKeys
-      variables[variableName] = objectStates[key]
-      
+    for variableName, key of @selectedLayer.variableKeys
+      variables[key] = states[variableName]
+
     variables
 
   dropGraphicName:({objectState})->
@@ -478,6 +482,15 @@ class kiss.ResourceManager
     delete @dragVariableName
     delete @dragGraphicName
     delete @dragSoundFilename
+
+  _getObjectIndexByValue:(object, checkValue)->
+    key = false
+
+    for key, value of object
+      if value is checkValue
+        break
+
+    key
 
   changeResouceMode:(mode)->
     @resouceMode = mode
@@ -519,7 +532,7 @@ class kiss.ResourceManager
         objectChanges[objectName] = {}
 
 
-    @objectFileTime = _.saveObjectList(@objectFileTime, objectChanges)
+    @objectFileTime = _.saveObjectList(@objectFileTime, @objectList)
 
   loadObject: ->
     _.loadObjectFile 'src/php/resourceManager/objectLoad.php', (file)=>
@@ -528,16 +541,27 @@ class kiss.ResourceManager
 
       for objectName, object of @objectList
         for key, variables of object
-          if key is 'variables'
+          if key in ['variables']
             for variableName, combinations of variables
               if _.typeOf(combinations) == 'array'
                 delete object[key][variableName]
 
                 newCombinations = {}
                 for combinationKey, combination of combinations
-                  newCombinations[combination] = combination
+                  newCombinations[combinationKey] = combination
 
                 @objectList[objectName][key][variableName] = newCombinations
+          if key in ['layers']
+            for variableName, variableValues of variables
+              for variableValueKey, variableValueValues of variableValues
+                if _.typeOf(variableValueValues) == 'array'
+                  delete object[key][variableName][variableValueKey]
+
+                  newValues = {}
+                  for i, v of variableValueValues
+                    newValues[i] = v
+
+                  @objectList[objectName][key][variableName][variableValueKey] = newValues
 
       @objectBackup   = _.clone @objectList, true
       
